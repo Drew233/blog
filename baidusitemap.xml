@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cndrew.cn/2019/04/21/Change/</loc>
+    <lastmod>2019-06-23</lastmod>
+  </url>  <url>
     <loc>https://cndrew.cn/2019/06/23/drew/</loc>
     <lastmod>2019-06-23</lastmod>
   </url>  <url>
@@ -14,9 +17,6 @@
     <lastmod>2019-06-21</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/2019/06/17/Dijkstra/</loc>
-    <lastmod>2019-06-21</lastmod>
-  </url>  <url>
-    <loc>https://cndrew.cn/2019/04/21/Change/</loc>
     <lastmod>2019-06-21</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/2019/06/17/romantic/</loc>
