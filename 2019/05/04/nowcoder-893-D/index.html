@@ -121,14 +121,14 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="Think in another way!!!">
-<meta name="keywords" content="nowcoder,Thiking">
+<meta name="keywords" content="Thinking,nowcoder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Stone">
 <meta property="og:url" content="https://cndrew.cn/2019/05/04/nowcoder-893-D/index.html">
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="Think in another way!!!">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-13T14:27:54.511Z">
+<meta property="og:updated_time" content="2019-06-27T10:59:06.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Stone">
 <meta name="twitter:description" content="Think in another way!!!">
@@ -479,7 +479,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-13 22:27:54" itemprop="dateModified" datetime="2019-05-13T22:27:54+08:00">2019-05-13</time>
+                <time title="Modified: 2019-06-27 18:59:06" itemprop="dateModified" datetime="2019-06-27T18:59:06+08:00">2019-06-27</time>
               
             
           </span>
@@ -562,7 +562,7 @@
 <details><br>  <summary><font color="red">Click to see Chinese Intentional analysis</font></summary><br>一开始看到这道题，我以为是贪心裸题，结果仔细一看，数列的顺序是不能变的。。。然后就没了思路。。。等到比赛结束之后看了大佬思路，恍然大悟。<br>因为每次能合起来两堆石子，消耗的疲劳度是最小的那个，并且顺序还不能变，所以若想使最后的疲劳度最小，只需要让最大的那堆石头当成最后一组合起来的一个就行。因为最大的那个不管加上其他哪个数之后都会大于那个数。在一次合成中消耗掉这个最大的数并且使它不计算入疲劳度，就可以得到最小的疲劳度。<br></details>
 
 
-<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll a[10005]; </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll n,t;</span><br><span class="line">    scanf(&quot;%lld&quot;,&amp;n);</span><br><span class="line">    while(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%lld&quot;,&amp;t);</span><br><span class="line">        ll sum=0;</span><br><span class="line">        for(ll i=0;i&lt;t;i++)</span><br><span class="line">            &#123;scanf(&quot;%lld&quot;,&amp;a[i]);sum+=a[i];&#125;</span><br><span class="line">        ll maxx=a[0];</span><br><span class="line">        for(ll i=1;i&lt;t;i++)</span><br><span class="line">            maxx=max(maxx,a[i]);</span><br><span class="line">        printf(&quot;%lld\n&quot;,sum-maxx);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll a[10005];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll n,t;</span><br><span class="line">    scanf(&quot;%lld&quot;,&amp;n);</span><br><span class="line">    while(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%lld&quot;,&amp;t);</span><br><span class="line">        ll sum=0;</span><br><span class="line">        for(ll i=0;i&lt;t;i++)</span><br><span class="line">            &#123;scanf(&quot;%lld&quot;,&amp;a[i]);sum+=a[i];&#125;</span><br><span class="line">        ll maxx=a[0];</span><br><span class="line">        for(ll i=1;i&lt;t;i++)</span><br><span class="line">            maxx=max(maxx,a[i]);</span><br><span class="line">        printf(&quot;%lld\n&quot;,sum-maxx);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -576,6 +576,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="\2019\06\23\nowcoder-945-J\" rel="bookmark">Times 17</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="\2019\05\26\nowcoder-910-D\" rel="bookmark">最大的湖</a></div>
       
     </li>
@@ -584,13 +591,6 @@
       
       
       <div class="popular-posts-title"><a href="\2019\05\26\nowcoder-900-A\" rel="bookmark">风雨无阻</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="\2019\05\25\nowcoder-215-A\" rel="bookmark">灰魔法师</a></div>
       
     </li>
   
@@ -651,9 +651,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nowcoder/" rel="tag"><i class="fa fa-tag"></i> nowcoder</a>
+            <a href="/tags/Thinking/" rel="tag"><i class="fa fa-tag"></i> Thinking</a>
           
-            <a href="/tags/Thiking/" rel="tag"><i class="fa fa-tag"></i> Thiking</a>
+            <a href="/tags/nowcoder/" rel="tag"><i class="fa fa-tag"></i> nowcoder</a>
           
         </div>
       
@@ -670,7 +670,7 @@
   <p><span>Title:</span><a href="/2019/05/04/nowcoder-893-D/">Stone</a></p>
   <p><span>Author:</span><a href="/" title="Visit the personal blog of Uncle_drew">Uncle_drew</a></p>
   <p><span>Dated:</span>2019.05.04 - 22:44</p>
-  <p><span>Updated:</span>2019.05.13 - 22:27</p>
+  <p><span>Updated:</span>2019.06.27 - 18:59</p>
   <p><span>link:</span><a href="/2019/05/04/nowcoder-893-D/" title="Stone">https://cndrew.cn/2019/05/04/nowcoder-893-D/</a>
     <span class="copy-path" title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://cndrew.cn/2019/05/04/nowcoder-893-D/" aria-label="Successful copy!"></i></span>
   </p>
@@ -909,9 +909,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1104,7 +1102,7 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 68.3kwords</span>
+  <span class="post-count">A total of 68.4kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 

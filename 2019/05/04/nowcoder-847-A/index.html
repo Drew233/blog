@@ -121,7 +121,7 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="No Wrong Answer No Time Limit Exceeded No Memory Limit Exceeded No Segmentation Fault No Run Time Error No Presentation Error No Floating Point Error No Compilation Error No Output Limit Exceeded Just">
-<meta name="keywords" content="nowcoder,Thiking">
+<meta name="keywords" content="Thinking,nowcoder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QAQ">
 <meta property="og:url" content="https://cndrew.cn/2019/05/04/nowcoder-847-A/index.html">
@@ -130,7 +130,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/05/04/5cccd9f76c1bf.gif">
 <meta property="og:image" content="https://i.loli.net/2019/05/04/5cccd9942181f.png">
-<meta property="og:updated_time" content="2019-05-13T14:27:49.968Z">
+<meta property="og:updated_time" content="2019-06-27T10:59:10.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="QAQ">
 <meta name="twitter:description" content="No Wrong Answer No Time Limit Exceeded No Memory Limit Exceeded No Segmentation Fault No Run Time Error No Presentation Error No Floating Point Error No Compilation Error No Output Limit Exceeded Just">
@@ -482,7 +482,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-13 22:27:49" itemprop="dateModified" datetime="2019-05-13T22:27:49+08:00">2019-05-13</time>
+                <time title="Modified: 2019-06-27 18:59:10" itemprop="dateModified" datetime="2019-06-27T18:59:10+08:00">2019-06-27</time>
               
             
           </span>
@@ -564,7 +564,7 @@
 <p>QAQ,let&#39;s look it carefully.Then we can find that the amount of &quot;QAQ&quot; is depends on the amount of &quot;A&quot;.So our task is find the position of &quot;A&quot;.<br>Attention: You can&#39;t choose neighboring char from the original string.</p>
 <details><br>  <summary><font color="red">Click to see Chinese Intentional analysis</font></summary><br>观察一下可以发现，QAQ的数量取决于A的数量。所以我们只需要找到A的数量，然后进行判断计算就行。<br>注意：这道题要求的QAQ不能是在原字符串中相邻的字符。<br></details>
 
-<p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QAQAQ</span><br><span class="line">12345</span><br><span class="line"></span><br><span class="line">We can find &quot;QAQ&quot; at: </span><br><span class="line">1 2 3</span><br><span class="line">1 2 5</span><br><span class="line">1 4 5</span><br><span class="line">3 4 5</span><br><span class="line"></span><br><span class="line">but all of these have neighboring char,so the answer of this example is &quot;0&quot;,not &quot;4&quot;.</span><br></pre></td></tr></table></figure></p>
+<p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">QAQAQ</span><br><span class="line">12345</span><br><span class="line"></span><br><span class="line">We can find &quot;QAQ&quot; at:</span><br><span class="line">1 2 3</span><br><span class="line">1 2 5</span><br><span class="line">1 4 5</span><br><span class="line">3 4 5</span><br><span class="line"></span><br><span class="line">but all of these have neighboring char,so the answer of this example is &quot;0&quot;,not &quot;4&quot;.</span><br></pre></td></tr></table></figure></p>
 <p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">string s;</span><br><span class="line">long long ans;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;s;</span><br><span class="line">	int l=s.size();</span><br><span class="line">	for(int i=0;i&lt;l;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(s[i]==&apos;A&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">			int a=0;</span><br><span class="line">			int b=0;</span><br><span class="line">			for(int j=i-2;j&gt;=0;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				if(s[j]==&apos;Q&apos;)</span><br><span class="line">					a++;</span><br><span class="line">			&#125;</span><br><span class="line">			for(int k=i+2;k&lt;l;k++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(s[k]==&apos;Q&apos;)</span><br><span class="line">					b++;</span><br><span class="line">			&#125;</span><br><span class="line">			ans+=a*b;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>One more thing you should better focus on:<br>The answer is too big to be able to save a int type.I ffailed once because of this.</p>
 <h3 id="A-similar-question"><a href="#A-similar-question" class="headerlink" title="A similar question:"></a>A similar question:</h3><p><center>CodeForces-894-A QAQ</center><br>link: <a href="https://codeforces.com/problemset/problem/894/A" target="_blank" rel="noopener">QAQ</a></p>
@@ -605,6 +605,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="\2019\06\23\nowcoder-945-J\" rel="bookmark">Times 17</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="\2019\05\26\nowcoder-910-D\" rel="bookmark">最大的湖</a></div>
       
     </li>
@@ -613,13 +620,6 @@
       
       
       <div class="popular-posts-title"><a href="\2019\05\26\nowcoder-900-A\" rel="bookmark">风雨无阻</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="\2019\05\25\nowcoder-215-A\" rel="bookmark">灰魔法师</a></div>
       
     </li>
   
@@ -680,9 +680,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/nowcoder/" rel="tag"><i class="fa fa-tag"></i> nowcoder</a>
+            <a href="/tags/Thinking/" rel="tag"><i class="fa fa-tag"></i> Thinking</a>
           
-            <a href="/tags/Thiking/" rel="tag"><i class="fa fa-tag"></i> Thiking</a>
+            <a href="/tags/nowcoder/" rel="tag"><i class="fa fa-tag"></i> nowcoder</a>
           
         </div>
       
@@ -699,7 +699,7 @@
   <p><span>Title:</span><a href="/2019/05/04/nowcoder-847-A/">QAQ</a></p>
   <p><span>Author:</span><a href="/" title="Visit the personal blog of Uncle_drew">Uncle_drew</a></p>
   <p><span>Dated:</span>2019.05.04 - 08:01</p>
-  <p><span>Updated:</span>2019.05.13 - 22:27</p>
+  <p><span>Updated:</span>2019.06.27 - 18:59</p>
   <p><span>link:</span><a href="/2019/05/04/nowcoder-847-A/" title="QAQ">https://cndrew.cn/2019/05/04/nowcoder-847-A/</a>
     <span class="copy-path" title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://cndrew.cn/2019/05/04/nowcoder-847-A/" aria-label="Successful copy!"></i></span>
   </p>
@@ -947,9 +947,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1159,7 +1157,7 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 68.3kwords</span>
+  <span class="post-count">A total of 68.4kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 

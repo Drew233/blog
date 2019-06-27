@@ -121,14 +121,14 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="A problem was met in a prgramming contest before.When I tried to solve this I find it&amp;#39;s a meaningful problem.">
-<meta name="keywords" content="HPUOJ,nowcoder,Thiking">
+<meta name="keywords" content="Thinking,HPUOJ,nowcoder">
 <meta property="og:type" content="article">
 <meta property="og:title" content="灰魔法师">
 <meta property="og:url" content="https://cndrew.cn/2019/05/25/nowcoder-215-A/index.html">
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="A problem was met in a prgramming contest before.When I tried to solve this I find it&amp;#39;s a meaningful problem.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-25T00:17:23.435Z">
+<meta property="og:updated_time" content="2019-06-27T10:58:59.937Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="灰魔法师">
 <meta name="twitter:description" content="A problem was met in a prgramming contest before.When I tried to solve this I find it&amp;#39;s a meaningful problem.">
@@ -462,12 +462,24 @@
                 
               
 
-              <time title="Created: 2019-05-25 08:11:20 / Modified: 08:17:23" itemprop="dateCreated datePublished" datetime="2019-05-25T08:11:20+08:00">2019-05-25</time>
+              <time title="Created: 2019-05-25 08:11:20" itemprop="dateCreated datePublished" datetime="2019-05-25T08:11:20+08:00">2019-05-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-27 18:58:59" itemprop="dateModified" datetime="2019-06-27T18:58:59+08:00">2019-06-27</time>
               
             
           </span>
@@ -543,7 +555,7 @@
 <p><center>灰魔法师</center><br>Links: <a href="https://ac.nowcoder.com/acm/contest/215/A" target="_blank" rel="noopener">nowcoder-215-B</a><br><a href="https://hpuoj.com/contest/3/problem/B/" target="_blank" rel="noopener">HPUOJ-contest-3-B</a><br>Description:<br>“White shores, and beyond. A far green country under a swift sunrise.”--灰魔法师</p>
 <p>给出长度为n的序列a, 求有多少对数对 (i, j) (1 &lt;= i &lt; j &lt;= n) 满足 ai + aj 为完全平方数。<br>输入描述:<br>第一行一个整数 n (1 &lt;= n &lt;= 105)<br>第二行 n 个整数 ai (1 &lt;= ai &lt;= 105)<br>输出描述:<br>输出一个整数，表示满足上述条件的数对个数。<br>示例1<br>输入<br>3<br>1 3 6<br>输出<br>2<br>说明<br>满足条件的有 (1, 2), (2, 3) 两对。</p>
 <p>Intentional analysis:<br>We should use a tag array because the data range is too large and the violence will time out.For this way,this problem is easy too.</p>
-<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=200050;</span><br><span class="line">int a[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,x,ans=0;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;x;</span><br><span class="line">		for(int i=1;i*i&lt;=maxn;i++)</span><br><span class="line">			if(i*i&gt;x)	</span><br><span class="line">				ans+=a[i*i-x];</span><br><span class="line">		a[x]++;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=200050;</span><br><span class="line">int a[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,x,ans=0;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;x;</span><br><span class="line">		for(int i=1;i*i&lt;=maxn;i++)</span><br><span class="line">			if(i*i&gt;x)</span><br><span class="line">				ans+=a[i*i-x];</span><br><span class="line">		a[x]++;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>The reason why I said this problem is meaningful is a thought,a &quot;flag&quot; thought,which can reduce the time the program runs to avoid TLE.</p>
 
       
@@ -558,6 +570,13 @@
     <li class="popular-posts-item">
       
       
+      <div class="popular-posts-title"><a href="\2019\06\23\nowcoder-945-J\" rel="bookmark">Times 17</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
       <div class="popular-posts-title"><a href="\2019\05\26\nowcoder-910-D\" rel="bookmark">最大的湖</a></div>
       
     </li>
@@ -566,13 +585,6 @@
       
       
       <div class="popular-posts-title"><a href="\2019\05\26\nowcoder-900-A\" rel="bookmark">风雨无阻</a></div>
-      
-    </li>
-  
-    <li class="popular-posts-item">
-      
-      
-      <div class="popular-posts-title"><a href="\2019\05\04\nowcoder-893-D\" rel="bookmark">Stone</a></div>
       
     </li>
   
@@ -633,11 +645,11 @@
       
         <div class="post-tags">
           
+            <a href="/tags/Thinking/" rel="tag"><i class="fa fa-tag"></i> Thinking</a>
+          
             <a href="/tags/HPUOJ/" rel="tag"><i class="fa fa-tag"></i> HPUOJ</a>
           
             <a href="/tags/nowcoder/" rel="tag"><i class="fa fa-tag"></i> nowcoder</a>
-          
-            <a href="/tags/Thiking/" rel="tag"><i class="fa fa-tag"></i> Thiking</a>
           
         </div>
       
@@ -654,7 +666,7 @@
   <p><span>Title:</span><a href="/2019/05/25/nowcoder-215-A/">灰魔法师</a></p>
   <p><span>Author:</span><a href="/" title="Visit the personal blog of Uncle_drew">Uncle_drew</a></p>
   <p><span>Dated:</span>2019.05.25 - 08:11</p>
-  <p><span>Updated:</span>2019.05.25 - 08:17</p>
+  <p><span>Updated:</span>2019.06.27 - 18:58</p>
   <p><span>link:</span><a href="/2019/05/25/nowcoder-215-A/" title="灰魔法师">https://cndrew.cn/2019/05/25/nowcoder-215-A/</a>
     <span class="copy-path" title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://cndrew.cn/2019/05/25/nowcoder-215-A/" aria-label="Successful copy!"></i></span>
   </p>
@@ -893,9 +905,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">38</span>
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1088,7 +1098,7 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 68.3kwords</span>
+  <span class="post-count">A total of 68.4kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 
