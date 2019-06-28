@@ -1551,15 +1551,15 @@ jQuery(document).ready(function($) {
     </script>
 
 
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-7495139204844693",
-          enable_page_level_ads: true
-     });
-</script>
-   var result = document.execCommand('copy');
+t = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
         
           if (result) $(this).text('Copied');
           else $(this).text('Copy failed');
@@ -1646,11 +1646,3 @@ jQuery(document).ready(function($) {
     </script>
 
 
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-7495139204844693",
-          enable_page_level_ads: true
-     });
-</script>
