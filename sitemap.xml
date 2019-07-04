@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://cndrew.cn/blog/2019/07/04/oldabout/</loc>
+    
+    <lastmod>2019-07-04T03:23:58.950Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://cndrew.cn/blog/2019/06/23/nowcoder-945-J/</loc>
     
     <lastmod>2019-07-03T10:03:05.862Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>https://cndrew.cn/blog/2019/06/17/romantic/</loc>
     
     <lastmod>2019-06-24T23:18:11.224Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://cndrew.cn/blog/about/index.html</loc>
-    
-    <lastmod>2019-06-23T21:53:44.368Z</lastmod>
     
   </url>
   
