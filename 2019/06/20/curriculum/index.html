@@ -11,10 +11,8 @@
 
 
 
-  
 
-
-<html class="theme-next muse use-motion" lang="en,default">
+<html class="theme-next muse" lang="en,default">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,10 +85,10 @@
     version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
     fancybox: true,
-    fastclick: true,
-    lazyload: true,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
-    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -596,50 +594,9 @@
       <div>
       
         
-<div class="my_post_copyright">
-  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
-  
-  <!-- JS库 sweetalert 可修改路径 -->
-  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>Title:</span><a href="/blog/2019/06/20/curriculum/">Put my curriculum on my blog</a></p>
-  <p><span>Author:</span><a href="/" title="Visit the personal blog of Uncle_drew">Uncle_drew</a></p>
-  <p><span>Dated:</span>2019.06.20 - 10:26</p>
-  <p><span>Updated:</span>2019.06.20 - 10:44</p>
-  <p><span>link:</span><a href="/blog/2019/06/20/curriculum/" title="Put my curriculum on my blog">https://cndrew.cn/blog/2019/06/20/curriculum/</a>
-    <span class="copy-path" title="Click to copy the article link"><i class="fa fa-clipboard" data-clipboard-text="https://cndrew.cn/blog/2019/06/20/curriculum/" aria-label="Successful copy!"></i></span>
-  </p>
-  <p><span>State:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">Signature - Non-commercial use - Prohibition interpretation 4.0 International</a>       Please keep the original link and author.</p>  
-</div>
-<script> 
-    var clipboard = new Clipboard('.fa-clipboard');
-      $(".fa-clipboard").click(function(){
-      clipboard.on('success', function(){
-        swal({   
-          title: "Please keep the original link and author.",   
-          text: 'Successful copy!',
-          icon: "success", 
-          showConfirmButton: true
-          });
-        });
-    });  
-</script>
-
       
       </div>
 	  
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        
-
-        
-
-        
-        </div>
       
       
 
@@ -739,7 +696,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">84</span>
+                    <span class="site-state-item-count">83</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1066,7 +1023,7 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 86.3kwords</span>
+  <span class="post-count">A total of 86.2kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 
@@ -1137,11 +1094,7 @@ setInterval(getRTime,1000);
 
 
 
-  
 
-
-
-  
 
 
 
@@ -1166,12 +1119,6 @@ setInterval(getRTime,1000);
 
   
   <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script src="/blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script src="/blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
   <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
@@ -1598,41 +1545,6 @@ setInterval(getRTime,1000);
   
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-  
-
-  
-
-  
-  <script>
-    wpac_init = window.wpac_init || [];
-    wpac_init.push({
-      widget: 'Rating',
-      id: ,
-      el: 'wpac-rating',
-      color: 'fc6423'
-    });
-    (function() {
-      if ('WIDGETPACK_LOADED' in window) return;
-      WIDGETPACK_LOADED = true;
-      var mc = document.createElement('script');
-      mc.type = 'text/javascript';
-      mc.async = true;
-      mc.src = '//embed.widgetpack.com/widget.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-    })();
-  </script>
-
 
   
 
