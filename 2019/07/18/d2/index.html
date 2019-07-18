@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="今天主要学习了sort，结构体的sort。第一天算是结束了，还是有点累的，但是也很有收获，趁着这些题还都勉强能做出来，赶紧多写点吧.">
+<meta name="keywords" content="Algorithm,c&#x2F;c++,CodeForces,Thinking,HDU,STL,math">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU Summer Training Day 2（河南理工暑期集训第二天）">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/07/18/d2/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="今天主要学习了sort，结构体的sort。第一天算是结束了，还是有点累的，但是也很有收获，趁着这些题还都勉强能做出来，赶紧多写点吧.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d3012d17685519697.png">
+<meta property="og:updated_time" content="2019-07-18T15:43:28.837Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU Summer Training Day 2（河南理工暑期集训第二天）">
+<meta name="twitter:description" content="今天主要学习了sort，结构体的sort。第一天算是结束了，还是有点累的，但是也很有收获，趁着这些题还都勉强能做出来，赶紧多写点吧.">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/18/5d3012d17685519697.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/07/18/d2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU Summer Training Day 2（河南理工暑期集训第二天） | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/07/18/d2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU Summer Training Day 2（河南理工暑期集训第二天）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-18 22:55:32 / Modified: 23:43:28" itemprop="dateCreated datePublished" datetime="2019-07-18T22:55:32+08:00">2019-07-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/07/18/d2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/18/d2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天主要学习了sort，结构体的sort。<br>第一天算是结束了，还是有点累的，但是也很有收获，趁着这些题还都勉强能做出来，赶紧多写点吧.<a id="more"></a></p>
+<h3 id="前m大的数"><a href="#前m大的数" class="headerlink" title="前m大的数"></a>前m大的数</h3><p>Description:<br>还记得Gardon给小希布置的那个作业么？（上次比赛的1005）其实小希已经找回了原来的那张数表，现在她想确认一下她的答案是否正确，但是整个的答案是很庞大的表，小希只想让你把答案中最大的M个数告诉她就可以了。<br>给定一个包含N(N&lt;=3000)个正整数的序列，每个数不超过5000，对它们两两相加得到的N*(N-1)/2个和，求出其中前M大的数(M&lt;=1000)并按从大到小的顺序排列。<br>Input</p>
+<blockquote>
+<p>输入可能包含多组数据，其中每组数据包括两行：<br>第一行两个数N和M，<br>第二行N个数，表示该序列。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于输入的每组数据，输出M个数，表示结果。输出应当按照从大到小的顺序排列。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>4 4<br>1 2 3 4<br>4 5<br>5 3 6 4</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>7 6 5 5<br>11 10 9 9 8</p>
+</blockquote>
+<p>Problem solving:<br>I have nothing to say about this *** problem,just do it without thinking.</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1e7;</span><br><span class="line">int a[maxn],b[4000];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,m;</span><br><span class="line">	while(~scanf(&quot;%d %d&quot;,&amp;n,&amp;m))</span><br><span class="line">	&#123;</span><br><span class="line">		int k=0;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">			scanf(&quot;%d&quot;,&amp;b[i]);</span><br><span class="line">		for(int i=0;i&lt;n-1;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=i+1;j&lt;n;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				a[k]=b[i]+b[j];</span><br><span class="line">				k++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(a,a+k);</span><br><span class="line">		for(int i=k-1;i&gt;0;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			if(m==0)	break;</span><br><span class="line">			if(i==k-1)	cout&lt;&lt;a[i];</span><br><span class="line">			else	cout&lt;&lt;&quot; &quot;&lt;&lt;a[i];</span><br><span class="line">			m--;</span><br><span class="line">		&#125;</span><br><span class="line">		puts(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="稳定排序"><a href="#稳定排序" class="headerlink" title="稳定排序"></a>稳定排序</h3><p>Description:<br>大家都知道，快速排序是不稳定的排序方法。<br>如果对于数组中出现的任意a[i],a<a href="i&lt;j">j</a>,其中a[i]==a[j]，在进行排序以后a[i]一定出现在a[j]之前，则认为该排序是稳定的。</p>
+<p>某高校招生办得到一份成绩列表，上面记录了考生名字和考生成绩。并且对其使用了某排序算法按成绩进行递减排序。现在请你判断一下该排序算法是否正确，如果正确的话，则判断该排序算法是否为稳定的。<br>Input</p>
+<blockquote>
+<p>本题目包含多组输入，请处理到文件结束。<br>对于每组数据，第一行有一个正整数N(0&lt;N&lt;300)，代表成绩列表中的考生数目。<br>接下来有N行，每一行有一个字符串代表考生名字(长度不超过50，仅包含&#39;a&#39;~&#39;z&#39;),和一个整数代表考生分数(小于500)。其中名字和成绩用一个空格隔开。<br>再接下来又有N行，是上述列表经过某排序算法以后生成的一个序列。格式同上。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每组数据，如果算法是正确并且稳定的，就在一行里面输出&quot;Right&quot;。如果算法是正确的但不是稳定的，就在一行里面输出&quot;Not Stable&quot;，并且在下面输出正确稳定排序的列表，格式同输入。如果该算法是错误的，就在一行里面输出&quot;Error&quot;,并且在下面输出正确稳定排序的列表，格式同输入。<br>注意，本题目不考虑该排序算法是错误的，但结果是正确的这样的意外情况。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>aa 10<br>bb 10<br>cc 20<br>cc 20<br>bb 10<br>aa 10<br>3<br>aa 10<br>bb 10<br>cc 20<br>cc 20<br>aa 10<br>bb 10<br>3<br>aa 10<br>bb 10<br>cc 20<br>aa 10<br>bb 10<br>cc 20</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>Not Stable<br>cc 20<br>aa 10<br>bb 10<br>Right<br>Error<br>cc 20<br>aa 10<br>bb 10</p>
+</blockquote>
+<p>Problem solving:<br>Attention: we&#39;d better make the order in which it arrears.And then just sort for structures.Compare the second input with the right and stable result.If the score&#39;s order is wrong,output &#39;Error&#39;,if the name&#39;s order is wrong,output &#39;Not Stable&#39;,if all order are right,output &#39;Right&#39;.</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	string na;</span><br><span class="line">	int s,i;</span><br><span class="line">&#125;p[305],pp[305];</span><br><span class="line">bool cmp(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	if(x.s==y.s)	return x.i&lt;y.i;</span><br><span class="line">	return x.s&gt;y.s;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	while(~scanf(&quot;%d&quot;,&amp;n))</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;p[i].na&gt;&gt;p[i].s;</span><br><span class="line">			p[i].i=i;</span><br><span class="line">		&#125;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;pp[i].na&gt;&gt;pp[i].s;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(p,p+n,cmp);</span><br><span class="line">		int flag=0;</span><br><span class="line">		for(int i=0;i&lt;n-1;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(pp[i].s&lt;pp[i+1].s)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=1;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag)</span><br><span class="line">		&#123;</span><br><span class="line">			puts(&quot;Error&quot;);</span><br><span class="line">			for(int i=0;i&lt;n;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				cout&lt;&lt;p[i].na&lt;&lt;&quot; &quot;&lt;&lt;p[i].s&lt;&lt;&quot;\n&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			for(int i=0;i&lt;n;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(p[i].na!=pp[i].na)</span><br><span class="line">				&#123;</span><br><span class="line">					flag=1;</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			if(flag)</span><br><span class="line">			&#123;</span><br><span class="line">				puts(&quot;Not Stable&quot;);</span><br><span class="line">				for(int i=0;i&lt;n;i++)</span><br><span class="line">				&#123;</span><br><span class="line">					cout&lt;&lt;p[i].na&lt;&lt;&quot; &quot;&lt;&lt;p[i].s&lt;&lt;&quot;\n&quot;;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			else</span><br><span class="line">			&#123;</span><br><span class="line">				puts(&quot;Right&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="开门人和关门人"><a href="#开门人和关门人" class="headerlink" title="开门人和关门人"></a>开门人和关门人</h3><p>Description:<br>每天第一个到机房的人要把门打开，最后一个离开的人要把门关好。现有一堆杂乱的机房签<br>到、签离记录，请根据记录找出当天开门和关门的人。<br>Input</p>
+<blockquote>
+<p>测试输入的第一行给出记录的总天数N ( &gt; 0 )。下面列出了N天的记录。<br>每天的记录在第一行给出记录的条目数M ( &gt; 0 )，下面是M行，每行的格式为<br>证件号码 签到时间 签离时间<br>其中时间按“小时:分钟:秒钟”（各占2位）给出，证件号码是长度不超过15的字符串。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对每一天的记录输出1行，即当天开门和关门人的证件号码，中间用1空格分隔。<br>注意：在裁判的标准测试输入中，所有记录保证完整，每个人的签到时间在签离时间之前，<br>且没有多人同时签到或者签离的情况。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>1<br>ME3021112225321 00:00:00 23:59:59<br>2<br>EE301218 08:05:35 20:56:35<br>MA301134 12:35:45 21:40:42<br>3<br>CS301111 15:30:28 17:00:10<br>SC3021234 08:00:00 11:25:25<br>CS301133 21:45:00 21:58:40</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>ME3021112225321 ME3021112225321<br>EE301218 MA301134<br>SC3021234 CS301133</p>
+</blockquote>
+<p>Problem solving:<br>The earliest person and the lastest person is what we should output.The way we get these two person&#39;s name is sort,sort for structures.The best thing is we can find this efficient through sort string.You can look my code carefully to understand this.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	string n,b,e;</span><br><span class="line">&#125;p[1000];</span><br><span class="line">bool cmp(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	return x.b&lt;y.b;</span><br><span class="line">&#125;</span><br><span class="line">bool ccmp(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	return x.e&gt;y.e;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		int m;</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;m);</span><br><span class="line">		for(int i=0;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;p[i].n&gt;&gt;p[i].b&gt;&gt;p[i].e;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(p,p+m,cmp);</span><br><span class="line">		cout&lt;&lt;p[0].n&lt;&lt;&quot; &quot;;</span><br><span class="line">		sort(p,p+m,ccmp);</span><br><span class="line">		cout&lt;&lt;p[0].n;</span><br><span class="line">		puts(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="EXCEL排序"><a href="#EXCEL排序" class="headerlink" title="EXCEL排序"></a>EXCEL排序</h3><p>Description:<br>Excel可以对一组纪录按任意指定列排序。现请你编写程序实现类似功能。<br>Input</p>
+<blockquote>
+<p>测试输入包含若干测试用例。每个测试用例的第1行包含两个整数 N (&lt;=100000) 和 C，其中 N 是纪录的条数，C 是指定排序的列号。以下有 N<br>行，每行包含一条学生纪录。每条学生纪录由学号（6位数字，同组测试中没有重复的学号）、姓名（不超过8位且不包含空格的字符串）、成绩（闭区间[0, 100]内的整数）组成，每个项目间用1个空格隔开。当读到 N=0 时，全部输入结束，相应的结果不要输出。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对每个测试用例，首先输出1行“Case i:”，其中 i 是测试用例的编号（从1开始）。随后在 N 行中输出按要求排序后的结果，即：当 C=1 时，按学号递增排序；当 C=2时，按姓名的非递减字典序排序；当 C=3<br>时，按成绩的非递减排序。当若干学生具有相同姓名或者相同成绩时，则按他们的学号递增排序。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3 1<br>000007 James 85<br>000010 Amy 90<br>000001 Zoe 60<br>4 2<br>000007 James 85<br>000010 Amy 90<br>000001 Zoe 60<br>000002 James 98<br>4 3<br>000007 James 85<br>000010 Amy 90<br>000001 Zoe 60<br>000002 James 90<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>Case 1:<br>000001 Zoe 60<br>000007 James 85<br>000010 Amy 90<br>Case 2:<br>000010 Amy 90<br>000002 James 98<br>000007 James 85<br>000001 Zoe 60<br>Case 3:<br>000001 Zoe 60<br>000007 James 85<br>000002 James 90<br>000010 Amy 90</p>
+</blockquote>
+<p>Problem solving:<br>Look the problem description carefully,and sort for structures.Easy.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	string id,na;</span><br><span class="line">	int s;</span><br><span class="line">&#125;p[100008];</span><br><span class="line">bool cmp1(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	return x.id&lt;y.id;</span><br><span class="line">&#125;</span><br><span class="line">bool cmp2(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">		if(x.na==y.na)</span><br><span class="line">		return x.id&lt;y.id;</span><br><span class="line">	return x.na&lt;y.na;</span><br><span class="line">&#125;</span><br><span class="line">bool cmp3(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	if(x.s==y.s)</span><br><span class="line">		return x.id&lt;y.id;</span><br><span class="line">	return x.s&lt;y.s;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,c,j=0;</span><br><span class="line">	while(scanf(&quot;%d %d&quot;,&amp;n,&amp;c)&amp;&amp;n)</span><br><span class="line">	&#123;</span><br><span class="line">		j++;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		cin&gt;&gt;p[i].id&gt;&gt;p[i].na&gt;&gt;p[i].s;</span><br><span class="line">		if(c==1)</span><br><span class="line">		&#123;</span><br><span class="line">			sort(p,p+n,cmp1);</span><br><span class="line">		&#125;</span><br><span class="line">		if(c==2)</span><br><span class="line">		&#123;</span><br><span class="line">			sort(p,p+n,cmp2);</span><br><span class="line">		&#125;</span><br><span class="line">		if(c==3)</span><br><span class="line">		&#123;</span><br><span class="line">			sort(p,p+n,cmp3);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;Case %d:\n&quot;,j);</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		cout&lt;&lt;p[i].id&lt;&lt;&quot; &quot;&lt;&lt;p[i].na&lt;&lt;&quot; &quot;&lt;&lt;p[i].s&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="统计同成绩学生人数"><a href="#统计同成绩学生人数" class="headerlink" title="统计同成绩学生人数"></a>统计同成绩学生人数</h3><p>Description:<br>读入N名学生的成绩，将获得某一给定分数的学生人数输出。<br>Input</p>
+<blockquote>
+<p>测试输入包含若干测试用例，每个测试用例的格式为<br>第1行：N<br>第2行：N名学生的成绩，相邻两数字用一个空格间隔。<br>第3行：给定分数<br>当读到N=0时输入结束。其中N不超过1000，成绩分数为（包含）0到100之间的一个整数。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对每个测试用例，将获得给定分数的学生人数输出。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>80 60 90<br>60<br>2<br>85 66<br>0<br>5<br>60 75 90 55 75<br>75<br>0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1<br>0<br>2</p>
+</blockquote>
+<p>Problem solving:<br>We can solve this by loop for,but I think map is exciting.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,a,m;</span><br><span class="line">	while(scanf(&quot;%d&quot;,&amp;n)&amp;&amp;n)</span><br><span class="line">	&#123;		</span><br><span class="line">		map&lt;int,int&gt; ma;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(&quot;%d&quot;,&amp;a);</span><br><span class="line">			ma[a]++;</span><br><span class="line">		&#125;</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;m);</span><br><span class="line">		printf(&quot;%d\n&quot;,ma[m]);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="What-Is-Your-Grade"><a href="#What-Is-Your-Grade" class="headerlink" title="What Is Your Grade?"></a>What Is Your Grade?</h3><p>Description:<br>“Point, point, life of student!”<br>This is a ballad（歌谣）well known in colleges, and you must care about your score in this exam too. How many points can you get? Now, I told you the rules which are used in this course.<br>There are 5 problems in this final exam. And I will give you 100 points if you can solve all 5 problems; of course, it is fairly difficulty for many of you. If you can solve 4 problems, you can also get a high score 95 or 90 (you can get the former(前者) only when your rank is in the first half of all students who solve 4 problems). Analogically（以此类推）, you can get 85、80、75、70、65、60. But you will not pass this exam if you solve nothing problem, and I will mark your score with 50.<br>Note, only 1 student will get the score 95 when 3 students have solved 4 problems.<br>I wish you all can pass the exam!<br>Come on!<br>Input</p>
+<blockquote>
+<p>Input contains multiple test cases. Each test case contains an integer N (1&lt;=N&lt;=100, the number of students) in a line first, and then N lines follow. Each line contains P (0&lt;=P&lt;=5 number of problems that have been solved) and T（consumed time）. You can assume that all data are different when 0\&lt;p.<br>A test case starting with a negative integer terminates the input and this test case should not to be processed.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Output the scores of N students in N lines for each case, and there is a blank line after each case.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>4<br>5 06:30:17<br>4 07:31:27<br>4 08:12:12<br>4 05:23:13<br>1<br>5 06:30:17<br>-1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>100<br>90<br>90<br>95<br>100</p>
+</blockquote>
+<p>Problem solving:<br>&#39;only when your rank is in the first half of all students who solve 4 problems&#39;-&gt;This is important.What we should pay more attention to is the meaning of this problem.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int na;</span><br><span class="line">	string t;</span><br><span class="line">	int s;</span><br><span class="line">	int i;</span><br><span class="line">&#125;p[105];</span><br><span class="line">bool cmp(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	if(x.s==y.s)	return x.t&lt;y.t;</span><br><span class="line">	return x.s&gt;y.s;</span><br><span class="line">&#125;</span><br><span class="line">bool cmp1(node x,node y)</span><br><span class="line">&#123;</span><br><span class="line">	return x.i&lt;y.i;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	while(scanf(&quot;%d&quot;,&amp;n)&amp;&amp;n&gt;0)</span><br><span class="line">	&#123;</span><br><span class="line">		int mid=0,aa=0,bb=0,cc=0,dd=0;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			p[i].i=i;</span><br><span class="line">			cin&gt;&gt;p[i].na&gt;&gt;p[i].t;</span><br><span class="line">			if(p[i].na==5)	p[i].s=100;</span><br><span class="line">			if(p[i].na==0)	p[i].s=50;</span><br><span class="line">			if(p[i].na==4)	&#123;p[i].s=90;aa++;&#125;</span><br><span class="line">			if(p[i].na==3)	&#123;p[i].s=80;bb++;&#125;</span><br><span class="line">			if(p[i].na==2)	&#123;p[i].s=70;cc++;&#125;</span><br><span class="line">			if(p[i].na==1)	&#123;p[i].s=60;dd++;&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		aa/=2;</span><br><span class="line">		bb/=2;</span><br><span class="line">		cc/=2;</span><br><span class="line">		dd/=2;</span><br><span class="line">		sort(p,p+n,cmp);</span><br><span class="line"></span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(p[i].s==90&amp;&amp;aa)</span><br><span class="line">			&#123;</span><br><span class="line">				p[i].s=95;</span><br><span class="line">				aa--;</span><br><span class="line">			&#125;</span><br><span class="line">			if(p[i].s==80&amp;&amp;bb)</span><br><span class="line">			&#123;</span><br><span class="line">				p[i].s=85;</span><br><span class="line">				bb--;</span><br><span class="line">			&#125;</span><br><span class="line">			if(p[i].s==70&amp;&amp;cc)</span><br><span class="line">			&#123;</span><br><span class="line">				p[i].s=75;</span><br><span class="line">				cc--;</span><br><span class="line">			&#125;</span><br><span class="line">			if(p[i].s==60&amp;&amp;dd)</span><br><span class="line">			&#123;</span><br><span class="line">				p[i].s=65;</span><br><span class="line">				dd--;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(p,p+n,cmp1);</span><br><span class="line">		for(int i=0;i&lt;n;i++)&#123;</span><br><span class="line">			cout&lt;&lt;p[i].s&lt;&lt;&quot;\n&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		puts(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Magical-Bamboos"><a href="#Magical-Bamboos" class="headerlink" title="Magical Bamboos"></a>Magical Bamboos</h3><p>Description:<br>In a magical forest, there exists N bamboos that don&#39;t quite get cut down the way you would expect.</p>
+<p>Originally, the height of the ith bamboo is equal to hi. In one move, you can push down a bamboo and decrease its height by one, but this move magically causes all the other bamboos to increase in height by one.</p>
+<p>If you can do as many moves as you like, is it possible to make all the bamboos have the same height?</p>
+<p>Input</p>
+<blockquote>
+<p>The first line of input is T – the number of test cases.<br>The first line of each test case contains an integer N (1 ≤ N ≤ 105) - the number of bamboos.<br>The second line contains N space-separated integers hi (1 ≤ hi ≤ 105) - the original heights of the bamboos.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, output on a single line &quot;yes” (without quotes), if you can make all the bamboos have the same height, and &quot;no&quot; otherwise.</p>
+</blockquote>
+<p>Example</p>
+<blockquote>
+<p>Input<br>2<br>3<br>2 4 2<br>2<br>1 2</p>
+</blockquote>
+<blockquote>
+<p>Output<br>yes<br>no</p>
+</blockquote>
+<p>Problem solving:<br>Sorted this array fist.If the difference of two adjacent numbers have odd,output &#39;no&#39;,otherwise,output &#39;yes&#39;.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1e5+7;</span><br><span class="line">int a[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		int m,flag=0;</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;m);</span><br><span class="line">		for(int i=0;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		for(int i=0;i&lt;m-1;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if((a[i+1]-a[i])%2!=0)</span><br><span class="line">			&#123;</span><br><span class="line">				flag=1;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag)	puts(&quot;no&quot;);</span><br><span class="line">		else	puts(&quot;yes&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Bear-and-Three-Balls"><a href="#Bear-and-Three-Balls" class="headerlink" title="Bear and Three Balls"></a>Bear and Three Balls</h3><p>Description:<br>Limak is a little polar bear. He has n balls, the i-th ball has size ti.</p>
+<p>Limak wants to give one ball to each of his three friends. Giving gifts isn&#39;t easy — there are two rules Limak must obey to make friends happy:</p>
+<p>No two friends can get balls of the same size.<br>No two friends can get balls of sizes that differ by more than 2.<br>For example, Limak can choose balls with sizes 4, 5 and 3, or balls with sizes 90, 91 and 92. But he can&#39;t choose balls with sizes 5, 5 and 6 (two friends would get balls of the same size), and he can&#39;t choose balls with sizes 30, 31 and 33 (because sizes 30 and 33 differ by more than 2).</p>
+<p>Your task is to check whether Limak can choose three balls that satisfy conditions above.</p>
+<p>Input</p>
+<blockquote>
+<p>The first line of the input contains one integer n (3 ≤ n ≤ 50) — the number of balls Limak has.<br>The second line contains n integers t1, t2, ..., tn (1 ≤ ti ≤ 1000) where ti denotes the size of the i-th ball.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Print &quot;YES&quot; (without quotes) if Limak can choose three balls of distinct sizes, such that any two of them differ by no more than 2. Otherwise, print &quot;NO&quot; (without quotes).</p>
+</blockquote>
+<p>Examples</p>
+<blockquote>
+<p>Input<br>4<br>18 55 16 17</p>
+</blockquote>
+<blockquote>
+<p>Output<br>YES</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>6<br>40 41 43 44 44 44</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>NO</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>8<br>5 972 3 4 1 4 970 971</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>YES</p>
+</blockquote>
+<p>Note</p>
+<blockquote>
+<p>In the first sample, there are 4 balls and Limak is able to choose three of them to satisfy the rules. He must must choose balls with sizes 18, 16 and 17.<br>In the second sample, there is no way to give gifts to three friends without breaking the rules.<br>In the third sample, there is even more than one way to choose balls:</p>
+<ol>
+<li>Choose balls with sizes 3, 4 and 5.</li>
+<li>Choose balls with sizes 972, 970, 971.</li>
+</ol>
+</blockquote>
+<p>Problem solving:<br>If there have three numbers which are adjacent,output &#39;yes&#39;,otherwise ouput&#39;no&#39;.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[100];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,flag=0;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%d&quot;,&amp;a[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a,a+n);</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(binary_search(a,a+n,a[i]+1)&amp;&amp;binary_search(a,a+n,a[i]+2))</span><br><span class="line">		&#123;</span><br><span class="line">			flag=1;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if(flag)	puts(&quot;YES&quot;);</span><br><span class="line">	else	puts(&quot;NO&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="今年暑假不AC"><a href="#今年暑假不AC" class="headerlink" title="今年暑假不AC"></a>今年暑假不AC</h3><p>Description:<br>“今年暑假不AC？”<br>“是的。”<br>“那你干什么呢？”<br>“看世界杯呀，笨蛋！”<br>“@#\$%^&amp;*%...”</p>
+<p>确实如此，世界杯来了，球迷的节日也来了，估计很多ACMer也会抛开电脑，奔向电视了。<br>作为球迷，一定想看尽量多的完整的比赛，当然，作为新时代的好青年，你一定还会看一些其它的节目，比如新闻联播（永远不要忘记关心国家大事）、非常6+7、超级女生，以及王小丫的《开心辞典》等等，假设你已经知道了所有你喜欢看的电视节目的转播时间表，你会合理安排吗？（目标是能看尽量多的完整节目）<br>Input</p>
+<blockquote>
+<p>输入数据包含多个测试实例，每个测试实例的第一行只有一个整数n(n&lt;=100)，表示你喜欢看的节目的总数，然后是n行数据，每行包括两个数据Ti_s,Ti_e (1&lt;=i&lt;=n)，分别表示第i个节目的开始和结束时间，为了简化问题，每个时间都用一个正整数表示。n=0表示输入结束，不做处理。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试实例，输出能完整看到的电视节目的个数，每个测试实例的输出占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>12<br>1 3<br>3 4<br>0 7<br>3 8<br>15 19<br>15 20<br>10 15<br>8 18<br>6 12<br>5 10<br>4 14<br>2 9<br>0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>5</p>
+</blockquote>
+<p>Problem solving:<br>Greedy,sort by the end time,and then start counting.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 105;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int b,s;</span><br><span class="line">&#125;x[maxn];</span><br><span class="line">bool cmp(node q,node w)</span><br><span class="line">&#123;</span><br><span class="line">	return q.s&lt;w.s;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	while(scanf(&quot;%d&quot;,&amp;n)&amp;&amp;n)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;x[i].b&gt;&gt;x[i].s;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(x,x+n,cmp);</span><br><span class="line">		int o=x[0].s,ans=1;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(x[i].b&gt;=o)</span><br><span class="line">			&#123;</span><br><span class="line">				ans++;</span><br><span class="line">				o=x[i].s;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="The-sum-problem"><a href="#The-sum-problem" class="headerlink" title="The sum problem"></a>The sum problem</h3><p>Description:<br>Given a sequence 1,2,3,......N, your job is to calculate all the possible sub-sequences that the sum of the sub-sequence is M.<br>Input</p>
+<blockquote>
+<p>Input contains multiple test cases. each case contains two integers N, M( 1 &lt;= N, M &lt;= 1000000000).input ends with N = M = 0.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, print all the possible sub-sequence that its sum is M.The format is show in the sample below.print a blank line after each test case.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>20 10<br>50 30<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>[1,4]<br>[10,10]<br>[4,8]<br>[6,9]<br>[9,11]<br>[30,30]</p>
+</blockquote>
+<p>Problem solving:<br>Sum Formula of Equal Difference Sequences.<br><img src="https://i.loli.net/2019/07/18/5d3012d17685519697.png" alt><br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,m;</span><br><span class="line">	while(scanf(&quot;%d %d&quot;,&amp;n,&amp;m))</span><br><span class="line">	&#123;</span><br><span class="line">		if(m==0&amp;&amp;m==0)	break;</span><br><span class="line">		for(int i=sqrt(2*m);i&gt;=1;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			int a=(m-i*(i-1)/2)/i;</span><br><span class="line">			if((a*i)+i*(i-1)/2==m)</span><br><span class="line">			printf(&quot;[%d,%d]\n&quot;,a,a+i-1);</span><br><span class="line">		&#125;</span><br><span class="line">		puts(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\04\27\CodeForces-1157-B\" rel="bookmark">Long Number</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\18\dx\" rel="bookmark">HPU Summer Training Day x（河南理工大学暑期第x天）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\06\21\Floyd\" rel="bookmark">Floyd</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/CodeForces/" rel="tag"><i class="fa fa-tag"></i> CodeForces</a>
+          
+            <a href="/blog/tags/Thinking/" rel="tag"><i class="fa fa-tag"></i> Thinking</a>
+          
+            <a href="/blog/tags/HDU/" rel="tag"><i class="fa fa-tag"></i> HDU</a>
+          
+            <a href="/blog/tags/STL/" rel="tag"><i class="fa fa-tag"></i> STL</a>
+          
+            <a href="/blog/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+          
+        </div>
+      
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/07/17/d1/" rel="next" title="HPU Summer Training Day 1（河南理工大学暑期第一天）">
+                <i class="fa fa-chevron-left"></i> HPU Summer Training Day 1（河南理工大学暑期第一天）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/07/18/sp-gcd/" rel="prev" title="Something about __gcd">
+                Something about __gcd <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">87</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前m大的数"><span class="nav-number">1.</span> <span class="nav-text">前m大的数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#稳定排序"><span class="nav-number">2.</span> <span class="nav-text">稳定排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开门人和关门人"><span class="nav-number">3.</span> <span class="nav-text">开门人和关门人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXCEL排序"><span class="nav-number">4.</span> <span class="nav-text">EXCEL排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统计同成绩学生人数"><span class="nav-number">5.</span> <span class="nav-text">统计同成绩学生人数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-Is-Your-Grade"><span class="nav-number">6.</span> <span class="nav-text">What Is Your Grade?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Magical-Bamboos"><span class="nav-number">7.</span> <span class="nav-text">Magical Bamboos</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bear-and-Three-Balls"><span class="nav-number">8.</span> <span class="nav-text">Bear and Three Balls</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#今年暑假不AC"><span class="nav-number">9.</span> <span class="nav-text">今年暑假不AC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-sum-problem"><span class="nav-number">10.</span> <span class="nav-text">The sum problem</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 94.2kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->

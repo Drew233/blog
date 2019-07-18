@@ -1,0 +1,1902 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="主要学的是快速幂，gcdI don&amp;#39;t know what day this is,just record it.">
+<meta name="keywords" content="Algorithm,c&#x2F;c++,math,Fast power,prime,gcd,lcm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU Summer Training Day x（河南理工大学暑期第x天）">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/07/18/dx/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="主要学的是快速幂，gcdI don&amp;#39;t know what day this is,just record it.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d30905f4767b53419.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/18/5d3090c87d97386427.png">
+<meta property="og:updated_time" content="2019-07-18T15:47:41.820Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU Summer Training Day x（河南理工大学暑期第x天）">
+<meta name="twitter:description" content="主要学的是快速幂，gcdI don&amp;#39;t know what day this is,just record it.">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/18/5d30905f4767b53419.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/07/18/dx/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU Summer Training Day x（河南理工大学暑期第x天） | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/07/18/dx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU Summer Training Day x（河南理工大学暑期第x天）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-18 23:18:12 / Modified: 23:47:41" itemprop="dateCreated datePublished" datetime="2019-07-18T23:18:12+08:00">2019-07-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/07/18/dx/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/18/dx/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>主要学的是快速幂，gcd<br>I don&#39;t know what day this is,just record it.<a id="more"></a></p>
+<h3 id="Pseudoprime-numbers"><a href="#Pseudoprime-numbers" class="headerlink" title="Pseudoprime numbers"></a>Pseudoprime numbers</h3><p>Description:<br>Fermat&#39;s theorem states that for any prime number p and for any integer a &gt; 1, ap = a (mod p). That is, if we raise a to the pth power and divide by p, the remainder is a. Some (but not very many) non-prime values of p, known as base-a pseudoprimes, have this property for some a. (And some, known as Carmichael Numbers, are base-a pseudoprimes for all a.)</p>
+<p>Given 2 &lt; p ≤ 1000000000 and 1 &lt; a &lt; p, determine whether or not p is a base-a pseudoprime.</p>
+<p>Input</p>
+<blockquote>
+<p>Input contains several test cases followed by a line containing &quot;0 0&quot;. Each test case consists of a line containing p and a.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, output &quot;yes&quot; if p is a base-a pseudoprime; otherwise output &quot;no&quot;.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3 2<br>10 3<br>341 2<br>341 3<br>1105 2<br>1105 3<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>no<br>no<br>yes<br>no<br>yes<br>yes</p>
+</blockquote>
+<p>Problem solving:<br>First judge p is a prime number or not,if p is a prime number output &#39;no&#39;,else then judge a^p%p is equal to a or not,if not equal output &#39;no&#39;.We should use fast power to avoid TLE.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">#include&lt;math.h&gt;</span><br><span class="line">int s(long long a)</span><br><span class="line">&#123;</span><br><span class="line">	if(a==2)</span><br><span class="line">		return 1;</span><br><span class="line">	for(int i=2;i*i&lt;=a;i++)</span><br><span class="line">		if(a%i==0)</span><br><span class="line">			return 0;</span><br><span class="line">	return 1;</span><br><span class="line">&#125;</span><br><span class="line">long long f(long long a,long long b,long long c)//快速幂模板</span><br><span class="line">&#123;</span><br><span class="line">	long long t=1;</span><br><span class="line">	a=a%c;</span><br><span class="line">	while(b&gt;0)</span><br><span class="line">	&#123;</span><br><span class="line">		if(b%2==1)</span><br><span class="line">			t=t*a%c;</span><br><span class="line">		b=b/2;</span><br><span class="line">		a=a*a%c;</span><br><span class="line">	&#125;</span><br><span class="line">	return t;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	long long  a,p;</span><br><span class="line">	while(~scanf(&quot;%lld%lld&quot;,&amp;p,&amp;a)&amp;&amp;!(a==0&amp;&amp;p==0))</span><br><span class="line">	&#123;</span><br><span class="line">		if(s(p))</span><br><span class="line">		printf(&quot;no\n&quot;);</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			if(f(a,p,p)==a)</span><br><span class="line">    	    printf(&quot;yes\n&quot;);</span><br><span class="line">	       else</span><br><span class="line">	       printf(&quot;no\n&quot;);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Raising-Modulo-Numbers"><a href="#Raising-Modulo-Numbers" class="headerlink" title="Raising Modulo Numbers"></a>Raising Modulo Numbers</h3><p>Description:<br>People are different. Some secretly read magazines full of interesting girls&#39; pictures, others create an A-bomb in their cellar, others like using Windows, and some like difficult mathematical games. Latest marketing research shows, that this market segment was so far underestimated and that there is lack of such games. This kind of game was thus included into the KOKODáKH. The rules follow:</p>
+<p>Each player chooses two numbers Ai and Bi and writes them on a slip of paper. Others cannot see the numbers. In a given moment all players show their numbers to the others. The goal is to determine the sum of all expressions Ai Bi from all players including oneself and determine the remainder after division by a given number M. The winner is the one who first determines the correct result. According to the players&#39; experience it is possible to increase the difficulty by choosing higher numbers.</p>
+<p>You should write a program that calculates the result and is able to find out who won the game.</p>
+<p>Input</p>
+<blockquote>
+<p>The input consists of Z assignments. The number of them is given by the single positive integer Z appearing on the first line of input. Then the assignements follow. Each assignement begins with line containing an integer M (1 &lt;= M &lt;= 45000). The sum will be divided by this number. Next line contains number of players H (1 &lt;= H &lt;= 45000). Next exactly H lines follow. On each line, there are exactly two numbers Ai and Bi separated by space. Both numbers cannot be equal zero at the same time.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each assingnement there is the only one line of output. On this line, there is a number, the result of expression</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/07/18/5d30905f4767b53419.png" alt></p>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>16<br>4<br>2 3<br>3 4<br>4 5<br>5 6<br>36123<br>1<br>2374859 3029382<br>17<br>1<br>3 18132</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>2<br>13195<br>13</p>
+</blockquote>
+<p>Problem solving:<br>I don&#39;t understand this problem clearly first time,and then I find a little hint in the output,so it&#39;s easy now.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll poww(ll x, ll y, ll maxn)</span><br><span class="line">&#123;</span><br><span class="line">    ll res = 1;</span><br><span class="line">    while (y)</span><br><span class="line">    &#123;</span><br><span class="line">        if (y % 2 != 0)</span><br><span class="line">            res = res * x % maxn;</span><br><span class="line">        x  = x * x % maxn;</span><br><span class="line">        y /= 2;</span><br><span class="line">    &#125;</span><br><span class="line">    return res % maxn;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    ll a, b, c, d, e;</span><br><span class="line">    while (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        ll sum = 0;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        while (b--)</span><br><span class="line">        &#123;</span><br><span class="line">            cin &gt;&gt; d &gt;&gt; e;</span><br><span class="line">            sum += poww(d, e, a);</span><br><span class="line">            sum %= a;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Wolf-and-Rabbit"><a href="#Wolf-and-Rabbit" class="headerlink" title="Wolf and Rabbit"></a>Wolf and Rabbit</h3><p>Description:<br>There is a hill with n holes around. The holes are signed from 0 to n-1.<br><img src="https://i.loli.net/2019/07/18/5d3090c87d97386427.png" alt><br>A rabbit must hide in one of the holes. A wolf searches the rabbit in anticlockwise order. The first hole he get into is the one signed with 0. Then he will get into the hole every m holes. For example, m=2 and n=6, the wolf will get into the holes which are signed 0,2,4,0. If the rabbit hides in the hole which signed 1,3 or 5, she will survive. So we call these holes the safe holes.<br>Input</p>
+<blockquote>
+<p>The input starts with a positive integer P which indicates the number of test cases. Then on the following P lines,each line consists 2 positive integer m and n(0&lt;m,n&lt;2147483648).</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each input m n, if safe holes exist, you should output &quot;YES&quot;, else output &quot;NO&quot; in a single line.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>1 2<br>2 2</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>NO<br>YES</p>
+</blockquote>
+<p>Problem solving:<br>Nothing to say,just judge the gcd of m and n is equal to 1 or not.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,a,b;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</span><br><span class="line">		if(__gcd(a,b)==1)	puts(&quot;NO&quot;);</span><br><span class="line">		else	puts(&quot;YES&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Cake"><a href="#Cake" class="headerlink" title="Cake"></a>Cake</h3><p>Description:<br>一次生日Party可能有p人或者q人参加,现准备有一个大蛋糕.问最少要将蛋糕切成多少块(每块大小不一定相等),才能使p人或者q人出席的任何一种情况,都能平均将蛋糕分食.<br>Input</p>
+<blockquote>
+<p>每行有两个数p和q.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>输出最少要将蛋糕切成多少块.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2 3</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>Hint</p>
+<blockquote>
+<p>将蛋糕切成大小分别为1/3,1/3,1/6,1/6的四块即满足要求.<br>当2个人来时，每人可以吃1/3+1/6=1/2 , 1/2块。<br>当3个人来时，每人可以吃1/6+1/6=1/3 , 1/3, 1/3块。</p>
+</blockquote>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int p, q;</span><br><span class="line">    while (~scanf(&quot;%d %d&quot;, &amp;p, &amp;q))</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; p + q - __gcd(p, q) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="又见GCD"><a href="#又见GCD" class="headerlink" title="又见GCD"></a>又见GCD</h3><p>Description:<br>有三个正整数a,b,c(0&lt;a,b,c&lt;10^6)，其中c不等于b。若a和c的最大公约数为b，现已知a和b，求满足条件的最小的c。<br>Input</p>
+<blockquote>
+<p>第一行输入一个n，表示有n组测试数据，接下来的n行，每行输入两个正整数a,b。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>输出对应的c，每组测试数据占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>6 2<br>12 4</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>4<br>8</p>
+</blockquote>
+<p>Problem solving:<br>What we would like to find is the smallest c,so begin with 2*b.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, a, b;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    while (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        for (int i = b * 2; ; i += b)</span><br><span class="line">        &#123;</span><br><span class="line">            if (__gcd(a, i) == b)</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; i &lt;&lt; endl; break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="最小公倍数"><a href="#最小公倍数" class="headerlink" title="最小公倍数"></a>最小公倍数</h3><p>Description:<br>给定两个正整数，计算这两个数的最小公倍数。<br>Input</p>
+<blockquote>
+<p>输入包含多组测试数据，每组只有一行，包括两个不大于1000的正整数.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试用例，给出这两个数的最小公倍数，每个实例输出一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>10 14</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>70</p>
+</blockquote>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll n, a, b;</span><br><span class="line">    while (~scanf(&quot;%lld %lld&quot;, &amp;a, &amp;b))</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; a * b / __gcd(a, b) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="素数判定"><a href="#素数判定" class="headerlink" title="素数判定"></a>素数判定</h3><p>Description:<br>对于表达式n^2+n+41，当n在（x,y）范围内取整数值时（包括x,y）(-39&lt;=x&lt;y&lt;=50)，判定该表达式的值是否都为素数。<br>Input</p>
+<blockquote>
+<p>输入数据有多组，每组占一行，由两个整数x，y组成，当x=0,y=0时，表示输入结束，该行不做处理。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个给定范围内的取值，如果表达式的值都为素数，则输出&quot;OK&quot;,否则请输出“Sorry”,每组输出占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>0 1<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>OK</p>
+</blockquote>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">bool check(ll x)</span><br><span class="line">&#123;</span><br><span class="line">    if (x == 2)</span><br><span class="line">        return 0;</span><br><span class="line">    for (int i = 2; i &lt; sqrt(x + 1); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (x % i == 0)</span><br><span class="line">            return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll n, a, b;</span><br><span class="line">    while (scanf(&quot;%lld %lld&quot;, &amp;a, &amp;b))</span><br><span class="line">    &#123;</span><br><span class="line">        int flag = 0;</span><br><span class="line">        if (a == 0 &amp;&amp; b == 0)</span><br><span class="line">            break;</span><br><span class="line">        for (ll i = a; i &lt;= b; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            ll mid = i*i+ i + 41;</span><br><span class="line">            if (check(mid))</span><br><span class="line">            &#123;</span><br><span class="line">                flag = 1;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (flag)</span><br><span class="line">            puts(&quot;Sorry&quot;);</span><br><span class="line">        else</span><br><span class="line">            puts(&quot;OK&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="分拆素数和"><a href="#分拆素数和" class="headerlink" title="分拆素数和"></a>分拆素数和</h3><p>Description:<br>把一个偶数拆成两个不同素数的和，有几种拆法呢？<br>Input</p>
+<blockquote>
+<p>输入包含一些正的偶数，其值不会超过10000，个数不会超过500，若遇0，则结束。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对应每个偶数，输出其拆成不同素数的个数，每个结果占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>30<br>26<br>0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>3<br>2</p>
+</blockquote>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e4 + 7;</span><br><span class="line">int       p[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; maxn; i++)</span><br><span class="line">        p[i] = 1;</span><br><span class="line">    p[0] = p[1] = 0;</span><br><span class="line">    for (int i = 2; i &lt;= sqrt(maxn + 1); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int j = i + i; j &lt; maxn; j += i)</span><br><span class="line">        &#123;</span><br><span class="line">            p[j] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll n, a, b;</span><br><span class="line">    while (scanf(&quot;%lld&quot;, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        if (n == 0)</span><br><span class="line">            break;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for (int i = 2; i &lt;n / 2; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (p[i] &amp;&amp; p[n - i])</span><br><span class="line">                ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="美素数"><a href="#美素数" class="headerlink" title="美素数"></a>美素数</h3><p>Description:<br>小明对数的研究比较热爱，一谈到数，脑子里就涌现出好多数的问题，今天，小明想考考你对素数的认识。<br>　　问题是这样的：一个十进制数，如果是素数，而且它的各位数字和也是素数，则称之为“美素数”，如29，本身是素数，而且2+9 = 11也是素数，所以它是美素数。<br>　　给定一个区间，你能计算出这个区间内有多少个美素数吗？<br>Input</p>
+<blockquote>
+<p>第一行输入一个正整数T，表示总共有T组数据(T &lt;= 10000)。<br>接下来共T行，每行输入两个整数L，R(1&lt;= L &lt;= R &lt;= 1000000)，表示区间的左值和右值。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每组数据，先输出Case数，然后输出区间内美素数的个数（包括端点值L,R）。<br>每组数据占一行，具体输出格式参见样例。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>1 100<br>2 2<br>3 19</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>Case #1: 14<br>Case #2: 1<br>Case #3: 4</p>
+</blockquote>
+<p>Problem solving:<br>Just By meter(打表).<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e4 + 7;</span><br><span class="line">int       p[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; maxn; i++)</span><br><span class="line">        p[i] = 1;</span><br><span class="line">    p[0] = p[1] = 0;</span><br><span class="line">    for (int i = 2; i &lt;= sqrt(maxn + 1); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int j = i + i; j &lt; maxn; j += i)</span><br><span class="line">        &#123;</span><br><span class="line">            p[j] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll n, a, b;</span><br><span class="line">    while (scanf(&quot;%lld&quot;, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        if (n == 0)</span><br><span class="line">            break;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for (int i = 2; i &lt;n / 2; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (p[i] &amp;&amp; p[n - i])</span><br><span class="line">                ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Key-Set"><a href="#Key-Set" class="headerlink" title="Key Set"></a>Key Set</h3><p>Description:<br>soda has a set S with n integers {1,2,…,n}. A set is called key set if the sum of integers in the set is an even number. He wants to know how many nonempty subsets of S are key set.<br>Input</p>
+<blockquote>
+<p>There are multiple test cases. The first line of input contains an integer T (1≤T≤1e5), indicating the number of test cases. For each test case:<br>The first line contains an integer n (1≤n≤1e9), the number of integers in the set.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, output the number of key sets modulo 1000000007.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>4<br>1<br>2<br>3<br>4</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>0<br>1<br>3<br>7</p>
+</blockquote>
+<p>Problem solving:<br>The answer is 2^(a-1)-1<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1000000007;</span><br><span class="line">ll poww(ll x, ll y)</span><br><span class="line">&#123;</span><br><span class="line">    ll res = 1;</span><br><span class="line">    while (y)</span><br><span class="line">    &#123;</span><br><span class="line">        if (y % 2 != 0)</span><br><span class="line">            res = res * x % maxn;</span><br><span class="line">        x  = x * x % maxn;</span><br><span class="line">        y /= 2;</span><br><span class="line">    &#125;</span><br><span class="line">    return res % maxn;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, a, b;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    while (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a;</span><br><span class="line">        cout &lt;&lt; poww(2, a - 1) - 1 &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="人见人爱A-B"><a href="#人见人爱A-B" class="headerlink" title="人见人爱A^B"></a>人见人爱A^B</h3><p>Description:<br>求A^B的最后三位数表示的整数。<br>说明：A^B的含义是“A的B次方”<br>Input</p>
+<blockquote>
+<p>输入数据包含多个测试实例，每个实例占一行，由两个正整数A和B组成（1&lt;=A,B&lt;=10000），如果A=0, B=0，则表示输入数据的结束，不做处理。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试实例，请输出A^B的最后三位表示的整数，每个输出占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2 3<br>12 6<br>6789 10000<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>8<br>984<br>1</p>
+</blockquote>
+<p>Problem solving:<br>Fast power.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll poww(ll x, ll y, ll z)</span><br><span class="line">&#123;</span><br><span class="line">    ll ans = 1, base = x; while (y != 0)</span><br><span class="line">    &#123;</span><br><span class="line">        if (y &amp; 1 != 0)</span><br><span class="line">            ans = ans * base % z;</span><br><span class="line">        base = (base % z) * (base % z) % z; y &gt;&gt;= 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll a, b;</span><br><span class="line">    while (scanf(&quot;%lld %lld&quot;, &amp;a, &amp;b))</span><br><span class="line">    &#123;</span><br><span class="line">        if (a == 0 &amp;&amp; b == 0)</span><br><span class="line">            break;</span><br><span class="line">        cout &lt;&lt; poww(a, b, 1000) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Rightmost-Digit"><a href="#Rightmost-Digit" class="headerlink" title="Rightmost Digit"></a>Rightmost Digit</h3><p>Description:<br>Given a positive integer N, you should output the most right digit of N^N.<br>Input</p>
+<blockquote>
+<p>The input contains several test cases. The first line of the input is a single integer T which is the number of test cases. T test cases follow.<br>Each test case contains a single positive integer N(1&lt;=N&lt;=1,000,000,000).</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, you should output the rightmost digit of N^N.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>3<br>4</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>7<br>6</p>
+</blockquote>
+<p>Hint</p>
+<blockquote>
+<p>In the first case, 3 <em> 3 </em> 3 = 27, so the rightmost digit is 7.<br>In the second case, 4 <em> 4 </em> 4 * 4 = 256, so the rightmost digit is 6.</p>
+</blockquote>
+<p>Problem solving:<br>Fast power.<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll poww(ll x, ll y, ll z)</span><br><span class="line">&#123;</span><br><span class="line">    ll ans = 1, base = x; while (y != 0)</span><br><span class="line">    &#123;</span><br><span class="line">        if (y &amp; 1 != 0)</span><br><span class="line">            ans = ans * base % z;</span><br><span class="line">        base = (base % z) * (base % z) % z; y &gt;&gt;= 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ll n, a;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    while (n--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a;</span><br><span class="line">        cout &lt;&lt; poww(a, a, 10) &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\18\d2\" rel="bookmark">HPU Summer Training Day 2（河南理工暑期集训第二天）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\18\sp-gcd\" rel="bookmark">Something about __gcd</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\17\d1\" rel="bookmark">HPU Summer Training Day 1（河南理工大学暑期第一天）</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/math/" rel="tag"><i class="fa fa-tag"></i> math</a>
+          
+            <a href="/blog/tags/Fast-power/" rel="tag"><i class="fa fa-tag"></i> Fast power</a>
+          
+            <a href="/blog/tags/prime/" rel="tag"><i class="fa fa-tag"></i> prime</a>
+          
+            <a href="/blog/tags/gcd/" rel="tag"><i class="fa fa-tag"></i> gcd</a>
+          
+            <a href="/blog/tags/lcm/" rel="tag"><i class="fa fa-tag"></i> lcm</a>
+          
+        </div>
+      
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/07/18/sp-gcd/" rel="next" title="Something about __gcd">
+                <i class="fa fa-chevron-left"></i> Something about __gcd
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">87</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pseudoprime-numbers"><span class="nav-number">1.</span> <span class="nav-text">Pseudoprime numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Raising-Modulo-Numbers"><span class="nav-number">2.</span> <span class="nav-text">Raising Modulo Numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wolf-and-Rabbit"><span class="nav-number">3.</span> <span class="nav-text">Wolf and Rabbit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cake"><span class="nav-number">4.</span> <span class="nav-text">Cake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#又见GCD"><span class="nav-number">5.</span> <span class="nav-text">又见GCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小公倍数"><span class="nav-number">6.</span> <span class="nav-text">最小公倍数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#素数判定"><span class="nav-number">7.</span> <span class="nav-text">素数判定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分拆素数和"><span class="nav-number">8.</span> <span class="nav-text">分拆素数和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#美素数"><span class="nav-number">9.</span> <span class="nav-text">美素数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Key-Set"><span class="nav-number">10.</span> <span class="nav-text">Key Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#人见人爱A-B"><span class="nav-number">11.</span> <span class="nav-text">人见人爱A^B</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rightmost-Digit"><span class="nav-number">12.</span> <span class="nav-text">Rightmost Digit</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 94.2kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->
