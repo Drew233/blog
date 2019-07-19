@@ -130,7 +130,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://i.loli.net/2019/07/18/5d30905f4767b53419.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/18/5d3090c87d97386427.png">
-<meta property="og:updated_time" content="2019-07-18T15:47:41.820Z">
+<meta property="og:updated_time" content="2019-07-19T12:11:05.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HPU Summer Training Day x（河南理工大学暑期第x天）">
 <meta name="twitter:description" content="主要学的是快速幂，gcdI don&amp;#39;t know what day this is,just record it.">
@@ -431,12 +431,24 @@
                 
               
 
-              <time title="Created: 2019-07-18 23:18:12 / Modified: 23:47:41" itemprop="dateCreated datePublished" datetime="2019-07-18T23:18:12+08:00">2019-07-18</time>
+              <time title="Created: 2019-07-18 23:18:12" itemprop="dateCreated datePublished" datetime="2019-07-18T23:18:12+08:00">2019-07-18</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-19 20:11:05" itemprop="dateModified" datetime="2019-07-19T20:11:05+08:00">2019-07-19</time>
               
             
           </span>
@@ -482,6 +494,13 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
           
 
           
@@ -664,7 +683,7 @@
 <blockquote>
 <p>Case #1: 14<br>Case #2: 1<br>Case #3: 4</p>
 </blockquote>
-<p>Problem solving:<br>Just By meter(打表).<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn = 1e4 + 7;</span><br><span class="line">int       p[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; maxn; i++)</span><br><span class="line">        p[i] = 1;</span><br><span class="line">    p[0] = p[1] = 0;</span><br><span class="line">    for (int i = 2; i &lt;= sqrt(maxn + 1); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int j = i + i; j &lt; maxn; j += i)</span><br><span class="line">        &#123;</span><br><span class="line">            p[j] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll n, a, b;</span><br><span class="line">    while (scanf(&quot;%lld&quot;, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        if (n == 0)</span><br><span class="line">            break;</span><br><span class="line">        int ans = 0;</span><br><span class="line">        for (int i = 2; i &lt;n / 2; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (p[i] &amp;&amp; p[n - i])</span><br><span class="line">                ans++;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Problem solving:<br>Just By meter(打表).<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=1e6+7;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll p[maxn];</span><br><span class="line">ll a[maxn];</span><br><span class="line">bool check(ll x)</span><br><span class="line">&#123;</span><br><span class="line">	if(p[x])	return 0;</span><br><span class="line">	ll mid=0;</span><br><span class="line">	while(x)</span><br><span class="line">	&#123;</span><br><span class="line">		mid+=x%10;x/=10;</span><br><span class="line">	&#125;</span><br><span class="line">	if(p[mid])	return 0;</span><br><span class="line">	else	return 1;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	p[0]=p[1]=1;</span><br><span class="line">	for(ll i=2;i&lt;sqrt(maxn);i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(ll j=i*2;j&lt;maxn;j+=i)</span><br><span class="line">		&#123;</span><br><span class="line">			p[j]=1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	a[0]=0;</span><br><span class="line">	for(int i=1;i&lt;maxn;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(check(i))	a[i]=a[i-1]+1;</span><br><span class="line">		else	a[i]=a[i-1];</span><br><span class="line">	&#125;</span><br><span class="line">	ll t,l,r;</span><br><span class="line">	while(~scanf(&quot;%lld&quot;,&amp;t))</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i=1;i&lt;=t;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			scanf(&quot;%lld %lld&quot;,&amp;l,&amp;r);</span><br><span class="line">			printf(&quot;Case #%lld: %lld\n&quot;,i,a[r]-a[l-1]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Key-Set"><a href="#Key-Set" class="headerlink" title="Key Set"></a>Key Set</h3><p>Description:<br>soda has a set S with n integers {1,2,…,n}. A set is called key set if the sum of integers in the set is an even number. He wants to know how many nonempty subsets of S are key set.<br>Input</p>
 <blockquote>
 <p>There are multiple test cases. The first line of input contains an integer T (1≤T≤1e5), indicating the number of test cases. For each test case:<br>The first line contains an integer n (1≤n≤1e9), the number of integers in the set.</p>
@@ -1269,11 +1288,37 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 99.4kwords</span>
+  <span class="post-count">A total of 99.5kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-true"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
 
 
 

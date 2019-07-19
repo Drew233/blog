@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cndrew.cn/blog/blog/2019/07/02/three/</loc>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
+    <loc>https://cndrew.cn/blog/blog/2019/07/18/dx/</loc>
+    <lastmod>2019-07-19</lastmod>
+  </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/04/21/Change/</loc>
     <lastmod>2019-07-19</lastmod>
   </url>  <url>
@@ -9,9 +15,6 @@
   </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/07/19/d3/</loc>
     <lastmod>2019-07-19</lastmod>
-  </url>  <url>
-    <loc>https://cndrew.cn/blog/blog/2019/07/18/dx/</loc>
-    <lastmod>2019-07-18</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/07/18/sp-gcd/</loc>
     <lastmod>2019-07-18</lastmod>
@@ -23,9 +26,6 @@
     <lastmod>2019-07-18</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/06/17/romantic/</loc>
-    <lastmod>2019-07-08</lastmod>
-  </url>  <url>
-    <loc>https://cndrew.cn/blog/blog/2019/07/02/three/</loc>
     <lastmod>2019-07-08</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/07/06/Codeforces-572/</loc>
