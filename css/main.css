@@ -2060,7 +2060,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9e9846;
+  background: #8f34ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2846,7 +2846,7 @@ img.img-topic {
   clear: right;
 }
 body {
-  background: url("http://www.jituwang.com/uploads/allimg/110624/6451-1106241RI476.jpg");
+  background: url("https://i.loli.net/2019/07/19/5d318f419275a75081.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -2879,11 +2879,7 @@ body {
   width: 100%;
 }
 .site-meta {
-  background-color: #fee140;
-  background-image: -webkit-linear-gradient(90deg, #fee140 0%, #fa709a 100%);
-  background-image: -moz-linear-gradient(90deg, #fee140 0%, #fa709a 100%);
-  background-image: -o-linear-gradient(90deg, #fee140 0%, #fa709a 100%);
-  background-image: linear-gradient(90deg, #fee140 0%, #fa709a 100%);
+  background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
 }
 .brand {
   background-color: rgba(255,255,255,0);

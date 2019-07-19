@@ -120,20 +120,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
-  <meta name="description" content="今天跟着众多大佬学长去了郑轻参加天梯赛，显然我拖了大佬后腿，一拖九了解一下，吓得我快来补题先。">
-<meta name="keywords" content="Algorithm,c&#x2F;c++">
+  <meta name="description" content="Give me three minutes,I will make you learn more about stringstream.">
+<meta name="keywords" content="c&#x2F;c++,functions">
 <meta property="og:type" content="article">
-<meta property="og:title" content="彩虹瓶">
-<meta property="og:url" content="https://cndrew.cn/blog/2019/03/30/PTA-L2-032/index.html">
+<meta property="og:title" content="stringstream(常见函数及其常见用法)">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/07/19/sstream/index.html">
 <meta property="og:site_name" content="Uncle_drew">
-<meta property="og:description" content="今天跟着众多大佬学长去了郑轻参加天梯赛，显然我拖了大佬后腿，一拖九了解一下，吓得我快来补题先。">
+<meta property="og:description" content="Give me three minutes,I will make you learn more about stringstream.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/04/06/5ca871314836a.jpg">
-<meta property="og:updated_time" content="2019-04-25T02:26:45.933Z">
+<meta property="og:updated_time" content="2019-07-19T09:12:12.768Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="彩虹瓶">
-<meta name="twitter:description" content="今天跟着众多大佬学长去了郑轻参加天梯赛，显然我拖了大佬后腿，一拖九了解一下，吓得我快来补题先。">
-<meta name="twitter:image" content="https://i.loli.net/2019/04/06/5ca871314836a.jpg">
+<meta name="twitter:title" content="stringstream(常见函数及其常见用法)">
+<meta name="twitter:description" content="Give me three minutes,I will make you learn more about stringstream.">
 
 
 
@@ -142,7 +140,7 @@
 
 
 
-  <link rel="canonical" href="https://cndrew.cn/blog/2019/03/30/PTA-L2-032/">
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/07/19/sstream/">
 
 
 
@@ -152,7 +150,7 @@
   };
 </script>
 
-  <title>彩虹瓶 | Uncle_drew</title>
+  <title>stringstream(常见函数及其常见用法) | Uncle_drew</title>
   
 
 
@@ -387,7 +385,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/03/30/PTA-L2-032/">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/07/19/sstream/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
@@ -404,7 +402,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">彩虹瓶
+          <h1 class="post-title" itemprop="name headline">stringstream(常见函数及其常见用法)
 
               
             
@@ -430,24 +428,12 @@
                 
               
 
-              <time title="Created: 2019-03-30 23:52:14" itemprop="dateCreated datePublished" datetime="2019-03-30T23:52:14+08:00">2019-03-30</time>
+              <time title="Created: 2019-07-19 16:19:10 / Modified: 17:12:12" itemprop="dateCreated datePublished" datetime="2019-07-19T16:19:10+08:00">2019-07-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-25 10:26:45" itemprop="dateModified" datetime="2019-04-25T10:26:45+08:00">2019-04-25</time>
               
             
           </span>
@@ -464,7 +450,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/c-c/" itemprop="url" rel="index"><span itemprop="name">c/c++</span></a></span>
 
                 
                 
@@ -483,8 +469,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/blog/2019/03/30/PTA-L2-032/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/03/30/PTA-L2-032/" itemprop="commentCount"></span>
+                <a href="/blog/2019/07/19/sstream/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/19/sstream/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -512,19 +498,21 @@
       
 
       
-        <p>今天跟着众多大佬学长去了郑轻参加天梯赛，显然我拖了大佬后腿，一拖九了解一下，吓得我快来补题先。<a id="more"></a></p>
-<p><center> PTA L2-032 彩虹瓶 </center><br>原题链接：<a href="https://pintia.cn/problem-sets/994805046380707840/problems/1111914599412858889" target="_blank" rel="noopener">PTA彩虹瓶</a><br>题目描述<br><img src="https://i.loli.net/2019/04/06/5ca871314836a.jpg" alt><br>彩虹瓶的制作过程（并不）是这样的：先把一大批空瓶铺放在装填场地上，然后按照一定的顺序将每种颜色的小球均匀撒到这批瓶子里。</p>
-<p>假设彩虹瓶里要按顺序装 N 种颜色的小球（不妨将顺序就编号为 1 到 N）。现在工厂里有每种颜色的小球各一箱，工人需要一箱一箱地将小球从工厂里搬到装填场地。如果搬来的这箱小球正好是可以装填的颜色，就直接拆箱装填；如果不是，就把箱子先码放在一个临时货架上，码放的方法就是一箱一箱堆上去。当一种颜色装填完以后，先看看货架顶端的一箱是不是下一个要装填的颜色，如果是就取下来装填，否则去工厂里再搬一箱过来。</p>
-<p>如果工厂里发货的顺序比较好，工人就可以顺利地完成装填。例如要按顺序装填 7 种颜色，工厂按照 7、6、1、3、2、5、4 这个顺序发货，则工人先拿到 7、6 两种不能装填的颜色，将其按照 7 在下、6 在上的顺序堆在货架上；拿到 1 时可以直接装填；拿到 3 时又得临时码放在 6 号颜色箱上；拿到 2 时可以直接装填；随后从货架顶取下 3 进行装填；然后拿到 5，临时码放到 6 上面；最后取了 4 号颜色直接装填；剩下的工作就是顺序从货架上取下 5、6、7 依次装填。</p>
-<p>但如果工厂按照 3、1、5、4、2、6、7 这个顺序发货，工人就必须要愤怒地折腾货架了，因为装填完 2 号颜色以后，不把货架上的多个箱子搬下来就拿不到 3 号箱，就不可能顺利完成任务。</p>
-<p>另外，货架的容量有限，如果要堆积的货物超过容量，工人也没办法顺利完成任务。例如工厂按照 7、6、5、4、3、2、1 这个顺序发货，如果货架够高，能码放 6 只箱子，那还是可以顺利完工的；但如果货架只能码放 5 只箱子，工人就又要愤怒了……</p>
-<p>本题就请你判断一下，工厂的发货顺序能否让工人顺利完成任务。</p>
-<p>输入格式：<br>输入首先在第一行给出 3 个正整数，分别是彩虹瓶的颜色数量 N（1&lt;N≤10<br>​3<br>​​ ）、临时货架的容量 M（&lt;N）、以及需要判断的发货顺序的数量 K。</p>
-<p>随后 K 行，每行给出 N 个数字，是 1 到N 的一个排列，对应工厂的发货顺序。</p>
-<p>一行中的数字都以空格分隔。</p>
-<p>输出格式：<br>对每个发货顺序，如果工人可以愉快完工，就在一行中输出 YES；否则输出 NO。</p>
-<p>输入样例：<br>7 5 3<br>7 6 1 3 2 5 4<br>3 1 5 4 2 6 7<br>7 6 5 4 3 2 1<br>输出样例：<br>YES<br>NO<br>NO<br>我与这道题的恩恩怨怨：<br>第一次看到这道题的时候，是很懵的，描述太长感觉看不懂不想看。看了榜单发现好多人做出来了，回头仔细一看，发现这就是一道栈的题。用一个栈就可以解决，虽然发现了方法，可是由于菜还是没做出来，补题补题。补题时候发现我的思路又总是出问题，在学长的帮助下，还是成功的过了这道题。<br>题意分析：这道题跟pta上之前一道题，几乎是原题，题目是出栈序列的合理性(想找的自己翻吧，我没找到🌚)。我们不管输入的是什么都先让它入栈然后对栈顶的元素进行判断，并且将符合条件的pop出栈。具体看代码<br>代码实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,m,k,a;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;</span><br><span class="line">	while(k--)</span><br><span class="line">	&#123;</span><br><span class="line">		int k=1;</span><br><span class="line">		bool flag=0;</span><br><span class="line">		stack&lt;int&gt; sta;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;a;</span><br><span class="line">			sta.push(a);</span><br><span class="line">			if(sta.size()&gt;m+1)</span><br><span class="line">				flag=1;</span><br><span class="line">			while(!sta.empty())</span><br><span class="line">			&#123;</span><br><span class="line">				if(sta.top()==k)</span><br><span class="line">				&#123;</span><br><span class="line">					sta.pop();</span><br><span class="line">					k++;//k就是用来模拟此时应放的序号，如果有对应的就对k加1，模拟的就是这个放过了，准备放下一个。</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(!flag&amp;&amp;k==n+1)</span><br><span class="line">			puts(&quot;YES&quot;);</span><br><span class="line">		else</span><br><span class="line">			puts(&quot;NO&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Ps：<code>if(sta.size()&gt;m+1)</code>是因为题目中要求的有货架最多存放的数量，即栈的最大容量。可为什么是m+1而不是m呢，这个我也纠结了好久。因为我们放进去之后接下来就要对它进行判断，所以在实际的过程中它是不用放在货架（入栈）上的，所以是m+1。还是不明白的话，建议手动模拟一下，这道题就会理解的更加透彻。<br>Warning：栈空的时候千万不要用.top()。。。不要用，不要用，不要用。</p>
+        <p>Give me three minutes,I will make you learn more about stringstream.<a id="more"></a></p>
+<h3 id="Some-common-usage"><a href="#Some-common-usage" class="headerlink" title="Some common usage"></a>Some common usage</h3><h4 id="Data-type-conversion-数据类型的转换"><a href="#Data-type-conversion-数据类型的转换" class="headerlink" title="Data type conversion(数据类型的转换)"></a>Data type conversion(数据类型的转换)</h4><p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string       a = &quot;521&quot;, b;</span><br><span class="line">    int          c, d = 1314;</span><br><span class="line">    stringstream x, y;</span><br><span class="line">    x &lt;&lt; a;   y &lt;&lt; d;</span><br><span class="line">    x &gt;&gt; c;   y &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; b &lt;&lt; endl &lt;&lt; c &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;The size of b is &quot; &lt;&lt; sizeof(b) &lt;&lt; &quot;\nThe size of c is &quot; &lt;&lt; sizeof(c) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Output:</p>
+<blockquote>
+<p>5211314<br>5211314<br>The size of b is 24<br>The size of c is 4</p>
+</blockquote>
+<p>In this case,we transform a string to int and an int to string through stringstream.</p>
+<h4 id="Can-be-used-to-split-strings-separated-by-spaces-etc-可以分割被空格分割的字符串"><a href="#Can-be-used-to-split-strings-separated-by-spaces-etc-可以分割被空格分割的字符串" class="headerlink" title="Can be used to split strings separated by spaces etc.(可以分割被空格分割的字符串)"></a>Can be used to split strings separated by spaces etc.(可以分割被空格分割的字符串)</h4><p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string       s = &quot;521 1314&quot;,mid;</span><br><span class="line">    stringstream x(s);</span><br><span class="line">    while (x &gt;&gt; mid)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; mid &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Output:</p>
+<blockquote>
+<p>521<br>1314</p>
+</blockquote>
+<p>This part is always useful in some type.</p>
+<h3 id="Official-explanation"><a href="#Official-explanation" class="headerlink" title="Official explanation"></a>Official explanation</h3><p>CPP: <a href="http://www.cplusplus.com/reference/sstream/stringstream/" target="_blank" rel="noopener">http://www.cplusplus.com/reference/sstream/stringstream/</a></p>
+<p>As far as I know,If you can grasp the common usage,it&#39;s enough in ACM.</p>
 
       
     </div>
@@ -607,9 +595,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
-          
             <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/functions/" rel="tag"><i class="fa fa-tag"></i> functions</a>
           
         </div>
       
@@ -627,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/28/Binary/" rel="next" title="递归实现十进制与二进制的转换">
-                <i class="fa fa-chevron-left"></i> 递归实现十进制与二进制的转换
+              <a href="/blog/2019/07/19/d3/" rel="next" title="HPU Summer Training Day 3（河南理工暑期集训第三天）">
+                <i class="fa fa-chevron-left"></i> HPU Summer Training Day 3（河南理工暑期集训第三天）
               </a>
             
           </div>
@@ -636,10 +624,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/2019/04/01/knowledge/" rel="prev" title="矩形面积并">
-                矩形面积并 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -692,8 +676,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -970,6 +963,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Some-common-usage"><span class="nav-number">1.</span> <span class="nav-text">Some common usage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-type-conversion-数据类型的转换"><span class="nav-number">1.1.</span> <span class="nav-text">Data type conversion(数据类型的转换)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Can-be-used-to-split-strings-separated-by-spaces-etc-可以分割被空格分割的字符串"><span class="nav-number">1.2.</span> <span class="nav-text">Can be used to split strings separated by spaces etc.(可以分割被空格分割的字符串)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-explanation"><span class="nav-number">2.</span> <span class="nav-text">Official explanation</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
 
