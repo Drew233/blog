@@ -805,7 +805,7 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 106kwords</span>
+  <span class="post-count">A total of 110.8kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 
@@ -1466,7 +1466,32 @@ jQuery(document).ready(function($) {
   else
     document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
 </script> -->
-ar ta = document.createElement('textarea');
+ng: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
         var range = document.createRange(); //For Chrome
         var sel = window.getSelection(); //For Chrome
         var yPosition = window.pageYOffset || document.documentElement.scrollTop;
