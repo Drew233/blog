@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。">
+<meta name="keywords" content="Algorithm,c&#x2F;c++,HDU,CodeForces,poj,STL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU Summer Training Day 8（河南理工大学暑期第八天）">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/07/24/d8/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.loli.net/2019/07/24/5d3816e429b0036148.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/24/5d3817f744d8511698.png">
+<meta property="og:updated_time" content="2019-07-24T14:17:56.359Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU Summer Training Day 8（河南理工大学暑期第八天）">
+<meta name="twitter:description" content="今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/24/5d3816e429b0036148.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/07/24/d8/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU Summer Training Day 8（河南理工大学暑期第八天） | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/07/24/d8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU Summer Training Day 8（河南理工大学暑期第八天）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-24 22:11:20 / Modified: 22:17:56" itemprop="dateCreated datePublished" datetime="2019-07-24T22:11:20+08:00">2019-07-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/07/24/d8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/24/d8/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。<a id="more"></a></p>
+<h3 id="Oil-Deposits"><a href="#Oil-Deposits" class="headerlink" title="Oil Deposits"></a>Oil Deposits</h3><p>Description：<br>The GeoSurvComp geologic survey company is responsible for detecting underground oil deposits. GeoSurvComp works with one large rectangular region of land at a time, and creates a grid that divides the land into numerous square plots. It then analyzes each plot separately, using sensing equipment to determine whether or not the plot contains oil. A plot containing oil is called a pocket. If two pockets are adjacent, then they are part of the same oil deposit. Oil deposits can be quite large and may contain numerous pockets. Your job is to determine how many different oil deposits are contained in a grid.<br>Input<br>The input file contains one or more grids. Each grid begins with a line containing m and n, the number of rows and columns in the grid, separated by a single space. If m = 0 it signals the end of the input; otherwise 1 &lt;= m &lt;= 100 and 1 &lt;= n &lt;= 100. Following this are m lines of n characters each (not counting the end-of-line characters). Each character corresponds to one plot, and is either `*&#39;, representing the absence of oil, or `@&#39;, representing an oil pocket.</p>
+<p>Output</p>
+<blockquote>
+<p>For each grid, output the number of distinct oil deposits. Two different pockets are part of the same oil deposit if they are adjacent horizontally, vertically, or diagonally. An oil deposit will not contain more than 100 pockets.</p>
+</blockquote>
+<p>Sample Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1 1</span><br><span class="line">*</span><br><span class="line">3 5</span><br><span class="line">*@*@*</span><br><span class="line">**@**</span><br><span class="line">*@*@*</span><br><span class="line">1 8</span><br><span class="line">@@****@*</span><br><span class="line">5 5</span><br><span class="line">****@</span><br><span class="line">*@@*@</span><br><span class="line">*@**@</span><br><span class="line">@@@*@</span><br><span class="line">@@**@</span><br><span class="line">0 0</span><br></pre></td></tr></table></figure></p>
+<p>Sample Output</p>
+<blockquote>
+<p>0<br>1<br>2<br>2</p>
+</blockquote>
+<p>Problem solving:<br>简单题，输入一个图，@表示油田，*表示没有油田，@只要是相邻的都可以算成是一个，所以就是八个方向上dfs就行，访问过的@就换成*或者其他的字符就行只要不是@.(如果这样写的话其实就不需要标记数组了)</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">char s[105][105];</span><br><span class="line">int vis[105][105];</span><br><span class="line">int m,n,ans;</span><br><span class="line">int d[8][2]=&#123;1,0,0,1,0,-1,-1,0,1,1,1,-1,-1,-1,-1,1&#125;;</span><br><span class="line">void dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	vis[x][y]=1;</span><br><span class="line">	if(x&lt;0||x&gt;=m||y&lt;0||y&gt;=n)	return ;</span><br><span class="line">	for(int i=0;i&lt;8;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int dx=x+d[i][0];</span><br><span class="line">		int dy=y+d[i][1];</span><br><span class="line">		if(dx&gt;=0&amp;&amp;dx&lt;m&amp;&amp;dy&gt;=0&amp;&amp;dy&lt;n&amp;&amp;!vis[dx][dy]&amp;&amp;s[dx][dy]==&apos;@&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">			s[dx][dy]=&apos;*&apos;;</span><br><span class="line">			dfs(dx,dy);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;m&gt;&gt;n&amp;&amp;m)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		ans=0;</span><br><span class="line">		for(int i=0;i&lt;m;i++)	cin&gt;&gt;s[i];</span><br><span class="line">		for(int i=0;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=0;j&lt;n;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(s[i][j]==&apos;@&apos;)</span><br><span class="line">				&#123;</span><br><span class="line">					dfs(i,j);</span><br><span class="line">					ans++;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="How-Many-Equations-Can-You-Find"><a href="#How-Many-Equations-Can-You-Find" class="headerlink" title="How Many Equations Can You Find"></a>How Many Equations Can You Find</h3><p>Description：<br>Now give you an string which only contains 0, 1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9.You are asked to add the sign ‘+’ or ’-’ between the characters. Just like give you a string “12345”, you can work out a string “123+4-5”. Now give you an integer N, please tell me how many ways can you find to make the result of the string equal to N .You can only choose at most one sign between two adjacent characters.<br>Input</p>
+<blockquote>
+<p>Each case contains a string s and a number N . You may be sure the length of the string will not exceed 12 and the absolute value of N will not exceed 999999999999.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>The output contains one line for each data set : the number of ways you can find to make the equation.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>123456789 3<br>21 1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>18<br>1</p>
+</blockquote>
+<p>Problem solving:<br>每两个数中间都有两种可能，一种是加号一种是减号，并且能放入操作符的位置我们也是知道的，所以只需要查找每个位置放上不同的运算符之后得到的所有结果，看有几个与n相等即可。查找的过程用dfs来实现。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">string s;int n,ans;</span><br><span class="line">void dfs(int x,int now)//x代表的是当前要进行操作的位置，now代表当前得到的值</span><br><span class="line">&#123;</span><br><span class="line">	if(x==s.size())//如果x已经跟字符串的长度相等说明这一次遍历已经结束了</span><br><span class="line">	&#123;</span><br><span class="line">		if(now==n)	ans++;//如果得到的值跟n相等，答案就加一</span><br><span class="line">//		cout&lt;&lt;now&lt;&lt;endl;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=x;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int mid=0;</span><br><span class="line">		for(int j=x;j&lt;=i;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			mid=mid*10+s[j]-&apos;0&apos;;//得到运算符左边字符串所代表数的大小</span><br><span class="line">//			cout&lt;&lt;mid&lt;&lt;&quot;?&quot;&lt;&lt;now&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		dfs(i+1,now+mid);//去访问下一个位置，并且此时的值加上上面得到的运算符左边字符串所代表的数</span><br><span class="line">		if(x)	dfs(i+1,now-mid);//减号不能放在最前面，所以要有一个x不为0的判断</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;s&gt;&gt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=0;</span><br><span class="line">		dfs(0,0);//从s[0]开始，当前值为0</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="N皇后问题"><a href="#N皇后问题" class="headerlink" title="N皇后问题"></a>N皇后问题</h3><p>Description：<br>在N*N的方格棋盘放置了N个皇后，使得它们不相互攻击（即任意2个皇后不允许处在同一排，同一列，也不允许处在与棋盘边框成45角的斜线上。<br>你的任务是，对于给定的N，求出有多少种合法的放置方法。</p>
+<p>Input</p>
+<blockquote>
+<p>共有若干行，每行一个正整数N≤10，表示棋盘和皇后的数量；如果N=0，表示结束。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>共有若干行，每行一个正整数，表示对应输入行的皇后的不同放置数量。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>1<br>8<br>5<br>0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1<br>92<br>10</p>
+</blockquote>
+<p>Problem solving:<br>从第一行开始放，然后放下一行，如果出现了在同一行的或者同一列的或者同一条斜线上的就return，如果放进去的个数等于n，答案就加一。这道题N虽然小于等于10，但是是多组输入，如果每次输入都计算一次并且输入数据很多的话，肯定会TLE。所以需要打表，就是如果这个计算过了就把它的结果记录下来，如果下次又要求这个的结果直接调用就行。也可以直接从输入前就先计算好存进数组。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,mid;</span><br><span class="line">int ans[12],mmp[12];</span><br><span class="line">void dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">	if(x==n+1)</span><br><span class="line">	&#123;</span><br><span class="line">		mid++;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">	int flag=1;</span><br><span class="line">		mmp[x]=i;</span><br><span class="line">		for(int j=1;j&lt;x;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(mmp[j]==i||(abs(j-x)==abs(mmp[j]-mmp[x])))</span><br><span class="line">			&#123;</span><br><span class="line">				flag=0;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag)	dfs(x+1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	for(n=1;n&lt;=10;n++)</span><br><span class="line">	&#123;</span><br><span class="line">		mid=0;</span><br><span class="line">		dfs(1);</span><br><span class="line">		ans[n]=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	int t;</span><br><span class="line">	while(cin&gt;&gt;t&amp;&amp;t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;ans[t]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Fox-And-Two-Dots"><a href="#Fox-And-Two-Dots" class="headerlink" title="Fox And Two Dots"></a>Fox And Two Dots</h3><p>Description：<br>Fox Ciel is playing a mobile puzzle game called &quot;Two Dots&quot;. The basic levels are played on a board of size n × m cells, like this:</p>
+<p><center><img src="https://i.loli.net/2019/07/24/5d3816e429b0036148.png" alt></center><br>Each cell contains a dot that has some color. We will use different uppercase Latin characters to express different colors.</p>
+<p>The key of this game is to find a cycle that contain dots of same color. Consider 4 blue dots on the picture forming a circle as an example. Formally, we call a sequence of dots d1, d2, ..., dk a cycle if and only if it meets the following condition:</p>
+<ol>
+<li>These k dots are different: if i ≠ j then di is different from dj.</li>
+<li>k is at least 4.</li>
+<li>All dots belong to the same color.</li>
+<li>For all 1 ≤ i ≤ k - 1: di and di + 1 are adjacent. Also, dk and d1 should also be adjacent. Cells x and y are called adjacent if they share an edge.</li>
+</ol>
+<p>Determine if there exists a cycle on the field.<br>Input</p>
+<blockquote>
+<p>The first line contains two integers n and m (2 ≤ n, m ≤ 50): the number of rows and columns of the board.<br>Then n lines follow, each line contains a string consisting of m characters, expressing colors of dots in each line. Each character is an uppercase Latin letter.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Output &quot;Yes&quot; if there exists a cycle, and &quot;No&quot; otherwise.</p>
+</blockquote>
+<p>Examples<br>Input</p>
+<blockquote>
+<p>3 4<br>AAAA<br>ABCA<br>AAAA</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Yes</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>3 4<br>AAAA<br>ABCA<br>AADA</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>No</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>4 4<br>YYYR<br>BYBY<br>BBBY<br>BBBY</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Yes</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>7 6<br>AAAAAB<br>ABBBAB<br>ABAAAB<br>ABABBB<br>ABAAAB<br>ABBBAB<br>AAAAAB</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Yes</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>2 13<br>ABCDEFGHIJKLM<br>NOPQRSTUVWXYZ</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>No</p>
+</blockquote>
+<p>Note<br>In first sample test all &#39;A&#39; form a cycle.</p>
+<p>In second sample there is no such cycle.</p>
+<p>The third sample is displayed on the picture above (&#39;Y&#39; = Yellow, &#39;B&#39; = Blue, &#39;R&#39; = Red).<br>Problem solving:<br>这道题的意思就是输入一个由大写字母组成的图，如果相同的字母可以组成一个环，就输出Yes，否则输出No。<br>这道题跟昨天的那个机器人有点类似，不过那个机器人每次走的方向是定的，而这个是可以随意走的。<br>所以如何进行判断会不会有环的存在呢？<br>我们只需要在每次进行dfs的查找之前把最初的初始位置记录一下，然后开始dfs查找，上下左右四个方向，遇到与当前字母一样的字母就以这个为初始位置继续dfs，并且记录下来当前走的步数。如果在dfs结束之前遇到了一个(dx,dy)与我们记录的最初始的初始位置相等并且步数大于等于4的情况，就说明存在环，输出&#39;Yes&#39;即可，反之输出&#39;No&#39;。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">char s[60][60];</span><br><span class="line">int vis[60][60],flag,n,m,sx,sy;</span><br><span class="line">int d[4][2]=&#123;1,0,0,1,-1,0,0,-1&#125;;</span><br><span class="line">void dfs(int x,int y,int step)</span><br><span class="line">&#123;</span><br><span class="line">	if(flag)	return ;</span><br><span class="line">	vis[x][y]=1;</span><br><span class="line">	for(int i=0;i&lt;4;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int dx=x+d[i][0];</span><br><span class="line">		int dy=y+d[i][1];</span><br><span class="line">		if(dx==sx&amp;&amp;dy==sy&amp;&amp;step&gt;=4)</span><br><span class="line">		&#123;</span><br><span class="line">			flag=1;</span><br><span class="line">			return ;</span><br><span class="line">		&#125;</span><br><span class="line">		if(dx&gt;=0&amp;&amp;dx&lt;n&amp;&amp;dy&gt;=0&amp;&amp;dy&lt;m&amp;&amp;!vis[dx][dy]&amp;&amp;s[dx][dy]==s[x][y])</span><br><span class="line">		&#123;</span><br><span class="line">			dfs(dx,dy,step+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	for(int i=0;i&lt;n;i++)	cin&gt;&gt;s[i];</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int j=0;j&lt;m;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			memset(vis,0,sizeof(vis));</span><br><span class="line">			sx=i,sy=j;</span><br><span class="line">			dfs(sx,sy,1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if(flag)	puts(&quot;Yes&quot;);</span><br><span class="line">	else	puts(&quot;No&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="棋盘问题"><a href="#棋盘问题" class="headerlink" title="棋盘问题"></a>棋盘问题</h3><p>Description：<br>在一个给定形状的棋盘（形状可能是不规则的）上面摆放棋子，棋子没有区别。要求摆放时任意的两个棋子不能放在棋盘中的同一行或者同一列，请编程求解对于给定形状和大小的棋盘，摆放k个棋子的所有可行的摆放方案C。<br>Input</p>
+<blockquote>
+<p>输入含有多组测试数据。<br>每组数据的第一行是两个正整数，n k，用一个空格隔开，表示了将在一个n*n的矩阵内描述棋盘，以及摆放棋子的数目。 n &lt;= 8 , k &lt;= n<br>当为-1 -1时表示输入结束。<br>随后的n行描述了棋盘的形状：每行有n个字符，其中 # 表示棋盘区域， . 表示空白区域（数据保证不出现多余的空白行或者空白列）。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每一组数据，给出一行输出，输出摆放的方案数目C （数据保证C\&lt;2^31）。</p>
+</blockquote>
+<p>Sample Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">2 1</span><br><span class="line">#.</span><br><span class="line">.#</span><br><span class="line">4 4</span><br><span class="line">...#</span><br><span class="line">..#.</span><br><span class="line">.#..</span><br><span class="line">#...</span><br><span class="line">-1 -1</span><br></pre></td></tr></table></figure></p>
+<p>Sample Output</p>
+<blockquote>
+<p>2<br>1</p>
+</blockquote>
+<p>Problem solving:<br>跟n皇后很像的一个问题。判断条件还少了一个。注意回溯就行。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,k,vis[10],ans,now;</span><br><span class="line">char s[10][10];</span><br><span class="line">void dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">	if(now==k)</span><br><span class="line">	&#123;</span><br><span class="line">		ans++;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	if(x&gt;=n)	return ;</span><br><span class="line">	for(int j=0;j&lt;n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(!vis[j]&amp;&amp;s[x][j]==&apos;#&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">			vis[j]=1;</span><br><span class="line">			now++;</span><br><span class="line">			dfs(x+1);</span><br><span class="line">			now--;</span><br><span class="line">			vis[j]=0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(x+1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(scanf(&quot;%d %d&quot;,&amp;n,&amp;k)&amp;&amp;n!=-1&amp;&amp;k!=-1)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		for(int i=0;i&lt;n;i++)	cin&gt;&gt;s[i];</span><br><span class="line">		ans=0,now=0;</span><br><span class="line">		dfs(0);</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Sudoku"><a href="#Sudoku" class="headerlink" title="Sudoku"></a>Sudoku</h3><p>Description：<br>Sudoku is a very simple task. A square table with 9 rows and 9 columns is divided to 9 smaller squares 3x3 as shown on the Figure. In some of the cells are written decimal digits from 1 to 9. The other cells are empty. The goal is to fill the empty cells with decimal digits from 1 to 9, one digit per cell, in such way that in each row, in each column and in each marked 3x3 subsquare, all the digits from 1 to 9 to appear. Write a program to solve a given Sudoku-task.</p>
+<p><img src="https://i.loli.net/2019/07/24/5d3817f744d8511698.png" alt="JUT0QY($RVW[_(1EGZ@@)PK.png" title="JUT0QY($RVW[_(1EGZ@@)PK.png"></p>
+<p>Input</p>
+<blockquote>
+<p>The input data will start with the number of the test cases. For each test case, 9 lines follow, corresponding to the rows of the table. On each line a string of exactly 9 decimal digits is given, corresponding to the cells in this line. If a cell is empty it is represented by 0.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case your program should print the solution in the same format as the input data. The empty cells have to be filled according to the rules. If solutions is not unique, then the program may print any one of them.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>1<br>103000509<br>002109400<br>000704000<br>300502006<br>060000050<br>700803004<br>000401000<br>009205800<br>804000107</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>143628579<br>572139468<br>986754231<br>391542786<br>468917352<br>725863914<br>237481695<br>619275843<br>854396127</p>
+</blockquote>
+<p>Problem solving:<br>这道题的处理方式很巧妙。dfs中的参数只设置一个n(n就是代表着这是第几个数)就够了，就是当前的位置，在dfs中每次加一，如果当前位置不为0，就直接查找下一个位置。否则就从1～9中选一个数放进去，看同一行同一列以及同一小方格的同一行同一列有没有与之相同的，如果没有，就将当前位置的数更新成这个没有重复出现过的数。知道查找到n&gt;=81的时候，即每个位置都查找完了，结束查找输出即可。注意在查找的过程中需要用到回溯，因为如果这一条路行不通而返回上一条路的时候，此时当前位置还应该是0.<br>思路还是很清晰的，难点主要有两个</p>
+<ol>
+<li>如何用n来表示当前的位置</li>
+<li>如何判断同一行同一列以及同一小方格的同一行同一列有没有与之相同的数</li>
+</ol>
+<p>n/9代表的就是当前位置的行，n%9代表的就是当前位置的列。<br>n/9/3*3表示的就是当前位置在小方格里的行，n%9/3*3代表的就是当前位置在小方格里的列。</p>
+<p>位置都能表示出来了，那么判断也就简单了。<br>分别确定二维数组的第一个和第二个坐标进行判断就行了。这一点可能说的不是很好理解，可以看看代码，还是很好理解的。</p>
+<p>这里还用到了一个很巧妙的输入<code>scanf(&quot;%1d&quot;,&amp;a)</code>;这样的话就不用输入字符再转换成整型了。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[10][10],flag;</span><br><span class="line">bool check(int n,int now)</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;9;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int j=n%9;</span><br><span class="line">		if(a[i][j]==now)</span><br><span class="line">			return 0;</span><br><span class="line">	&#125;</span><br><span class="line">    for(int j=0;j&lt;9;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        int i=n/9;</span><br><span class="line">        if(a[i][j]==now)</span><br><span class="line">            return 0;</span><br><span class="line">    &#125;</span><br><span class="line">	int di=n/9/3*3;</span><br><span class="line">	int dj=n%9/3*3;</span><br><span class="line">	for(int i =di;i&lt;di+3;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int j=dj;j&lt;dj+3;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(a[i][j]==now)	return 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 1;</span><br><span class="line">&#125;</span><br><span class="line">int dfs(int n)</span><br><span class="line">&#123;</span><br><span class="line">	if(n&gt;=81)</span><br><span class="line">	&#123;</span><br><span class="line">		flag=1;</span><br><span class="line">		return 0;</span><br><span class="line">	&#125;</span><br><span class="line">	if(a[n/9][n%9]!=0)	dfs(n+1);</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i=1;i&lt;=9;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(check(n,i)==1)</span><br><span class="line">			&#123;</span><br><span class="line">				a[n/9][n%9]=i;</span><br><span class="line">				dfs(n+1);</span><br><span class="line">				if(flag==1)</span><br><span class="line">					return 0;</span><br><span class="line">				a[n/9][n%9]=0;//回溯</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">//	cout&lt;&lt;&quot;?&quot;&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int t;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	while(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		flag=0;</span><br><span class="line">		for(int i=0;i&lt;9;i++)</span><br><span class="line">			for(int j=0;j&lt;9;j++)</span><br><span class="line">			scanf(&quot;%1d&quot;,&amp;a[i][j]);</span><br><span class="line">		dfs(0);</span><br><span class="line">		for(int i=0;i&lt;9;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=0;j&lt;9;j++)</span><br><span class="line">				printf(&quot;%d&quot;,a[i][j]);</span><br><span class="line">			puts(&quot;&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="放苹果"><a href="#放苹果" class="headerlink" title="放苹果"></a>放苹果</h3><p>Description：<br>把M个同样的苹果放在N个同样的盘子里，允许有的盘子空着不放，问共有多少种不同的分法？（用K表示）5，1，1和1，5，1 是同一种分法。<br>Input</p>
+<blockquote>
+<p>第一行是测试数据的数目t（0 &lt;= t &lt;= 20）。以下每行均包含二个整数M和N，以空格分开。1&lt;=M，N&lt;=10。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对输入的每组数据M和N，用一行输出相应的K。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>1<br>7 3</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>8</p>
+</blockquote>
+<p>Problem solving:<br>思维题。(让我说也说不清，还是借用一下大佬的解释吧)<br>设f(m,n) 为m个苹果，n个盘子的放法数目，则先对n作讨论，<br>        当n&gt;m：必定有n-m个盘子永远空着，去掉它们对摆放苹果方法数目不产生影响。即if(n&gt;m) f(m,n) = f(m,m)　　<br>        当n&lt;=m：不同的放法可以分成两类：<br>        1、有至少一个盘子空着，即相当于f(m,n) = f(m,n-1);<br>        2、所有盘子都有苹果，相当于可以从每个盘子中拿掉一个苹果，不影响不同放法的数目，即f(m,n) = f(m-n,n).<br>        而总的放苹果的放法数目等于两者的和，即 f(m,n) =f(m,n-1)+f(m-n,n) </p>
+<p> 递归出口条件说明：<br>        当n=1时，所有苹果都必须放在一个盘子里，所以返回１；<br>        当没有苹果可放时，定义为１种放法；<br>        递归的两条路，第一条n会逐渐减少，终会到达出口n==1;<br>        第二条m会逐渐减少，因为n&gt;m时，我们会return f(m,m)　所以终会到达出口m==0．<br>此解释源于：<a href="https://blog.csdn.net/jason0539/article/details/12183817" target="_blank" rel="noopener">https://blog.csdn.net/jason0539/article/details/12183817</a></p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int t,n,m,ans;</span><br><span class="line">int dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	if(x==0||y==1)&#123;</span><br><span class="line">		return 1;</span><br><span class="line">	&#125;</span><br><span class="line">	else if(x&lt;y)	return dfs(x,x);</span><br><span class="line">	return dfs(x,y-1)+dfs(x-y,y);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	while(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">		cout&lt;&lt;dfs(m,n)&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Tempter-of-the-Bone"><a href="#Tempter-of-the-Bone" class="headerlink" title="Tempter of the Bone"></a>Tempter of the Bone</h3><p>Description：<br>小明做了一个很久很久的梦，醒来后他竟发现自己和朋友在一个摇摇欲坠的大棋盘上，他们必须得想尽一切办法逃离这里。<br>经过长时间的打探，小明发现，自己所在的棋盘格子上有个机关，上面写着“你只有一次机会，出发后t秒大门会为你敞开”，而他自己所在的棋盘是大小为 N*M 的长方形，他可以向上下左右四个方向移动（不可走有障碍点）。棋盘中有一扇门。根据机关的提示，小明顿时明白了，他和朋友必须在第 t 秒到门口。而这一切，没有回头路！因为一旦他移动了，他刚才所在的点就会消失，并且他不能在一个点上停留超过一秒，不然格子会爆炸。大逃亡开始了，请问小明和朋友能安全的逃出这奇怪的棋盘吗？</p>
+<p>Input</p>
+<blockquote>
+<p>输入多组测试数据。每个测试用例的第一行包含三个整数 N、M 和 T ( 1 &lt; N , M &lt; 7 ; 0 &lt; T &lt; 50 )，分别表示棋盘的大小和门打开的时间。接下来的N行给出棋盘布局，每一行包含M个字符。其中<br>&quot;.&quot;: 无障碍点<br>&quot;X&quot;: 障碍点<br>&quot;S&quot;: 起点<br>&quot;D&quot;: 门<br>输入以 3 个 0 结束。这个测试用例不需要处理。<br>输入数据中的空格有些问题，请不要使用getchar()，如果一定要用可以选择scanf(&quot;%s&quot;,) 自动忽略空格</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每组样例输出一行。<br>如果小明能够安全逃出，输出 &quot;YES&quot; ，否则输出 &quot;NO&quot;。</p>
+</blockquote>
+<p>Sample Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">4 4 5</span><br><span class="line">S.X.</span><br><span class="line">..X.</span><br><span class="line">..XD</span><br><span class="line">....</span><br><span class="line">3 4 5</span><br><span class="line">S.X.</span><br><span class="line">..X.</span><br><span class="line">...D</span><br><span class="line">0 0 0</span><br></pre></td></tr></table></figure></p>
+<p>Sample Output</p>
+<blockquote>
+<p>NO<br>YES</p>
+</blockquote>
+<p>Problem solving:<br>注意题目中要求的是当你走到D的时候你走的步数与它开门的时间即T相等，所以需要用DFS查找每一条到达D的路，看与T相等的值是否存在。<br>因为要查询到每一条路，这道题可能会超时。所以会用到一种很神奇的剪枝——<a href="https://baike.baidu.com/item/%E5%A5%87%E5%81%B6%E5%89%AA%E6%9E%9D" target="_blank" rel="noopener">奇偶剪枝</a><br>除去这个剪枝的难度的话这道题就很简单了。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,m,t,sx,sy,ex,ey,ti,flag;</span><br><span class="line">char s[10][10];</span><br><span class="line">int vis[10][10];</span><br><span class="line">int d[4][2]=&#123;0,1,0,-1,1,0,-1,0&#125;;</span><br><span class="line">void dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	if(x&lt;0||x&gt;=n||y&lt;0||y&gt;=m||ti&gt;t)	return ;</span><br><span class="line">	if(flag)	return ;</span><br><span class="line">	if(s[x][y]==&apos;D&apos;&amp;&amp;ti==t)</span><br><span class="line">	&#123;</span><br><span class="line">//		cout&lt;&lt;ti&lt;&lt;endl;</span><br><span class="line">		flag=1;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	int temp1 = abs(ex-x) + abs(ey-y);</span><br><span class="line">	int temp2 = abs(t-ti);</span><br><span class="line">	int temp = abs(temp1-temp2);</span><br><span class="line">	if(temp%2!=0)	return ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	vis[x][y]=1;</span><br><span class="line">	for(int i=0;i&lt;4;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int dx=x+d[i][0];</span><br><span class="line">		int dy=y+d[i][1];</span><br><span class="line">		if(dx&gt;=0&amp;&amp;dx&lt;n&amp;&amp;dy&gt;=0&amp;&amp;dy&lt;m&amp;&amp;!vis[dx][dy]&amp;&amp;s[dx][dy]!=&apos;X&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">//			cout&lt;&lt;ti&lt;&lt;&quot;--&gt;&quot;&lt;&lt;dx&lt;&lt;&quot; --&gt;&quot;&lt;&lt;dy&lt;&lt;&quot;\n&quot;;</span><br><span class="line">			ti++;</span><br><span class="line">			dfs(dx,dy);</span><br><span class="line">			vis[dx][dy]=0;</span><br><span class="line">			ti--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">        ios::sync_with_stdio(0);</span><br><span class="line">	while(cin&gt;&gt;n&gt;&gt;m&gt;&gt;t)</span><br><span class="line">	&#123;</span><br><span class="line">		if(n==0&amp;&amp;m==0&amp;&amp;t==0)	break;</span><br><span class="line">		flag=0,ti=0;</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		for(int i=0;i&lt;n;i++)	cin&gt;&gt;s[i];</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">			for(int j=0;j&lt;m;j++)</span><br><span class="line">				if(s[i][j]==&apos;S&apos;)</span><br><span class="line">				&#123;</span><br><span class="line">						sx=i,sy=j;</span><br><span class="line">				&#125;</span><br><span class="line">				else if(s[i][j]==&apos;D&apos;)</span><br><span class="line">				&#123;</span><br><span class="line">					ex=i,ey=j;</span><br><span class="line">				&#125;</span><br><span class="line">		dfs(sx,sy);</span><br><span class="line">		if(flag)	puts(&quot;YES&quot;);</span><br><span class="line">		else	puts(&quot;NO&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Red-and-Black"><a href="#Red-and-Black" class="headerlink" title="Red and Black"></a>Red and Black</h3><p>Description：<br>There is a rectangular room, covered with square tiles. Each tile is colored either red or black. A man is standing on a black tile. From a tile, he can move to one of four adjacent tiles. But he can&#39;t move on red tiles, he can move only on black tiles.</p>
+<p>Write a program to count the number of black tiles which he can reach by repeating the moves described above.<br>Input</p>
+<blockquote>
+<p>The input consists of multiple data sets. A data set starts with a line containing two positive integers W and H; W and H are the numbers of tiles in the x- and y- directions, respectively. W and H are not more than 20.<br>There are H more lines in the data set, each of which includes W characters. Each character represents the color of a tile as follows.<br>&#39;.&#39; - a black tile<br>&#39;#&#39; - a red tile<br>&#39;@&#39; - a man on a black tile(appears exactly once in a data set)</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each data set, your program should output a line which contains the number of tiles he can reach from the initial tile (including itself).</p>
+</blockquote>
+<p>Sample Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">6 9</span><br><span class="line">....#.</span><br><span class="line">.....#</span><br><span class="line">......</span><br><span class="line">......</span><br><span class="line">......</span><br><span class="line">......</span><br><span class="line">......</span><br><span class="line">#@...#</span><br><span class="line">.#..#.</span><br><span class="line">11 9</span><br><span class="line">.#.........</span><br><span class="line">.#.#######.</span><br><span class="line">.#.#.....#.</span><br><span class="line">.#.#.###.#.</span><br><span class="line">.#.#..@#.#.</span><br><span class="line">.#.#####.#.</span><br><span class="line">.#.......#.</span><br><span class="line">.#########.</span><br><span class="line">...........</span><br><span class="line">11 6</span><br><span class="line">..#..#..#..</span><br><span class="line">..#..#..#..</span><br><span class="line">..#..#..###</span><br><span class="line">..#..#..#@.</span><br><span class="line">..#..#..#..</span><br><span class="line">..#..#..#..</span><br><span class="line">7 7</span><br><span class="line">..#.#..</span><br><span class="line">..#.#..</span><br><span class="line">###.###</span><br><span class="line">...@...</span><br><span class="line">###.###</span><br><span class="line">..#.#..</span><br><span class="line">..#.#..</span><br><span class="line">0 0</span><br></pre></td></tr></table></figure></p>
+<p>Sample Output</p>
+<blockquote>
+<p>45<br>59<br>6<br>13</p>
+</blockquote>
+<p>Problem solving:<br>对没错就是昨天那道题，用bfs可以写，用dfs也可以写。太强了。只要下一个还是可以走得就一直dfs查找下去就行。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">char s[25][25];</span><br><span class="line">int vis[25][25];</span><br><span class="line">int a,b,ans;</span><br><span class="line">int d[4][2]=&#123;1,0,0,1,0,-1,-1,0&#125;;</span><br><span class="line">void dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	vis[x][y]=1;</span><br><span class="line">	if(x&lt;0||x&gt;=b||y&lt;0||y&gt;=a)	return ;</span><br><span class="line">	for(int i=0;i&lt;4;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int dx=x+d[i][0];</span><br><span class="line">		int dy=y+d[i][1];</span><br><span class="line">		if(dx&gt;=0&amp;&amp;dx&lt;b&amp;&amp;dy&gt;=0&amp;&amp;dy&lt;a&amp;&amp;!vis[dx][dy]&amp;&amp;s[dx][dy]!=&apos;#&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">			ans++;</span><br><span class="line">			dfs(dx,dy);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;a&gt;&gt;b)</span><br><span class="line">	&#123;</span><br><span class="line">		if(a==0&amp;&amp;b==0)	break;</span><br><span class="line">		ans=1;</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		for(int i=0;i&lt;b;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=0;j&lt;a;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				cin&gt;&gt;s[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">        for(int i=0;i&lt;b;i++)</span><br><span class="line">			for(int j=0;j&lt;a;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(s[i][j]==&apos;@&apos;)	dfs(i,j);</span><br><span class="line">			&#125;        </span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\19\d3\" rel="bookmark">HPU Summer Training Day 3（河南理工暑期集训第三天）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\18\d2\" rel="bookmark">HPU Summer Training Day 2（河南理工暑期集训第二天）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\04\27\CodeForces-1157-B\" rel="bookmark">Long Number</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/HDU/" rel="tag"><i class="fa fa-tag"></i> HDU</a>
+          
+            <a href="/blog/tags/CodeForces/" rel="tag"><i class="fa fa-tag"></i> CodeForces</a>
+          
+            <a href="/blog/tags/poj/" rel="tag"><i class="fa fa-tag"></i> poj</a>
+          
+            <a href="/blog/tags/STL/" rel="tag"><i class="fa fa-tag"></i> STL</a>
+          
+        </div>
+      
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/07/23/d7/" rel="next" title="HPU Summer Training Day 7（河南理工大学暑期第七天）">
+                <i class="fa fa-chevron-left"></i> HPU Summer Training Day 7（河南理工大学暑期第七天）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">95</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">53</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Oil-Deposits"><span class="nav-number">1.</span> <span class="nav-text">Oil Deposits</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-Many-Equations-Can-You-Find"><span class="nav-number">2.</span> <span class="nav-text">How Many Equations Can You Find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#N皇后问题"><span class="nav-number">3.</span> <span class="nav-text">N皇后问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fox-And-Two-Dots"><span class="nav-number">4.</span> <span class="nav-text">Fox And Two Dots</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#棋盘问题"><span class="nav-number">5.</span> <span class="nav-text">棋盘问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sudoku"><span class="nav-number">6.</span> <span class="nav-text">Sudoku</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#放苹果"><span class="nav-number">7.</span> <span class="nav-text">放苹果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tempter-of-the-Bone"><span class="nav-number">8.</span> <span class="nav-text">Tempter of the Bone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Red-and-Black"><span class="nav-number">9.</span> <span class="nav-text">Red and Black</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 122.5kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->
