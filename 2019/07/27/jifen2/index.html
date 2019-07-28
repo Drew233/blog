@@ -138,7 +138,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/07/27/5d3c2e5283b8097230.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/27/5d3c2e528ee2a45133.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/27/5d3c2e529b1f973133.png">
-<meta property="og:updated_time" content="2019-07-27T14:43:48.450Z">
+<meta property="og:updated_time" content="2019-07-28T12:32:09.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="河南理工大学算法协会暑期集训积分赛（二）">
 <meta name="twitter:description" content="积分赛，被打爆的积分赛（music">
@@ -439,12 +439,24 @@
                 
               
 
-              <time title="Created: 2019-07-27 22:39:20 / Modified: 22:43:48" itemprop="dateCreated datePublished" datetime="2019-07-27T22:39:20+08:00">2019-07-27</time>
+              <time title="Created: 2019-07-27 22:39:20" itemprop="dateCreated datePublished" datetime="2019-07-27T22:39:20+08:00">2019-07-27</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-28 20:32:09" itemprop="dateModified" datetime="2019-07-28T20:32:09+08:00">2019-07-28</time>
               
             
           </span>
@@ -605,7 +617,9 @@
 <p>输入格式<br>第一行输入n,k(1≤n,k≤1e6).<br>接下来输入n个数，第i个数为ai(1≤ai≤1e3).</p>
 <p>输出格式<br>输出满足条件的区间个数</p>
 <p>样例<br>input<br>3 5<br>2 3 5<br>output<br>4</p>
-<p>Problem solving:<br>这道题做出来的人很多，我忘了lower_bound，用一个前缀和数组就行了。注意这道题的ans会爆int。</p>
+<p>Problem solving:<br>这道题做出来的人很多，我忘了lower_bound，用一个前缀和数组就行了。注意这道题的ans会爆int。<br>这道题看了学长的题解和标程之后觉得自己明白的很透彻。然后跟一个同学交流这道题的时候发现自己也是没那么明白。不过现在还是很透彻的，记录一下。</p>
+<p>主要需要理解的就是在你构造的前缀和数组中第n项到第m项的和为<br>sum[m]-sum[n-1](注意是n-1，如果是n的话，那表示的就是第n+1项到第m项的和，因为你会把a[n]也减掉。</p>
+<p>现在我们要查找区间和大于等于k的区间个数，因为是前缀和数组，所以构造出来的前缀和数组一定是有序的（升序。如果直接O(n*n)，1e6的数据范围肯定会超时。又正好看到数组是有序的，这时候就<del>~很自然</del>~的想到二分(虽然我并没有想到)。区间和大于等于k即a[m]-a[n-1]&gt;=k,所以我们先确定区间的左端点，然后二分查找到第一个使区间和大于等于k的右端点的值，此时我们找到的这个右端点的右面的每一个端点都可以跟那个确定的左端点组成一个区间和大于等于k的区间，查找所有点为左端点的情况，答案累加即可。<br>唯一有点绕的就是sum[n]-sum[m-1]&gt;=k换成了sum[m-1]+k&lt;=sum[n]<br>查找第一个符合要求的右端点可以这样写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lower_bound(sum+1,sum+n+1,k+a[i-1])-sum</span><br></pre></td></tr></table></figure></p>
 <p>Code：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int a[1000050],p[1000050];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,k;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">		cin&gt;&gt;a[i],p[i]=p[i-1]+a[i];</span><br><span class="line">	long long ans=0;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int mid=lower_bound(p+1,p+1+n,p[i-1]+k)-p;</span><br><span class="line">		ans+=(n-mid+1);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="剪纸"><a href="#剪纸" class="headerlink" title="剪纸"></a>剪纸</h3><p>Description:<br>中国剪纸是一种用剪刀或刻刀在纸上剪刻花纹，用于装点生活或配合其他民俗活动的民间艺术。在中国，剪纸具有广泛的群众基础，交融于各族人民的社会生活，是各种民俗活动的重要组成部分。其传承赓续的视觉形象和造型格式，蕴涵了丰富的文化历史信息，表达了广大民众的社会认以、道德观念、实践经验、生活理想和审美情趣，具有认知、教化、表意、抒情、娱乐、交往等多重社会价值。<br>2006年5月20日，剪纸艺术遗产经国务院批准列入第一批国家级非物质文化遗产名录 。2009年9月28日至10月2日举行的联合国教科文组织保护非物质文化遗产政府间委员会第四次会议上，中国申报的中国剪纸项目入选“人类非物质文化遗产代表作名录”。</p>
 <p>剪窗花最基本的操作为将剪纸进行多次对折，然后对对折之后的纸进行裁剪，展开后就是一个精美的艺术品。现在我们对问题进行化简，我们利用如下方法将一张形状矩形的纸按照对阵轴进行对折：<br><img src="https://i.loli.net/2019/07/27/5d3c2d9aaf68a63353.png" alt><br>假设剪后的形状为一个三角形，则展开效果为：<br><img src="https://i.loli.net/2019/07/27/5d3c2d9abf77369575.png" alt><br>现在给你一个对折两次且剪切后的图形，请你给出展开的图形形状。</p>
@@ -802,6 +816,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/blog/2019/07/28/d12/" rel="prev" title="HPU Summer Day 12(河南理工大学暑期第十二天)">
+                HPU Summer Day 12(河南理工大学暑期第十二天) <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -880,7 +898,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-count">101</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1036,7 +1054,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">56</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">58</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1243,7 +1265,7 @@ setInterval(getRTime,1000);
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">A total of 145.4kwords</span>
+  <span class="post-count">A total of 146.9kwords</span>
   <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
 </div>
 
