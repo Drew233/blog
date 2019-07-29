@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="今天讲了一点关于DP的知识和几道例题，据说这样就算是入门了。今天的题怎么说呢？亏是之前做过，要是之前没做过，还真不知道该怎么写。dp就是玄学？">
+<meta name="keywords" content="Algorithm,c&#x2F;c++,HDU,DP,poj">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU Summer Day 13(河南理工大学暑期第十三天)">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/07/29/d13/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="今天讲了一点关于DP的知识和几道例题，据说这样就算是入门了。今天的题怎么说呢？亏是之前做过，要是之前没做过，还真不知道该怎么写。dp就是玄学？">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://drew.todest.cn/YI$DPR%28_8~4%5DN$A2%5BLT%28%7DVU.png">
+<meta property="og:image" content="http://drew.todest.cn/YI$DPR%28_8~4%5DN$A2%5BLT%28%7DVU.png">
+<meta property="og:image" content="http://drew.todest.cn/W6@LCEF1Z61%60%5DGPX%25Y%60_J$Q.hc">
+<meta property="og:image" content="http://drew.todest.cn/68AW~3D2%7BH%25LMQ2Z140E3~R.hc">
+<meta property="og:image" content="http://drew.todest.cn/P40515CDJA5N%5B8NG5%2965K%287.png">
+<meta property="og:image" content="http://drew.todest.cn/Z8H9%5B%60GY5~TQ_$GQL%25U%7B1HX.png">
+<meta property="og:updated_time" content="2019-07-29T14:19:27.029Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU Summer Day 13(河南理工大学暑期第十三天)">
+<meta name="twitter:description" content="今天讲了一点关于DP的知识和几道例题，据说这样就算是入门了。今天的题怎么说呢？亏是之前做过，要是之前没做过，还真不知道该怎么写。dp就是玄学？">
+<meta name="twitter:image" content="http://drew.todest.cn/YI$DPR%28_8~4%5DN$A2%5BLT%28%7DVU.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/07/29/d13/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU Summer Day 13(河南理工大学暑期第十三天) | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/07/29/d13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU Summer Day 13(河南理工大学暑期第十三天)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-29 22:19:00 / Modified: 22:19:27" itemprop="dateCreated datePublished" datetime="2019-07-29T22:19:00+08:00">2019-07-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/07/29/d13/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/29/d13/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天讲了一点关于DP的知识和几道例题，据说这样就算是入门了。今天的题怎么说呢？亏是之前做过，要是之前没做过，还真不知道该怎么写。dp就是玄学？<a id="more"></a><br>今天的题很多都是需要灵光一现（或者百度解题的。具体的我也说不清，自己体会吧。（怎么能告诉你是因为我不会呢？</p>
+<h3 id="The-King’s-Ups-and-Downs"><a href="#The-King’s-Ups-and-Downs" class="headerlink" title="The King’s Ups and Downs"></a>The King’s Ups and Downs</h3><p>Description:<br>The king has guards of all different heights. Rather than line them up in increasing or decreasing height order, he wants to line them up so each guard is either shorter than the guards next to him or taller than the guards next to him (so the heights go up and down along the line). For example, seven guards of heights 160, 162, 164, 166, 168, 170 and 172 cm. could be arranged as:<br><img src="http://drew.todest.cn/YI$DPR%28_8~4%5DN$A2%5BLT%28%7DVU.png" alt><br>or perhaps:<br><img src="http://drew.todest.cn/YI$DPR%28_8~4%5DN$A2%5BLT%28%7DVU.png" alt><br>The king wants to know how many guards he needs so he can have a different up and down order at each changing of the guard for rest of his reign. To be able to do this, he needs to know for a given number of guards, n, how many different up and down orders there are:</p>
+<p>For example, if there are four guards: 1, 2, 3,4 can be arrange as:</p>
+<p>1324, 2143, 3142, 2314, 3412, 4231, 4132, 2413, 3241, 1423</p>
+<p>For this problem, you will write a program that takes as input a positive integer n, the number of guards and returns the number of up and down orders for n guards of differing heights.</p>
+<p>Input</p>
+<blockquote>
+<p>The first line of input contains a single integer P, (1 &lt;= P &lt;= 1000), which is the number of data sets that follow. Each data set consists of single line of input containing two integers. The first integer, D is the data set number. The second integer, n (1 &lt;= n &lt;= 20), is the number of guards of differing heights.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each data set there is one line of output. It contains the data set number (D) followed by a single space, followed by the number of up and down orders for the n guards.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>4<br>1 1<br>2 3<br>3 4<br>4 20</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1 1<br>2 4<br>3 10<br>4 740742376475050</p>
+</blockquote>
+<p>Problem solving:<br>这道题我是真的懵逼了。。。<br>看这个大佬的解释吧:<a href="https://blog.csdn.net/niuox/article/details/8866907" target="_blank" rel="noopener">niuox</a><br>题意是求1-n 的全排列中有多少呈现高低高低高低或者地高低高形式排列的个数。</p>
+<p>这种排列叫做：alternating permutations 或者 Extremal Permutations 。</p>
+<p>可以用DP做。</p>
+<p>dp(n,k)表示：长度为n，最后一个数为k，最后两个数是递增的  排列的个数;</p>
+<p>dp2(n,k)表示：长度为n,最后一个数为k,最后两个数是递减的 排列的个数;</p>
+<p>那么：</p>
+<p>dp(n,k) = dp2(n,n+1-k) ;</p>
+<p>很好理解吧，比如说132(低高低)等价于312(高低高)，相对的位置加起来等于4.</p>
+<p>那么我们针对dp[n][k]的最后一位进行如下考虑：</p>
+<p>最后一位是k，因为dp[n][k]最后两个数字是递增的，所以第n-1位的最大值是k-1。那么我们很容易推导出DP方程：<br><img src="http://drew.todest.cn/W6@LCEF1Z61%60%5DGPX%25Y%60_J$Q.hc" alt></p>
+<p>又</p>
+<p><img src="http://drew.todest.cn/68AW~3D2%7BH%25LMQ2Z140E3~R.hc" alt></p>
+<p>所以：dp(n,k) = dp(n-1,n+1-k) + dp(n,k-1)；<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=25;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll dp[maxn][maxn],ans[maxn];</span><br><span class="line">void init()</span><br><span class="line">&#123;</span><br><span class="line">	dp[1][1]=1;ans[1]=1;</span><br><span class="line">	for(int i=2;i&lt;=20;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int k=2;k&lt;=i;k++)</span><br><span class="line">		&#123;</span><br><span class="line">			dp[i][k]=dp[i-1][i+1-k]+dp[i][k-1];</span><br><span class="line">			ans[i]+=dp[i][k];</span><br><span class="line">		&#125;</span><br><span class="line">		ans[i]*=2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	init();</span><br><span class="line">	int p,m,n;</span><br><span class="line">	cin&gt;&gt;p;</span><br><span class="line">	while(p--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">		cout&lt;&lt;m&lt;&lt;&quot; &quot;&lt;&lt;ans[n]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="数塔"><a href="#数塔" class="headerlink" title="数塔"></a>数塔</h3><p>Description:<br>在讲述DP算法的时候，一个经典的例子就是数塔问题，它是这样描述的：</p>
+<p>有如下所示的数塔，要求从顶层走到底层，若每一步只能走到相邻的结点，则经过的结点的数字之和最大是多少？<br><img src="http://drew.todest.cn/P40515CDJA5N%5B8NG5%2965K%287.png" alt><br>已经告诉你了，这是个DP的题目，你能AC吗?</p>
+<p>Input</p>
+<blockquote>
+<p>输入数据首先包括一个整数C,表示测试实例的个数，每个测试实例的第一行是一个整数N(1 &lt;= N &lt;= 100)，表示数塔的高度，接下来用N行数字表示数塔，其中第i行有个i个整数，且所有的整数均在区间[0,99]内。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试实例，输出可能得到的最大和，每个实例的输出占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>1<br>5<br>7<br>3 8<br>8 1 0<br>2 7 4 4<br>4 5 2 6 5</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>30</p>
+</blockquote>
+<p>Problem solving:<br>挺简单的一道经典的dp的题。这道题我们可以倒着推，状态转移方程就是<br><code>a[i][j]=max(a[i+1][j],a[i+1][j+1])+a[i][j]</code><br>按照这个处理完之后直接输出a[1][1]即可</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 105;</span><br><span class="line">int c,n,a[maxn][maxn],ans[maxn][maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;c;</span><br><span class="line">	while(c--)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(ans,0,sizeof(ans));</span><br><span class="line">		cin&gt;&gt;n;</span><br><span class="line">		for(int i=1;i&lt;=n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=1;j&lt;=i;j++)</span><br><span class="line">				cin&gt;&gt;a[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">		for(int i=n-1;i&gt;=1;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=1;j&lt;=i;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				a[i][j]=max(a[i+1][j],a[i+1][j+1])+a[i][j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;a[1][1]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="母牛的故事"><a href="#母牛的故事" class="headerlink" title="母牛的故事"></a>母牛的故事</h3><p>Description:<br>有一头母牛，它每年年初生一头小母牛。每头小母牛从第四个年头开始，每年年初也生一头小母牛。请编程实现在第n年的时候，共有多少头母牛？<br>Input</p>
+<blockquote>
+<p>输入数据由多个测试实例组成，每个测试实例占一行，包括一个整数n(0&lt;n&lt;55)，n的含义如题目中描述。<br>n=0表示输入数据的结束，不做处理。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试实例，输出在第n年的时候母牛的数量。<br>每个输出占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>4<br>5<br>0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>2<br>4<br>6</p>
+</blockquote>
+<p>Problem solving:<br>经典题。每头小母牛从第四年开始就可以每年生一头小牛，所以第n年牛的个数即为<br><code>a[n]=a[n-1]+a[n-3]</code><br>即状态转移方程。a[n-1]代表的是上一年所有的母牛，a[n-3]代表的是上一年所有的母牛能生出来的小牛的个数。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll ans[60];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ans[0]=0;ans[1]=1;ans[2]=2;ans[3]=3;ans[4]=4;</span><br><span class="line">	for(int i=5;i&lt;60;i++)</span><br><span class="line">		ans[i]=ans[i-1]+ans[i-3];</span><br><span class="line">	int n;</span><br><span class="line">	while(cin&gt;&gt;n&amp;&amp;n)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;ans[n]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="一只小蜜蜂"><a href="#一只小蜜蜂" class="headerlink" title="一只小蜜蜂..."></a>一只小蜜蜂...</h3><p>Description:<br>有一只经过训练的蜜蜂只能爬向右侧相邻的蜂房，不能反向爬行。请编程计算蜜蜂从蜂房a爬到蜂房b的可能路线数。<br>其中，蜂房的结构如下所示。<br><img src="http://drew.todest.cn/Z8H9%5B%60GY5~TQ_$GQL%25U%7B1HX.png" alt><br>Input</p>
+<blockquote>
+<p>输入数据的第一行是一个整数N,表示测试实例的个数，然后是N 行数据，每行包含两个整数a和b(0&lt;a&lt;b&lt;50)。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试实例，请输出蜜蜂从蜂房a爬到蜂房b的可能路线数，每个实例的输出占一行。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>1 2<br>3 6</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1<br>3</p>
+</blockquote>
+<p>Problem solving:<br>状态转移方程<br>ans[i]=ans[i-1]+ans[i-2]</p>
+<p>要到达一个蜂房，如果这个蜂房在第一排，只能从它左边的蜂房或者左下方的蜂房过来；如果这个蜂房在第二排，只能从它左边的蜂房或者左上方的蜂房过来。（摘自<a href="https://blog.csdn.net/Artprog/article/details/69832070" target="_blank" rel="noopener">csdn</a>）</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll ans[55];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,a,b;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	ans[1]=1,ans[2]=1,ans[3]=2;</span><br><span class="line">	for(int i=4;i&lt;50;i++)</span><br><span class="line">		ans[i]=ans[i-1]+ans[i-2];</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		cout&lt;&lt;ans[b-a+1]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="超级楼梯"><a href="#超级楼梯" class="headerlink" title="超级楼梯"></a>超级楼梯</h3><p>Description:<br>有一楼梯共M级，刚开始时你在第一级，若每次只能跨上一级或二级，要走上第M级，共有多少种走法？<br>Input</p>
+<blockquote>
+<p>输入数据首先包含一个整数N，表示测试实例的个数，然后是N行数据，每行包含一个整数M（1&lt;=M&lt;=40）,表示楼梯的级数。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个测试实例，请输出不同走法的数量</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>2<br>3</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1<br>2</p>
+</blockquote>
+<p>Problem solving:<br>每次能走一级台阶或者两级台阶。所以状态转移方程就是<br>ans[i]=ans[i-1]+ans[i-2]</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll ans[45];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ans[1]=0;</span><br><span class="line">	ans[2]=1;</span><br><span class="line">	ans[3]=2;</span><br><span class="line">	for(int i=4;i&lt;=40;i++)</span><br><span class="line">		ans[i]=ans[i-1]+ans[i-2];</span><br><span class="line">	int n,m;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;m;</span><br><span class="line">		cout&lt;&lt;ans[m]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Tickets"><a href="#Tickets" class="headerlink" title="Tickets"></a>Tickets</h3><p>Description:<br>现在有n个人要买电影票，如果知道每个人单独买票花费的时间，还有和前一个人一起买花费的时间，问最少花多长时间可以全部买完票。<br>Input</p>
+<blockquote>
+<p>给出 N(1&lt;=N&lt;=10)，表示有N组样例 　　　　给出K (1&lt;=K&lt;=2000)，表示有K个人买票.. 　　　　给出K个数表示这个人单独买票会花的时间..保证每个数 (0s&lt;=Si&lt;=25s) 　　　　给出K-1个数，表示这个人和前面那个人一起买票会花的时间..保证每个数 (0s&lt;=Si&lt;=50s)</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每一组数据，你需要给出电影院售票结束的时间，售票开始的时间为 08:00:00 am. 时间格式为： HH:MM:SS am|pm. 具体看样例输出</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2<br>2<br>20 25<br>40<br>1<br>8</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>08:00:40 am<br>08:00:08 am<br>Problem solving:<br>这道题也是只要找到状态转移方程就行。状态转移方程<br>ans[i]=min(ans[i-1]+s[i],ans[i-2]+d[i]);<br>s[i]是一个人单独买票用的时间，d[i]是两个人一起买票用的时间</p>
+</blockquote>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn=2005;</span><br><span class="line">int s[maxn],d[maxn],ans[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,k;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;k;</span><br><span class="line">		for(int i=1;i&lt;=k;i++)	cin&gt;&gt;s[i];</span><br><span class="line">		for(int j=2;j&lt;=k;j++)	cin&gt;&gt;d[j];</span><br><span class="line">		ans[1]=s[1];		</span><br><span class="line">		for(int i=2;i&lt;=k;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			ans[i]=min(ans[i-1]+s[i],ans[i-2]+d[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		int time=ans[k];int h,m,s;</span><br><span class="line">		h=time/3600;</span><br><span class="line">		m=time%3600/60;</span><br><span class="line">		s=time%3600%60;</span><br><span class="line">		h+=8;</span><br><span class="line">		if(h&lt;=12)</span><br><span class="line">		printf(&quot;%02d:%02d:%02d am\n&quot;,h,m,s);</span><br><span class="line">		else</span><br><span class="line">		printf(&quot;%02d:%02d:%02d pm\n&quot;,h-12,m,s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="钱币兑换问题"><a href="#钱币兑换问题" class="headerlink" title="钱币兑换问题"></a>钱币兑换问题</h3><p>Description:<br>在一个国家仅有1分，2分，3分硬币，将钱N兑换成硬币有很多种兑法。请你编程序计算出共有多少种兑法。<br>Input</p>
+<blockquote>
+<p>每行只有一个正整数N，N小于32768。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对应每个输入，输出兑换方法数。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2934<br>12553</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>718831<br>13137761</p>
+</blockquote>
+<p>Problem solving:<br>emm，这道题我之前在牛客上面遇见过一道类似的题。只不过那道题里面硬币的个数比这个多。直接套着板子写了、、、</p>
+<p>这是个很基础的背包问题，怎么解释交给时间吧，等我理解了就把这个坑填上。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">const int maxn=35000;</span><br><span class="line">ll ans[maxn];</span><br><span class="line">ll co[4]=&#123;1,2,3&#125;;</span><br><span class="line">ll solve(ll x)</span><br><span class="line">&#123;</span><br><span class="line">	ans[0]=1;</span><br><span class="line">	for(int i=0;i&lt;3;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int j=co[i];j&lt;=x;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			ans[j]=(ans[j]+ans[j-co[i]]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return ans[x];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ll n;</span><br><span class="line">	while(cin&gt;&gt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(ans,0,sizeof(ans));</span><br><span class="line">		cout&lt;&lt;solve(n)&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Ignatius-and-the-Princess-IV"><a href="#Ignatius-and-the-Princess-IV" class="headerlink" title="Ignatius and the Princess IV"></a>Ignatius and the Princess IV</h3><p>Description:<br>给你n个数字，请你找出出现至少(n+1)/2次的数字。<br>输入</p>
+<blockquote>
+<p>本题包含多组数据，请处理到EOF：<br>每组数据包含两行。<br>第一行一个数字N(1&lt;=N&lt;=999999) ，保证N为奇数。<br>第二行为N个用空格隔开的整数。</p>
+</blockquote>
+<p>输出</p>
+<blockquote>
+<p>对于每组数据，输出一行，表示要求找到的那个数</p>
+</blockquote>
+<p>样例输入</p>
+<blockquote>
+<p>5<br>1 3 2 3 3<br>11<br>1 1 1 1 1 5 5 5 5 5 5<br>7<br>1 1 1 1 1 1 1</p>
+</blockquote>
+<p>样例输出</p>
+<blockquote>
+<p>3<br>5<br>1</p>
+</blockquote>
+<p>Problem solving:<br>这道题没啥说的，找就完了，可以边输入边查找。<br>还有很多办法，比如说直接排序。还有dp的方法。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,flag[1000000];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		int ans,a;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			cin&gt;&gt;a;</span><br><span class="line">			flag[a]++;</span><br><span class="line">			if(flag[a]&gt;=(n+1)/2)</span><br><span class="line">				ans=a;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="最少拦截系统"><a href="#最少拦截系统" class="headerlink" title="最少拦截系统"></a>最少拦截系统</h3><p>Description:<br>某国为了防御敌国的导弹袭击,发展出一种导弹拦截系统.但是这种导弹拦截系统有一个缺陷:虽然它的第一发炮弹能够到达任意的高度,但是以后每一发炮弹都不能超过前一发的高度.某天,雷达捕捉到敌国的导弹来袭.由于该系统还在试用阶段,所以只有一套系统,因此有可能不能拦截所有的导弹.<br>怎么办呢?多搞几套系统呗!你说说倒蛮容易,成本呢?成本是个大问题啊.所以俺就到这里来求救了,请帮助计算一下最少需要多少套拦截系统.<br>Input</p>
+<blockquote>
+<p>输入若干组数据.每组数据包括:导弹总个数(正整数),导弹依此飞来的高度(雷达给出的高度数据是不大于30000的正整数,用空格分隔)</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对应每组数据输出拦截所有导弹最少要配备多少套这种导弹拦截系统.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>8 389 207 155 300 299 170 158 65</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>Problem solving:<br>这个题我一开始就没读懂。。。<br>以后每一发炮弹都不能超过前一发的高度，所以这个就是求最大上升子序列的长度。<br>给定排好序的一堆数列中，求其的LIS长度。它的LIS长度就是它非上升子序列的个数。<br>我比较喜欢用这种nlog(n)的写法</p>
+<p>这道题还有一个坑点就是<br>如果此时一个数大于它前面那个数，那么拦截系统就要加一，但是并不代表前面那个系统就没用了。这样说比较抽象，举个栗子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100 60 80 20 50</span><br></pre></td></tr></table></figure></p>
+<p>我们来看一下，一开始我们选择100，大于60，换成了60，然后我们遇到了80，此时就需要一个新的系统了，然后现在是80，我们接着往下看遇到了20，再换成20，然后遇到了50，现在的50是大于20没错，但是上一个变成60的系统还可以使用，所以答案是2.</p>
+<p>也就是因为这个所以不可以直接查找遇见大于前面那个数的情况就加一，这也是这个LIS以及dp的巧妙之处！</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 1e5+10;</span><br><span class="line">const int INF = 0x3f3f3f3f;</span><br><span class="line">int a[maxn],dp[maxn],n;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int pos;</span><br><span class="line">	while(cin&gt;&gt;pos)</span><br><span class="line">	&#123;</span><br><span class="line">		fill(dp,dp+pos,INF);</span><br><span class="line">		for(int i=0;i&lt;pos;i++)	cin&gt;&gt;a[i];</span><br><span class="line">		for(int i=0;i&lt;pos;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			*lower_bound(dp,dp+pos,a[i])=a[i];</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;lower_bound(dp,dp+pos,INF)-dp&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\26\d10\" rel="bookmark">HPU Summer Training Day 10(河南理工大学暑期第十天)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\24\d8\" rel="bookmark">HPU Summer Training Day 8（河南理工大学暑期第八天）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\19\d3\" rel="bookmark">HPU Summer Training Day 3（河南理工暑期集训第三天）</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/HDU/" rel="tag"><i class="fa fa-tag"></i> HDU</a>
+          
+            <a href="/blog/tags/DP/" rel="tag"><i class="fa fa-tag"></i> DP</a>
+          
+            <a href="/blog/tags/poj/" rel="tag"><i class="fa fa-tag"></i> poj</a>
+          
+        </div>
+      
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/07/28/d12/" rel="next" title="HPU Summer Day 12(河南理工大学暑期第十二天)">
+                <i class="fa fa-chevron-left"></i> HPU Summer Day 12(河南理工大学暑期第十二天)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">102</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hpu-yz.github.io/" title="https://hpu-yz.github.io/" rel="noopener" target="_blank">The Flaneurs</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blogzhy.cn/" title="http://blogzhy.cn/" rel="noopener" target="_blank">blogzhy</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-King’s-Ups-and-Downs"><span class="nav-number">1.</span> <span class="nav-text">The King’s Ups and Downs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数塔"><span class="nav-number">2.</span> <span class="nav-text">数塔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#母牛的故事"><span class="nav-number">3.</span> <span class="nav-text">母牛的故事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一只小蜜蜂"><span class="nav-number">4.</span> <span class="nav-text">一只小蜜蜂...</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超级楼梯"><span class="nav-number">5.</span> <span class="nav-text">超级楼梯</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tickets"><span class="nav-number">6.</span> <span class="nav-text">Tickets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#钱币兑换问题"><span class="nav-number">7.</span> <span class="nav-text">钱币兑换问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ignatius-and-the-Princess-IV"><span class="nav-number">8.</span> <span class="nav-text">Ignatius and the Princess IV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最少拦截系统"><span class="nav-number">9.</span> <span class="nav-text">最少拦截系统</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 150.6kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->
