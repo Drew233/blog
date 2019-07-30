@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="今天讲了记忆化搜索，拉的题emm真让人自闭啊。">
+<meta name="keywords" content="Algorithm,c&#x2F;c++,UVA,dp,dfs,记忆化搜索,hdu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU Summer Day 14(河南理工大学暑期第十四天)">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/07/30/d14/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="今天讲了记忆化搜索，拉的题emm真让人自闭啊。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://drew.todest.cn/Description.png">
+<meta property="og:image" content="http://drew.todest.cn/f8bc32f9c3ed521ffc13c93ad058101e714e8250.png">
+<meta property="og:image" content="http://drew.todest.cn/b2047ac146b5704d62c2c5a4274ff76ea8c1b57b.png">
+<meta property="og:image" content="http://drew.todest.cn/bone.png">
+<meta property="og:updated_time" content="2019-07-30T14:11:59.586Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU Summer Day 14(河南理工大学暑期第十四天)">
+<meta name="twitter:description" content="今天讲了记忆化搜索，拉的题emm真让人自闭啊。">
+<meta name="twitter:image" content="http://drew.todest.cn/Description.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/07/30/d14/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU Summer Day 14(河南理工大学暑期第十四天) | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/07/30/d14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU Summer Day 14(河南理工大学暑期第十四天)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-30 22:08:53 / Modified: 22:11:59" itemprop="dateCreated datePublished" datetime="2019-07-30T22:08:53+08:00">2019-07-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/07/30/d14/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/07/30/d14/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天讲了记忆化搜索，拉的题emm真让人自闭啊。<a id="more"></a></p>
+<h3 id="Function-Run-Fun"><a href="#Function-Run-Fun" class="headerlink" title="Function Run Fun"></a>Function Run Fun</h3><p>Description:<br>We all love recursion! Don&#39;t we?</p>
+<p>Consider a three-parameter recursive function w(a, b, c):</p>
+<p>if a &lt;= 0 or b &lt;= 0 or c &lt;= 0, then w(a, b, c) returns:<br>1</p>
+<p>if a &gt; 20 or b &gt; 20 or c &gt; 20, then w(a, b, c) returns:<br>w(20, 20, 20)</p>
+<p>if a &lt; b and b &lt; c, then w(a, b, c) returns:<br>w(a, b, c-1) + w(a, b-1, c-1) - w(a, b-1, c)</p>
+<p>otherwise it returns:<br>w(a-1, b, c) + w(a-1, b-1, c) + w(a-1, b, c-1) - w(a-1, b-1, c-1)</p>
+<p>This is an easy function to implement. The problem is, if implemented directly, for moderate values of a, b and c (for example, a = 15, b = 15, c = 15), the program takes hours to run because of the massive recursion.<br>Input</p>
+<blockquote>
+<p>The input for your program will be a series of integer triples, one per line, until the end-of-file flag of -1 -1 -1. Using the above technique, you are to calculate w(a, b, c) efficiently and print the result.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Print the value for w(a,b,c) for each triple.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>1 1 1<br>2 2 2<br>10 4 6<br>50 50 50<br>-1 7 18<br>-1 -1 -1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>w(1, 1, 1) = 2<br>w(2, 2, 2) = 4<br>w(10, 4, 6) = 523<br>w(50, 50, 50) = 1048576<br>w(-1, 7, 18) = 1</p>
+</blockquote>
+<p>Problem solving:<br>这道题没什么好说的，按照题目上的要求来写一个递归就行了，因为是多组输入，所以要用到记忆化搜索。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll a,b,c,dp[21][21][21];</span><br><span class="line">ll dfs(ll m,ll t,ll x)</span><br><span class="line">&#123;</span><br><span class="line">	if(m&lt;=0||t&lt;=0||x&lt;=0)</span><br><span class="line">		return 1;</span><br><span class="line">	if(m&gt;20||t&gt;20||x&gt;20)</span><br><span class="line">		return	dfs(20,20,20);</span><br><span class="line">	if(dp[m][t][x])	return dp[m][t][x];</span><br><span class="line">	if(m&lt;t&amp;&amp;t&lt;x)</span><br><span class="line">		return dp[m][t][x]=dfs(m,t,x-1)+dfs(m,t-1,x-1)-dfs(m,t-1,x);</span><br><span class="line">	else</span><br><span class="line">		return dp[m][t][x]=dfs(m-1,t,x)+dfs(m-1,t-1,x)+dfs(m-1,t,x-1)-dfs(m-1,t-1,x-1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;a&gt;&gt;b&gt;&gt;c)</span><br><span class="line">	&#123;</span><br><span class="line">		if(a==-1&amp;&amp;b==-1&amp;&amp;c==-1)		</span><br><span class="line">			break;</span><br><span class="line">		printf(&quot;w(%lld, %lld, %lld) = %lld\n&quot;,a,b,c,dfs(a,b,c));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="滑雪"><a href="#滑雪" class="headerlink" title="滑雪"></a>滑雪</h3><p>Description:<br>Glory非常喜欢玩滑滑梯游戏，下面给出了一个n,m的滑道，其中的数字表示滑道的高度。Glory可以从一个点出发向下滑行，每次只能滑行到相邻的位置(上下左右)中高度严格低于当前高度的地方，不能重复划行已经滑行过的地方，但他希望在这个滑道上滑行尽量远的距离，也即是找一条最长的滑道。</p>
+<p>Input</p>
+<blockquote>
+<p>第一行输入两个数n,m代表滑梯范围行n和列m(1 &lt;= n,m &lt;= 100)。下面是n行，每行有m个整数，代表高度h，(0&lt;=h&lt;=20000)</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>输出一个值，代表Glory能够在滑滑梯上面滑行的最长长度是多少</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3 3<br>9 1 2<br>5 6 7<br>8 4 3</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>4 7<br>7 6 5 4 3 2 1<br>1 5 1 1 1 1 1<br>1 4 3 1 1 1 1<br>1 5 6 7 8 1 1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>7</p>
+</blockquote>
+<p>hint</p>
+<blockquote>
+<p>样例1：7-&gt;6-&gt;4-&gt;3 长度为4</p>
+</blockquote>
+<p>Problem solving:<br>四个方向搜索就行了。记忆化搜索要用上，不然会超时。<br>ma[dx][dy]与ma[x][y]的大小关系判断的时候大于小于都是可以的，这个还是很好理解的吧，降序反过来就是升序。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,m,ma[105][105],dp[105][105];</span><br><span class="line">int d[4][2]=&#123;1,0,0,1,0,-1,-1,0&#125;;</span><br><span class="line">int dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	int mid=1;</span><br><span class="line">	if(dp[x][y])	return dp[x][y];</span><br><span class="line">	for(int i=0;i&lt;4;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int dx=x+d[i][0];</span><br><span class="line">		int dy=y+d[i][1];</span><br><span class="line">		if(dx&gt;=0&amp;&amp;dx&lt;n&amp;&amp;dy&gt;=0&amp;&amp;dy&lt;m&amp;&amp;ma[dx][dy]&lt;ma[x][y])</span><br><span class="line">		&#123;</span><br><span class="line">			mid=max(mid,dfs(dx,dy)+1);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return dp[x][y]=mid;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">		for(int j=0;j&lt;m;j++)</span><br><span class="line">			cin&gt;&gt;ma[i][j];</span><br><span class="line">	int ans=0;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">		for(int j=0;j&lt;m;j++)</span><br><span class="line">			ans=max(ans,dfs(i,j));</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="漫步校园"><a href="#漫步校园" class="headerlink" title="漫步校园"></a>漫步校园</h3><p>LL最近沉迷于AC不能自拔，每天寝室、机房两点一线。由于长时间坐在电脑边，缺乏运动。他决定充分利用每次从寝室到机房的时间，在校园里散散步。整个HDU校园呈方形布局，可划分为n*n个小方格，代表各个区域。例如LL居住的18号宿舍位于校园的西北角，即方格(1,1)代表的地方，而机房所在的第三实验楼处于东南端的(n,n)。因有多条路线可以选择，LL希望每次的散步路线都不一样。另外，他考虑从A区域到B区域仅当存在一条从B到机房的路线比任何一条从A到机房的路线更近(否则可能永远都到不了机房了…)。现在他想知道的是，所有满足要求的路线一共有多少条。你能告诉他吗?<br>Input</p>
+<blockquote>
+<p>每组测试数据的第一行为n(2=&lt;n&lt;=50)，接下来的n行每行有n个数，代表经过每个区域所花的时间t(0&lt;t&lt;=50)(由于寝室与机房均在三楼，故起点与终点也得费时)。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>针对每组测试数据，输出总的路线数(小于2^63)。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>1 2 3<br>1 2 3<br>1 2 3<br>3<br>1 1 1<br>1 1 1<br>1 1 1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1<br>6</p>
+</blockquote>
+<p>Problem solving:<br>这道题的题意也太难懂了。。。<br>让你求最短路的条数，所以我们需要先求出最短路然后再求条数。<br>先用bfs求出每个点到终点的最短距离然后进行记忆化搜索。<br>（如果阁下真的是在看我的题解，当你看到这的时候，我衷心的给你道个歉，这道题为了你好还是百度吧</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">int n;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int x,y,c;</span><br><span class="line">	bool friend operator &lt;(node a,node b)</span><br><span class="line">	&#123;</span><br><span class="line">		return a.c&gt;b.c;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;r,w;</span><br><span class="line">ll ma[305][305],vis[305][305],dis[305][305],dp[305][305];</span><br><span class="line">int d[4][2]=&#123;0,1,1,0,-1,0,0,-1&#125;;</span><br><span class="line">void bfs()</span><br><span class="line">&#123;</span><br><span class="line">	priority_queue&lt;node&gt; q;</span><br><span class="line">	r.x=n-1,r.y=n-1;r.c=ma[n-1][n-1];</span><br><span class="line">	dis[n-1][n-1]=ma[n-1][n-1];</span><br><span class="line">	vis[n-1][n-1]=1;</span><br><span class="line">	q.push(r);</span><br><span class="line">	while(!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		r=q.top();</span><br><span class="line">		q.pop();</span><br><span class="line">		for(int i=0;i&lt;4;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			int dx=r.x+d[i][0];</span><br><span class="line">			int dy=r.y+d[i][1];</span><br><span class="line">			if(dx&lt;0||dy&lt;0||dx&gt;=n||dy&gt;=n||vis[dx][dy])	continue;</span><br><span class="line">			w.x=dx,w.y=dy,w.c=r.c+ma[dx][dy];</span><br><span class="line">			vis[dx][dy]=1;</span><br><span class="line">			q.push(w);</span><br><span class="line">			dis[dx][dy]=w.c;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">ll dfs(ll x,ll y)</span><br><span class="line">&#123;</span><br><span class="line">	if(x==n-1&amp;&amp;y==n-1)	return 1;</span><br><span class="line">	if(dp[x][y]!=-1)	return dp[x][y];</span><br><span class="line">	dp[x][y]=0;</span><br><span class="line">	for(int i=0;i&lt;4;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int dx=x+d[i][0];</span><br><span class="line">		int dy=y+d[i][1];</span><br><span class="line">		if(dx&lt;0||dy&lt;0||dx&gt;=n||dy&gt;=n||dis[dx][dy]&gt;=dis[x][y])	continue;</span><br><span class="line">		dp[x][y]+=dfs(dx,dy);</span><br><span class="line">	&#125;</span><br><span class="line">	return dp[x][y];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">			for(int j=0;j&lt;n;j++)</span><br><span class="line">				cin&gt;&gt;ma[i][j];</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		memset(dp,-1,sizeof(dp));</span><br><span class="line">		bfs();</span><br><span class="line">		cout&lt;&lt;dfs(0,0)&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Free-Candies"><a href="#Free-Candies" class="headerlink" title="Free Candies"></a>Free Candies</h3><p>Description:<br>PDF题面:<a href="https://uva.onlinejudge.org/external/101/p10118.pdf" target="_blank" rel="noopener">戳我戳我</a><br><img src="http://drew.todest.cn/Description.png" alt><br>输入<br><img src="http://drew.todest.cn/f8bc32f9c3ed521ffc13c93ad058101e714e8250.png" alt><br>输出<br><img src="http://drew.todest.cn/b2047ac146b5704d62c2c5a4274ff76ea8c1b57b.png" alt><br>Problem solving:<br>题意就是有4个盒子，每个盒子里面都放着糖果，有个最多能放5个糖果的袋子，每次只能取盒子最上面的那个糖果，如果袋子里面有两个颜色相同的糖果可以自己拿走（这道题用数字代表颜色），问你最优情况下能拿走几对糖果，注意是对（2个算一对）。<br>我们这里可以用一个四维数组表示分别从四堆糖果中取出不同个数的糖果的时候的最优解，用一个now数组代表此时在第i堆数组拿到了第now[i]个糖果，用一个flag数组表示这个颜色的糖果是否在袋子里出现过。然后进行dfs查找，注意这里用到了很多回溯，还有记忆化搜索。可以看一下代码注释了解一下具体的dfs过程。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int dp[45][45][45][45],n,ma[4][45];</span><br><span class="line">int now[4],flag[45];</span><br><span class="line">int dfs(int x)//x代表的就是当前袋子里放入的糖果个数</span><br><span class="line">&#123;</span><br><span class="line">	int ans=0;//初始化为0</span><br><span class="line">	if(dp[now[0]][now[1]][now[2]][now[3]]!=-1)//记忆化搜索</span><br><span class="line">		return dp[now[0]][now[1]][now[2]][now[3]];</span><br><span class="line">	if(x==5)	return 0;//袋子里有5个糖果了，不能放入更多，所以return 0</span><br><span class="line">	for(int i=0;i&lt;4;i++)//四堆糖果</span><br><span class="line">	&#123;</span><br><span class="line">		if(now[i]==n)	continue;//在这一堆如果已经取到了第n个，即最后一个，就结束这一堆糖果中的查找</span><br><span class="line">		int mid=ma[i][now[i]];//代表的是当前取出的糖果的颜色</span><br><span class="line">		now[i]++;//下一次要放入的糖果的颜色</span><br><span class="line">		if(flag[mid])//如果现在要放入袋子里的糖果的颜色在袋子里已经存在</span><br><span class="line">		&#123;</span><br><span class="line">			flag[mid]=0;//把袋子里的颜色相同的那个糖果取出来</span><br><span class="line">			ans=max(ans,dfs(x-1)+1);//当前的最优值更新一下，dfs(x-1)即取出颜色相同得糖果之后的最优解，加上的1就是取出的糖果和本来准备放进袋子却没放的糖果这一对</span><br><span class="line">			flag[mid]=1;//回溯，把从袋子里取出的糖果再放回去</span><br><span class="line">		&#125;</span><br><span class="line">		else//现在要放入袋子里的糖果的颜色在袋子里不存在</span><br><span class="line">		&#123;</span><br><span class="line">			flag[mid]=1;//把这个糖果放进去</span><br><span class="line">			ans=max(dfs(x+1),ans);//此时袋子里的糖果数加一</span><br><span class="line">			flag[mid]=0;//回溯，把放进去的再取出来</span><br><span class="line">		&#125;</span><br><span class="line">		now[i]--;//回溯，考虑不放这一个糖果的情况</span><br><span class="line">	&#125;</span><br><span class="line">	return dp[now[0]][now[1]][now[2]][now[3]]=ans;//记忆化</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;n&amp;&amp;n)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(dp,-1,sizeof(dp));</span><br><span class="line">		memset(now,0,sizeof(now));</span><br><span class="line">		memset(flag,0,sizeof(flag));</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">			for(int j=0;j&lt;4;j++)</span><br><span class="line">				cin&gt;&gt;ma[j][i];</span><br><span class="line">		cout&lt;&lt;dfs(0)&lt;&lt;endl;			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Zipper"><a href="#Zipper" class="headerlink" title="Zipper"></a>Zipper</h3><p>Description:<br>Given three strings, you are to determine whether the third string can be formed by combining the characters in the first two strings. The first two strings can be mixed arbitrarily, but each must stay in its original order.</p>
+<p>For example, consider forming &quot;tcraete&quot; from &quot;cat&quot; and &quot;tree&quot;:</p>
+<p>String A: cat<br>String B: tree<br>String C: tcraete</p>
+<p>As you can see, we can form the third string by alternating characters from the two strings. As a second example, consider forming &quot;catrtee&quot; from &quot;cat&quot; and &quot;tree&quot;:</p>
+<p>String A: cat<br>String B: tree<br>String C: catrtee</p>
+<p>Finally, notice that it is impossible to form &quot;cttaree&quot; from &quot;cat&quot; and &quot;tree&quot;.<br>Input</p>
+<blockquote>
+<p>The first line of input contains a single positive integer from 1 through 1000. It represents the number of data sets to follow. The processing for each data set is identical. The data sets appear on the following lines, one data set per line.<br>For each data set, the line of input consists of three strings, separated by a single space. All strings are composed of upper and lower case letters only. The length of the third string is always the sum of the lengths of the first two strings. The first two strings will have lengths between 1 and 200 characters, inclusive.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each data set, print:<br>Data set n: yes<br>if the third string can be formed from the first two, or<br>Data set n: no<br>if it cannot. Of course n should be replaced by the data set number. See the sample output below for an example.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>cat tree tcraete<br>cat tree catrtee<br>cat tree cttaree</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>Data set 1: yes<br>Data set 2: yes<br>Data set 3: no</p>
+</blockquote>
+<p>Problem solving:<br>匹配的时候只会有两种情况</p>
+<ol>
+<li>第一个字符串当前位置的字符与第三个字符串当前位置的字符相等。</li>
+<li>第二个字符串当前位置的字符与第三个字符串当前位置的字符相等。<br>只有这两种情况，所以我们可以直接用dfs进行暴搜。但是这道题需要用到记忆化搜索，用一个二维的标记数组即可。每次查找完当前的一对位置就标记起来，下次遇见的时候就不需要再查找了。</li>
+</ol>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">string a,b,c;</span><br><span class="line">int vis[205][205],flag;</span><br><span class="line">void dfs(int x,int y,int z)</span><br><span class="line">&#123;</span><br><span class="line">	if(flag)	return ;</span><br><span class="line">	if(z==c.size())</span><br><span class="line">	&#123;</span><br><span class="line">		flag=1;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	if(vis[x][y])	return ;</span><br><span class="line">	vis[x][y]=1;</span><br><span class="line">	if(a[x]==c[z])	dfs(x+1,y,z+1);</span><br><span class="line">	if(b[y]==c[z])	dfs(x,y+1,z+1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n,now=0;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		flag=0;</span><br><span class="line">		cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">		cout&lt;&lt;&quot;Data set &quot;&lt;&lt;++now&lt;&lt;&quot;: &quot;;</span><br><span class="line">		dfs(0,0,0);</span><br><span class="line">		if(flag)	puts(&quot;yes&quot;);</span><br><span class="line">		else	puts(&quot;no&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Bone-Collector"><a href="#Bone-Collector" class="headerlink" title="Bone Collector"></a>Bone Collector</h3><p>Description:<br>Many years ago , in Teddy’s hometown there was a man who was called “Bone Collector”. This man like to collect varies of bones , such as dog’s , cow’s , also he went to the grave …<br>The bone collector had a big bag with a volume of V ,and along his trip of collecting there are a lot of bones , obviously , different bone has different value and different volume, now given the each bone’s value along his trip , can you calculate out the maximum of the total value the bone collector can get ?<br><img src="http://drew.todest.cn/bone.png" alt><br>Input</p>
+<blockquote>
+<p>The first line contain a integer T , the number of cases.<br>Followed by T cases , each case three lines , the first line contain two integer N , V, (N &lt;= 1000 , V &lt;= 1000 )representing the number of bones and the volume of his bag. And the second line contain N integers representing the value of each bone. The third line contain N integers representing the volume of each bone.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>One integer per line representing the maximum of the total value (this number will be less than 2 31).</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>1<br>5 10<br>1 2 3 4 5<br>5 4 3 2 1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>14</p>
+</blockquote>
+<p>Problem solving:<br>这就是一道背包问题，但是换了描述。<br>背包问题dp得写法我们还没学，今天学到的是用记忆化搜索解决的背包问题。<br>具体的解释请看代码注释</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,m,a[1050],b[1050],dp[1050][1050];</span><br><span class="line">int dfs(int x,int y)//x代表的是收集到的骨头的个数</span><br><span class="line">&#123;					//y代表的是当前背包剩余容量</span><br><span class="line">	if(x==n)	return 0;//没有更多骨头可供收集了</span><br><span class="line">	if(dp[x][y])	return dp[x][y];//已经搜索过一次了，直接调用</span><br><span class="line">	int ans;</span><br><span class="line">	if(y&lt;b[x])	ans=dfs(x+1,y);//当前骨头所占体积大于背包所剩体积，放不进去了，直接跳过</span><br><span class="line">	else	ans=max(dfs(x+1,y),dfs(x+1,y-b[x])+a[x]);//能放进去，要分两种情况，放或不放，取最大值</span><br><span class="line">	return dp[x][y]=ans;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int t;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	while(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(dp,0,sizeof(dp));</span><br><span class="line">		cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">		for(int i=0;i&lt;n;i++)	cin&gt;&gt;a[i];</span><br><span class="line">		for(int i=0;i&lt;n;i++)	cin&gt;&gt;b[i];</span><br><span class="line">		cout&lt;&lt;dfs(0,m)&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="FatMouse-and-Cheese"><a href="#FatMouse-and-Cheese" class="headerlink" title="FatMouse and Cheese"></a>FatMouse and Cheese</h3><p>Description:<br>有一种游戏是的玩法是这样的：<br>有一个n*n的格子,每个格子有一个数字。<br>遵循以下规则:</p>
+<ol>
+<li>玩家每次可以由所在格子向上下左右四个方向进行直线移动，每次移动的距离不得超过m</li>
+<li>玩家一开始在第一行第一列，并且已经获得该格子的分值</li>
+<li>玩家获得每一次移动到的格子的分值</li>
+<li>玩家下一次移动到达的格子的分值要比当前玩家所在的格子的分值要大。</li>
+<li>游戏所有数字加起来也不大，保证所有数字的和不会超过int型整数的范围</li>
+<li>玩家仅能在n*n的格子内移动，超出格子边界属于非法操作</li>
+<li>当玩家不能再次移动时，游戏结束<br>现在问你，玩家所能获得的最大得分是多少？</li>
+</ol>
+<p>Input</p>
+<blockquote>
+<p>有多组测试数据<br>每组测试样例第一行是两个整数n,m (1≤n≤100)(1≤m≤100),当n和m都是-1时为程序结束标志，直接退出即可<br>之后n行，每行n个数字，描述n*n的格子里的数字</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每组测试数据输出一行，这一行仅有一个整数，代表玩家所能获得的最高得分</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3 1<br>1 2 5<br>10 11 6<br>12 12 7<br>-1 -1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>37</p>
+</blockquote>
+<p>Problem solving:<br>这道题跟滑雪那道题差不多，有一点不一样的就是这道题里面每次走的步数可以是不一样的并且范围给了我们。这样的话，仍然暴力搜索就行了。把每种步数都考虑进去可以这样实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int d[4][2]=&#123;0,1,1,0,0,-1,-1,0&#125;;</span><br><span class="line">for(int i=0;i&lt;m;i++)</span><br><span class="line">&#123;</span><br><span class="line">	for(int j=1;j&lt;=m;j++)</span><br><span class="line">    &#123;</span><br><span class="line">    	int dx=x+d[i][0]*j;</span><br><span class="line">        int dy=y+d[i][1]*j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后就跟滑雪那道题一样了。<br>主要要用到记忆化搜索，不然会TLE</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,m,ma[105][105],dp[105][105];</span><br><span class="line">int d[4][2]=&#123;1,0,0,1,-1,0,0,-1&#125;;</span><br><span class="line">int dfs(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	if(dp[x][y])	return dp[x][y];</span><br><span class="line">	int ans=0;</span><br><span class="line">	for(int i=0;i&lt;4;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int j=1;j&lt;=m;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			int dx=x+d[i][0]*j;</span><br><span class="line">			int dy=y+d[i][1]*j;</span><br><span class="line">			if(dx&gt;=0&amp;&amp;dy&gt;=0&amp;&amp;dx&lt;n&amp;&amp;dy&lt;n&amp;&amp;ma[dx][dy]&gt;ma[x][y])</span><br><span class="line">			&#123;</span><br><span class="line">				ans=max(ans,dfs(dx,dy));</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return dp[x][y]=ans+ma[x][y];</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(cin&gt;&gt;n&gt;&gt;m&amp;&amp;n!=-1&amp;&amp;m!=-1)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(dp,0,sizeof(dp));</span><br><span class="line">		for(int i=0;i&lt;n;i++)</span><br><span class="line">			for(int j=0;j&lt;n;j++)</span><br><span class="line">				cin&gt;&gt;ma[i][j];</span><br><span class="line">		cout&lt;&lt;dfs(0,0)&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\19\d3\" rel="bookmark">HPU Summer Training Day 3（河南理工暑期集训第三天）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\29\d13\" rel="bookmark">HPU Summer Day 13(河南理工大学暑期第十三天)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\26\d10\" rel="bookmark">HPU Summer Training Day 10(河南理工大学暑期第十天)</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/UVA/" rel="tag"><i class="fa fa-tag"></i> UVA</a>
+          
+            <a href="/blog/tags/dp/" rel="tag"><i class="fa fa-tag"></i> dp</a>
+          
+            <a href="/blog/tags/dfs/" rel="tag"><i class="fa fa-tag"></i> dfs</a>
+          
+            <a href="/blog/tags/记忆化搜索/" rel="tag"><i class="fa fa-tag"></i> 记忆化搜索</a>
+          
+            <a href="/blog/tags/hdu/" rel="tag"><i class="fa fa-tag"></i> hdu</a>
+          
+        </div>
+      
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/07/29/d13/" rel="next" title="HPU Summer Day 13(河南理工大学暑期第十三天)">
+                <i class="fa fa-chevron-left"></i> HPU Summer Day 13(河南理工大学暑期第十三天)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">62</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hpu-yz.github.io/" title="https://hpu-yz.github.io/" rel="noopener" target="_blank">The Flaneurs</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blogzhy.cn/" title="http://blogzhy.cn/" rel="noopener" target="_blank">blogzhy</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-Run-Fun"><span class="nav-number">1.</span> <span class="nav-text">Function Run Fun</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑雪"><span class="nav-number">2.</span> <span class="nav-text">滑雪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漫步校园"><span class="nav-number">3.</span> <span class="nav-text">漫步校园</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Free-Candies"><span class="nav-number">4.</span> <span class="nav-text">Free Candies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zipper"><span class="nav-number">5.</span> <span class="nav-text">Zipper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bone-Collector"><span class="nav-number">6.</span> <span class="nav-text">Bone Collector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FatMouse-and-Cheese"><span class="nav-number">7.</span> <span class="nav-text">FatMouse and Cheese</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 154.9kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+
+
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+
+
+
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->
