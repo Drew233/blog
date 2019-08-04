@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://cndrew.cn/blog/"/>
-  <updated>2019-08-03T13:31:17.912Z</updated>
+  <updated>2019-08-04T14:54:39.018Z</updated>
   <id>https://cndrew.cn/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HPU Summer Day 19(河南理工大学暑期第十九天)</title>
+    <link href="https://cndrew.cn/blog/2019/08/04/d19/"/>
+    <id>https://cndrew.cn/blog/2019/08/04/d19/</id>
+    <published>2019-08-04T14:41:06.950Z</published>
+    <updated>2019-08-04T14:54:39.018Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>今天是休息的一天。<a id="more"></a><br>早上五点左右醒来。癔症一会发现睡不着了，六点开始玩手机，玩到七点。<br>到了七点，开始了今天最重要的一件事，给我的图片换一下外链。之前所有的外链都是通过sm.ms弄得，也不能说它不好，就是时间久了的图片加载会很慢很慢，进而拖慢我整个博客的速度。前几天从学长那白嫖了了一个备案过的域名。有时会到了七牛云作图床的时代。不过人家七牛云是真的快。</p><p>换外链换到十一点多，出去吃了个饭直接去机房了。在机房水题水到两点做不下去了就去打了会球，打球回来四点多。</p><p>然后就开始了今天第二重要的事，做一个相册。之前做过，但是因为访问速度直接是弃用了，现在用的这个七牛云可以说是很舒服了。在网上找了个模板，套了一下，就到八点了。<br>想看我得新相册?<br>我帅不帅？<br><a href="https://blog.cndrew.cn/album/" target="_blank" rel="noopener">一般帅</a> <a href="https://blog.cndrew.cn/album/" target="_blank" rel="noopener">帅的惊天动地</a> <a href="https://blog.cndrew.cn/album/" target="_blank" rel="noopener">帅的无法形容</a></p><p>选对了就能进哦</p><p>我的假期就这样没了，没了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天是休息的一天。
+    
+    </summary>
+    
+      <category term="Training" scheme="https://cndrew.cn/blog/categories/Training/"/>
+    
+    
+      <category term="life" scheme="https://cndrew.cn/blog/tags/life/"/>
+    
+      <category term="html" scheme="https://cndrew.cn/blog/tags/html/"/>
+    
+  </entry>
   
   <entry>
     <title>HPU Summer Day 18(河南理工大学暑期第十八天)</title>
@@ -62,9 +86,9 @@
     
       <category term="Greedy" scheme="https://cndrew.cn/blog/tags/Greedy/"/>
     
-      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
-    
       <category term="HPUOJ" scheme="https://cndrew.cn/blog/tags/HPUOJ/"/>
+    
+      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
     
       <category term="BFS" scheme="https://cndrew.cn/blog/tags/BFS/"/>
     
@@ -430,9 +454,9 @@
     
       <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
     
-      <category term="HDU" scheme="https://cndrew.cn/blog/tags/HDU/"/>
-    
       <category term="CodeForces" scheme="https://cndrew.cn/blog/tags/CodeForces/"/>
+    
+      <category term="HDU" scheme="https://cndrew.cn/blog/tags/HDU/"/>
     
       <category term="poj" scheme="https://cndrew.cn/blog/tags/poj/"/>
     
@@ -460,9 +484,9 @@
     
       <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
     
-      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
-    
       <category term="DFS" scheme="https://cndrew.cn/blog/tags/DFS/"/>
+    
+      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
     
       <category term="Simulation" scheme="https://cndrew.cn/blog/tags/Simulation/"/>
     
@@ -540,11 +564,11 @@
       <category term="Training" scheme="https://cndrew.cn/blog/categories/Training/"/>
     
     
+      <category term="life" scheme="https://cndrew.cn/blog/tags/life/"/>
+    
       <category term="c/c++" scheme="https://cndrew.cn/blog/tags/c-c/"/>
     
       <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
-    
-      <category term="life" scheme="https://cndrew.cn/blog/tags/life/"/>
     
   </entry>
   
@@ -573,30 +597,6 @@
       <category term="STL" scheme="https://cndrew.cn/blog/tags/STL/"/>
     
       <category term="前缀和" scheme="https://cndrew.cn/blog/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>stringstream(常见函数及其常见用法)</title>
-    <link href="https://cndrew.cn/blog/2019/07/19/sstream/"/>
-    <id>https://cndrew.cn/blog/2019/07/19/sstream/</id>
-    <published>2019-07-19T08:19:10.783Z</published>
-    <updated>2019-08-04T00:38:11.481Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Give me three minutes,I will make you learn more about stringstream.<a id="more"></a></p><h3 id="Some-common-usage"><a href="#Some-common-usage" class="headerlink" title="Some common usage"></a>Some common usage</h3><h4 id="Data-type-conversion-数据类型的转换"><a href="#Data-type-conversion-数据类型的转换" class="headerlink" title="Data type conversion(数据类型的转换)"></a>Data type conversion(数据类型的转换)</h4><p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string       a = &quot;521&quot;, b;</span><br><span class="line">    int          c, d = 1314;</span><br><span class="line">    stringstream x, y;</span><br><span class="line">    x &lt;&lt; a;   y &lt;&lt; d;</span><br><span class="line">    x &gt;&gt; c;   y &gt;&gt; b;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; b &lt;&lt; endl &lt;&lt; c &lt;&lt; d &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;The size of b is &quot; &lt;&lt; sizeof(b) &lt;&lt; &quot;\nThe size of c is &quot; &lt;&lt; sizeof(c) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>Output:</p><blockquote><p>5211314<br>5211314<br>The size of b is 24<br>The size of c is 4</p></blockquote><p>In this case,we transform a string to int and an int to string through stringstream.</p><h4 id="Can-be-used-to-split-strings-separated-by-spaces-etc-可以分割被空格分割的字符串"><a href="#Can-be-used-to-split-strings-separated-by-spaces-etc-可以分割被空格分割的字符串" class="headerlink" title="Can be used to split strings separated by spaces etc.(可以分割被空格分割的字符串)"></a>Can be used to split strings separated by spaces etc.(可以分割被空格分割的字符串)</h4><p>For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string       s = &quot;521 1314&quot;,mid;</span><br><span class="line">    stringstream x(s);</span><br><span class="line">    while (x &gt;&gt; mid)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; mid &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>Output:</p><blockquote><p>521<br>1314</p></blockquote><p>This part is always useful in some type.</p><h3 id="Official-explanation"><a href="#Official-explanation" class="headerlink" title="Official explanation"></a>Official explanation</h3><p>CPP: <a href="http://www.cplusplus.com/reference/sstream/stringstream/" target="_blank" rel="noopener">http://www.cplusplus.com/reference/sstream/stringstream/</a></p><p>As far as I know,If you can grasp the common usage,it&#39;s enough in ACM.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Give me three minutes,I will make you learn more about stringstream.
-    
-    </summary>
-    
-      <category term="c/c++" scheme="https://cndrew.cn/blog/categories/c-c/"/>
-    
-    
-      <category term="c/c++" scheme="https://cndrew.cn/blog/tags/c-c/"/>
-    
-      <category term="functions" scheme="https://cndrew.cn/blog/tags/functions/"/>
     
   </entry>
   
