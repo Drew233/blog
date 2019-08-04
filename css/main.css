@@ -2060,7 +2060,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffc1;
+  background: #f9397f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2846,7 +2846,7 @@ img.img-topic {
   clear: right;
 }
 body {
-  background: url("https://i.loli.net/2019/07/07/5d216ab415cf127545.jpg");
+  background: url("http://drew.todest.cn//20190804103533.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -2900,9 +2900,6 @@ body {
   padding-bottom: 3px;
   font-weight: bold;
   color: #fff;
-  border-bottom-width: 3px;
-  border-bottom-style: solid;
-  border-bottom-color: #a166ab;
 }
 .menu {
   text-align: center;

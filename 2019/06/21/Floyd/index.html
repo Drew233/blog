@@ -121,21 +121,21 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="A man&amp;#39;s best friends are his ten fingers.">
-<meta name="keywords" content="Algorithm,c&#x2F;c++,HDU,Floyd">
+<meta name="keywords" content="c&#x2F;c++,Algorithm,HDU,Floyd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Floyd">
 <meta property="og:url" content="https://cndrew.cn/blog/2019/06/21/Floyd/index.html">
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="A man&amp;#39;s best friends are his ten fingers.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/06/21/5d0c3778965df16328.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/06/21/5d0c383c2824e43424.gif">
-<meta property="og:image" content="https://i.loli.net/2019/06/21/5d0c3875bf2c144558.gif">
-<meta property="og:updated_time" content="2019-06-21T01:53:07.966Z">
+<meta property="og:image" content="http://drew.todest.cn//20190804095517.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804095545.gif">
+<meta property="og:image" content="http://drew.todest.cn//20190804095608.gif">
+<meta property="og:updated_time" content="2019-08-04T01:56:11.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Floyd">
 <meta name="twitter:description" content="A man&amp;#39;s best friends are his ten fingers.">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/21/5d0c3778965df16328.jpg">
+<meta name="twitter:image" content="http://drew.todest.cn//20190804095517.png">
 
 
 
@@ -394,7 +394,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -432,12 +432,24 @@
                 
               
 
-              <time title="Created: 2019-06-21 09:42:17 / Modified: 09:53:07" itemprop="dateCreated datePublished" datetime="2019-06-21T09:42:17+08:00">2019-06-21</time>
+              <time title="Created: 2019-06-21 09:42:17" itemprop="dateCreated datePublished" datetime="2019-06-21T09:42:17+08:00">2019-06-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-04 09:56:11" itemprop="dateModified" datetime="2019-08-04T09:56:11+08:00">2019-08-04</time>
               
             
           </span>
@@ -511,9 +523,9 @@
       
         <p>A man&#39;s best friends are his ten fingers.<a id="more"></a></p>
 <p><center> 最短路-Floyd</center><br>Link: <a href="http://acm.hdu.edu.cn/showproblem.php?pid=2544" target="_blank" rel="noopener">HDU-2544</a></p>
-<p>Description:<br>在每年的校赛里，所有进入决赛的同学都会获得一件很漂亮的t-shirt。但是每当我们的工作人员把上百件的衣服从商店运回到赛场的时候，却是非常累的！所以现在他们想要寻找最短的从商店到赛场的路线，你可以帮助他们吗？<br><img src="https://i.loli.net/2019/06/21/5d0c3778965df16328.jpg" alt></p>
+<p>Description:<br>在每年的校赛里，所有进入决赛的同学都会获得一件很漂亮的t-shirt。但是每当我们的工作人员把上百件的衣服从商店运回到赛场的时候，却是非常累的！所以现在他们想要寻找最短的从商店到赛场的路线，你可以帮助他们吗？<br><img src="http://drew.todest.cn//20190804095517.png" alt></p>
 <p>Input<br>输入包括多组数据。每组数据第一行是两个整数N、M（N&lt;=100，M&lt;=10000），N表示成都的大街上有几个路口，标号为1的路口是商店所在地，标号为N的路口是赛场所在地，M则表示在成都有几条路。N=M=0表示输入结束。接下来M行，每行包括3个整数A，B，C（1&lt;=A,B&lt;=N,1&lt;=C&lt;=1000）,表示在路口A与路口B之间有一条路，我们的工作人员需要C分钟的时间走过这条路。<br>输入保证至少存在1条商店到赛场的路线。</p>
-<p><img src="https://i.loli.net/2019/06/21/5d0c383c2824e43424.gif" alt><br>Output<br>对于每组输入，输出一行，表示工作人员从商店走到赛场的最短时间</p>
+<p><img src="http://drew.todest.cn//20190804095545.gif" alt><br>Output<br>对于每组输入，输出一行，表示工作人员从商店走到赛场的最短时间</p>
 <p>Sample Input</p>
 <blockquote>
 <p>2 1<br>1 2 3<br>3 3<br>1 2 5<br>2 3 5<br>3 1 2<br>0 0</p>
@@ -523,7 +535,7 @@
 <p>3<br>2</p>
 </blockquote>
 <p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int maxn = 1e4 + 5;</span><br><span class="line">const int INF  = 0x3f3f3f3f;</span><br><span class="line">int       a[maxn][maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, m, u, v, p;</span><br><span class="line">    while (cin &gt;&gt; n &gt;&gt; m)</span><br><span class="line">    &#123;</span><br><span class="line">        if (n == 0 &amp;&amp; m == 0)</span><br><span class="line">            break;</span><br><span class="line">        for (int i = 1; i &lt;= n; i++)</span><br><span class="line">            for (int j = 1; j &lt;= n; j++)</span><br><span class="line">                a[i][j] = INF;</span><br><span class="line">        for (int i = 0; i &lt; m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin &gt;&gt; u &gt;&gt; v &gt;&gt; p;</span><br><span class="line">            a[u][v] = p;</span><br><span class="line">            a[v][u] = p;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int k = 1; k &lt;= n; k++)</span><br><span class="line">            for (int i = 1; i &lt;= n; i++)</span><br><span class="line">                for (int j = 1; j &lt;= n; j++)</span><br><span class="line">                    if (a[i][j] &gt; a[i][k] + a[k][j])</span><br><span class="line">                        a[i][j] = a[i][k] + a[k][j];</span><br><span class="line">        cout &lt;&lt; a[1][n] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://i.loli.net/2019/06/21/5d0c3875bf2c144558.gif" alt></p>
+<p><img src="http://drew.todest.cn//20190804095608.gif" alt></p>
 
       
     </div>
@@ -606,9 +618,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
-          
             <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
           
             <a href="/blog/tags/HDU/" rel="tag"><i class="fa fa-tag"></i> HDU</a>
           
@@ -700,7 +712,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

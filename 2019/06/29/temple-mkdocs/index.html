@@ -128,17 +128,17 @@
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="This tutorial I will use Chinese to finish,because there are so many English document of mkdocs and I can describe clearly enough through my mother tongue.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/06/29/5d16a23a123ff57236.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/29/5d16a23a2842d94844.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/29/5d16a3a81fd0d27251.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/29/5d16a475e1c5f59377.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/29/5d16a4760b05e41432.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/29/5d16a551d11b710021.png">
-<meta property="og:updated_time" content="2019-06-29T00:07:29.372Z">
+<meta property="og:image" content="http://drew.todest.cn//20190804101358.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804101426.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804101601.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804101620.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804101709.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804101815.png">
+<meta property="og:updated_time" content="2019-08-04T02:25:00.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Make your own template by mkdocs.">
 <meta name="twitter:description" content="This tutorial I will use Chinese to finish,because there are so many English document of mkdocs and I can describe clearly enough through my mother tongue.">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/29/5d16a23a123ff57236.png">
+<meta name="twitter:image" content="http://drew.todest.cn//20190804101358.png">
 
 
 
@@ -397,7 +397,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -435,12 +435,24 @@
                 
               
 
-              <time title="Created: 2019-06-29 07:08:25 / Modified: 08:07:29" itemprop="dateCreated datePublished" datetime="2019-06-29T07:08:25+08:00">2019-06-29</time>
+              <time title="Created: 2019-06-29 07:08:25" itemprop="dateCreated datePublished" datetime="2019-06-29T07:08:25+08:00">2019-06-29</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-04 10:25:00" itemprop="dateModified" datetime="2019-08-04T10:25:00+08:00">2019-08-04</time>
               
             
           </span>
@@ -517,14 +529,14 @@
 <p>运行这一行命令之后等一会，会有安装成功的提示。这里因为我之前已经安装过了，所以安装成功的提示我也截不到图，相信你应该是可以看懂successful的。</p>
 <h3 id="建立一个基本的页面"><a href="#建立一个基本的页面" class="headerlink" title="建立一个基本的页面"></a>建立一个基本的页面</h3><p>安装好mkdocs之后，我们首先要创立一个自己的项目<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdocs new my-project(项目名可以自定义)</span><br></pre></td></tr></table></figure></p>
 <p>执行完之后，会显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">INFO    -  Creating project directory: my-project</span><br><span class="line">INFO    -  Writing config file: my-project\mkdocs.yml</span><br><span class="line">INFO    -  Writing initial docs: my-project\docs\index.md</span><br></pre></td></tr></table></figure></p>
-<p>然后我们再去你创建新项目的文件夹中就可以看到<br><img src="https://i.loli.net/2019/06/29/5d16a23a123ff57236.png" alt><br><img src="https://i.loli.net/2019/06/29/5d16a23a2842d94844.png" alt></p>
+<p>然后我们再去你创建新项目的文件夹中就可以看到<br><img src="http://drew.todest.cn//20190804101358.png" alt><br><img src="http://drew.todest.cn//20190804101426.png" alt></p>
 <p>这时候最基础的一个网页你就生成好了，你可以选择<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdocs serve</span><br></pre></td></tr></table></figure></p>
 <p>这行命令实现本地预览（注意，要去到<code>my-projrct</code>的根目录，即有<code>mkdocs.yml</code>的地方运行这一行命令）。运行成功的话可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INFO    -  Building documentation...</span><br><span class="line">INFO    -  Cleaning site directory</span><br><span class="line">[I 190629 07:29:38 server:296] Serving on http://127.0.0.1:8000</span><br><span class="line">[I 190629 07:29:38 handlers:62] Start watching changes</span><br><span class="line">[I 190629 07:29:38 handlers:64] Start detecting changes</span><br></pre></td></tr></table></figure></p>
-<p>然后你就可以去浏览器输入<code>http://127.0.0.1:8000</code>进行本地预览。效果如下<br><img src="https://i.loli.net/2019/06/29/5d16a3a81fd0d27251.png" alt></p>
-<h3 id="添加新的页面"><a href="#添加新的页面" class="headerlink" title="添加新的页面"></a>添加新的页面</h3><p>这里以添加about页面为例。在<code>docs</code>里面新建一个文件&#39;about.md&#39;即可。<br><img src="https://i.loli.net/2019/06/29/5d16a475e1c5f59377.png" alt><br><img src="https://i.loli.net/2019/06/29/5d16a4760b05e41432.png" alt><br>以此为例，可以添加你想添加的页面，以markdown的格式编辑即可。</p>
+<p>然后你就可以去浏览器输入<code>http://127.0.0.1:8000</code>进行本地预览。效果如下<br><img src="http://drew.todest.cn//20190804101601.png" alt></p>
+<h3 id="添加新的页面"><a href="#添加新的页面" class="headerlink" title="添加新的页面"></a>添加新的页面</h3><p>这里以添加about页面为例。在<code>docs</code>里面新建一个文件&#39;about.md&#39;即可。<br><img src="http://drew.todest.cn//20190804101620.png" alt><br><img src="http://drew.todest.cn//20190804101709.png" alt><br>以此为例，可以添加你想添加的页面，以markdown的格式编辑即可。</p>
 <h3 id="建立网站"><a href="#建立网站" class="headerlink" title="建立网站"></a>建立网站</h3><p>如果你想把你的mkdocs搭建的东西托管在github（诸如此类）的地方，接着看下去。<br>执行这个命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdocs build</span><br></pre></td></tr></table></figure></p>
 <p>成功的话会有提示信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO    -  Cleaning site directory</span><br><span class="line">INFO    -  Building documentation to directory: E:\mkdocs\my-project\site</span><br></pre></td></tr></table></figure></p>
-<p>然后在你的mkdocs根目录中会出现一个新的文件夹&#39;site&#39;,里面的文件大致上是这样的<br><img src="https://i.loli.net/2019/06/29/5d16a551d11b710021.png" alt></p>
+<p>然后在你的mkdocs根目录中会出现一个新的文件夹&#39;site&#39;,里面的文件大致上是这样的<br><img src="http://drew.todest.cn//20190804101815.png" alt></p>
 <h3 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h3><p>这个跟hexo还不一样，但是你需要github上面存在一个仓库用于存放mkdocs的相关文件。只要把site文件夹里面的文件全部上传到github上的仓库里面，github pages就可以直接使用了。<br>或者你可以直接使用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdocs gh-deploy</span><br></pre></td></tr></table></figure></p>
 <p>这个命令我现在还有点懵，推荐大家可以去看看这篇博客： <a href="https://blog.keybrl.com/professional/2018-05-19-mkdocs-blog.html" target="_blank" rel="noopener">https://blog.keybrl.com/professional/2018-05-19-mkdocs-blog.html</a><br>不过我只是用mkdocs做出来一个模板，也不是写个人博客。上传频率不高，手动copy完全可以满足我的需要（要是能弄好自动部署，谁还愿意手动啊，卑微。</p>
 <h3 id="主题推荐"><a href="#主题推荐" class="headerlink" title="主题推荐"></a>主题推荐</h3><p>第一次看到mkdocs的demo，十分中意它两边的目录，可是自己弄了之后发现不是这样的，后来搜索了一番才知道那是另一个主题——<a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">mkdocs-material</a>。<br>安装之后就可以出现很炫酷（个人认为 的双目录了。</p>
@@ -711,7 +723,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

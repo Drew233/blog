@@ -121,7 +121,7 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="GCD和LCM是很常用的，但是之前一直记不住，用一篇博客总结一下，希望自己能加强记忆！">
-<meta name="keywords" content="Algorithm,c&#x2F;c++">
+<meta name="keywords" content="c&#x2F;c++,Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GCD和LCM">
 <meta property="og:url" content="https://cndrew.cn/blog/2019/03/26/GCD-LCM/index.html">
@@ -130,7 +130,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://thyrsi.com/t6/676/1551749214x2728278668.jpg">
 <meta property="og:image" content="http://thyrsi.com/t6/676/1551749245x2728278668.png">
-<meta property="og:updated_time" content="2019-04-25T02:22:13.582Z">
+<meta property="og:updated_time" content="2019-08-04T01:10:42.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GCD和LCM">
 <meta name="twitter:description" content="GCD和LCM是很常用的，但是之前一直记不住，用一篇博客总结一下，希望自己能加强记忆！">
@@ -393,7 +393,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -448,7 +448,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-25 10:22:13" itemprop="dateModified" datetime="2019-04-25T10:22:13+08:00">2019-04-25</time>
+                <time title="Modified: 2019-08-04 09:10:42" itemprop="dateModified" datetime="2019-08-04T09:10:42+08:00">2019-08-04</time>
               
             
           </span>
@@ -537,7 +537,7 @@
 <p>有三个正整数a,b,c(a,b,c是三个大于0小于1e6的数)，其中c不等于b。若a和c的最大公约数为b，现已知a和b，求满足条件的最小的c。</p>
 <p>Input<br>第一行输入一个n，表示有n组测试数据，接下来的n行，每行输入两个正整数a,b。</p>
 <p>Output<br>输出对应的c，每组测试数据占一行。</p>
-<p>Sample Input<br>2<br>6 2<br>12 4<br>Sample Output<br>4<br>8<br>题目分析<br>这是一道简单的考察最大公约数的问题。给定两个数a,b求满足<code>gcd(a,c)=b</code>的最小的c的值且c不等于b。数据范围在1e6以内，并且c是b的倍数，所以可以每次给b加c，每次判断是不是答案即可。即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c=2*b;	//因为b是a,c的最大公约数，所以c肯定是大于等于b的。又因为题目中了b不等于c，所以给c定初值为2*b。</span><br><span class="line">while(gcd(a,c)!=b)	</span><br><span class="line">	b+=c;	//c是b的倍数，所以可以每次给b加c</span><br></pre></td></tr></table></figure></p>
+<p>Sample Input<br>2<br>6 2<br>12 4<br>Sample Output<br>4<br>8<br>题目分析<br>这是一道简单的考察最大公约数的问题。给定两个数a,b求满足<code>gcd(a,c)=b</code>的最小的c的值且c不等于b。数据范围在1e6以内，并且c是b的倍数，所以可以每次给b加c，每次判断是不是答案即可。即<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c=2*b;	//因为b是a,c的最大公约数，所以c肯定是大于等于b的。又因为题目中了b不等于c，所以给c定初值为2*b。</span><br><span class="line">while(gcd(a,c)!=b)</span><br><span class="line">	b+=c;	//c是b的倍数，所以可以每次给b加c</span><br></pre></td></tr></table></figure></p>
 <p>完整代码实现</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int gcd(int x,int y)</span><br><span class="line">&#123;</span><br><span class="line">	if(y==0) return x;</span><br><span class="line">	return gcd(y,x%y);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int a,b,n;</span><br><span class="line">	scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%d %d&quot;,&amp;a,&amp;b);</span><br><span class="line">		int c=2*b;</span><br><span class="line">		while(gcd(a,c)!=b)</span><br><span class="line">		c+=b;</span><br><span class="line">		printf(&quot;%d\n&quot;,c);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在vj上提交运行的结果<br><img src="http://thyrsi.com/t6/676/1551749214x2728278668.jpg" alt></p>
@@ -637,9 +637,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
-          
             <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
           
         </div>
       
@@ -657,8 +657,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/26/background-hexo/" rel="next" title="Hexo背景的更换">
-                <i class="fa fa-chevron-left"></i> Hexo背景的更换
+              <a href="/blog/2019/03/26/CodeForces-1141A/" rel="next" title="Game 23">
+                <i class="fa fa-chevron-left"></i> Game 23
               </a>
             
           </div>
@@ -667,8 +667,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/26/CodeForces-1141A/" rel="prev" title="Game 23">
-                Game 23 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/26/CodeForces-1139A/" rel="prev" title="Even Substrings">
+                Even Substrings <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -736,7 +736,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

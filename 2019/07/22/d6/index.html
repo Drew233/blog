@@ -128,12 +128,12 @@
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="今天主要讲的是二分和贪心，题有点难。已经开始了不能写完题的日子了">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/07/23/5d35de6bd0a7a22502.png">
-<meta property="og:updated_time" content="2019-07-24T14:10:32.356Z">
+<meta property="og:image" content="http://drew.todest.cn//20190804094431.png">
+<meta property="og:updated_time" content="2019-08-04T01:44:34.192Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HPU Summer Training Day 6（河南理工大学暑期第六天）">
 <meta name="twitter:description" content="今天主要讲的是二分和贪心，题有点难。已经开始了不能写完题的日子了">
-<meta name="twitter:image" content="https://i.loli.net/2019/07/23/5d35de6bd0a7a22502.png">
+<meta name="twitter:image" content="http://drew.todest.cn//20190804094431.png">
 
 
 
@@ -392,7 +392,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-24 22:10:32" itemprop="dateModified" datetime="2019-07-24T22:10:32+08:00">2019-07-24</time>
+                <time title="Modified: 2019-08-04 09:44:34" itemprop="dateModified" datetime="2019-08-04T09:44:34+08:00">2019-08-04</time>
               
             
           </span>
@@ -618,7 +618,7 @@
 <p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const long long maxn=1e5+7;</span><br><span class="line">long long p[maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	long long t,a,b;</span><br><span class="line">	cin&gt;&gt;t;</span><br><span class="line">	while(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		for(long long i=0;i&lt;a;i++	)	cin&gt;&gt;p[i];</span><br><span class="line">		sort(p,p+a);</span><br><span class="line">		long long ans=0,pos=0;</span><br><span class="line">		for(long long i=0;i&lt;a;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			while(p[pos]-p[i]&lt;=b&amp;&amp;pos&lt;a)	pos++;</span><br><span class="line">			ans+=pos-i-1;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Radar-Installation"><a href="#Radar-Installation" class="headerlink" title="Radar Installation"></a>Radar Installation</h3><p>Description:<br>Assume the coasting is an infinite straight line. Land is in one side of coasting, sea in the other. Each small island is a point locating in the sea side. And any radar installation, locating on the coasting, can only cover d distance, so an island in the sea can be covered by a radius installation, if the distance between them is at most d.</p>
 <p>We use Cartesian coordinate system, defining the coasting is the x-axis. The sea side is above x-axis, and the land side below. Given the position of each island in the sea, and given the distance of the coverage of the radar installation, your task is to write a program to find the minimal number of radar installations to cover all the islands. Note that the position of an island is represented by its x-y coordinates.</p>
-<p>Figure A Sample Input of Radar Installations<br><img src="https://i.loli.net/2019/07/23/5d35de6bd0a7a22502.png" alt></p>
+<p>Figure A Sample Input of Radar Installations<br><img src="http://drew.todest.cn//20190804094431.png" alt></p>
 <p>Input<br>The input consists of several test cases. The first line of each case contains two integers n (1&lt;=n&lt;=1000) and d, where n is the number of islands in the sea and d is the distance of coverage of the radar installation. This is followed by n lines each containing two integers representing the coordinate of the position of each island. Then a blank line follows to separate the cases.</p>
 <p>The input is terminated by a line containing pair of zeros<br>Output<br>For each test case output one line consisting of the test case number followed by the minimal number of radar installations needed. &quot;-1&quot; installation means no solution for that case.<br>Sample Input</p>
 <blockquote>
@@ -853,7 +853,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

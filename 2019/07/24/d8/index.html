@@ -121,20 +121,20 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。">
-<meta name="keywords" content="Algorithm,c&#x2F;c++,CodeForces,HDU,poj,STL">
+<meta name="keywords" content="c&#x2F;c++,Algorithm,HDU,CodeForces,poj,STL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HPU Summer Training Day 8（河南理工大学暑期第八天）">
 <meta property="og:url" content="https://cndrew.cn/blog/2019/07/24/d8/index.html">
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/07/24/5d3816e429b0036148.png">
-<meta property="og:image" content="https://i.loli.net/2019/07/24/5d3817f744d8511698.png">
-<meta property="og:updated_time" content="2019-07-24T14:17:56.359Z">
+<meta property="og:image" content="http://drew.todest.cn//20190804094801.png">
+<meta property="og:image" content="http://drew.todest.cn//20190804094825.png">
+<meta property="og:updated_time" content="2019-08-04T01:48:26.142Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HPU Summer Training Day 8（河南理工大学暑期第八天）">
 <meta name="twitter:description" content="今天主要讲的是递归和DFS，因为涉及到递归，很抽象，所以比较难理解。题也很难做。">
-<meta name="twitter:image" content="https://i.loli.net/2019/07/24/5d3816e429b0036148.png">
+<meta name="twitter:image" content="http://drew.todest.cn//20190804094801.png">
 
 
 
@@ -393,7 +393,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -431,12 +431,24 @@
                 
               
 
-              <time title="Created: 2019-07-24 22:11:20 / Modified: 22:17:56" itemprop="dateCreated datePublished" datetime="2019-07-24T22:11:20+08:00">2019-07-24</time>
+              <time title="Created: 2019-07-24 22:11:20" itemprop="dateCreated datePublished" datetime="2019-07-24T22:11:20+08:00">2019-07-24</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-04 09:48:26" itemprop="dateModified" datetime="2019-08-04T09:48:26+08:00">2019-08-04</time>
               
             
           </span>
@@ -559,7 +571,7 @@
 <p>Problem solving:<br>从第一行开始放，然后放下一行，如果出现了在同一行的或者同一列的或者同一条斜线上的就return，如果放进去的个数等于n，答案就加一。这道题N虽然小于等于10，但是是多组输入，如果每次输入都计算一次并且输入数据很多的话，肯定会TLE。所以需要打表，就是如果这个计算过了就把它的结果记录下来，如果下次又要求这个的结果直接调用就行。也可以直接从输入前就先计算好存进数组。</p>
 <p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,mid;</span><br><span class="line">int ans[12],mmp[12];</span><br><span class="line">void dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">	if(x==n+1)</span><br><span class="line">	&#123;</span><br><span class="line">		mid++;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">	int flag=1;</span><br><span class="line">		mmp[x]=i;</span><br><span class="line">		for(int j=1;j&lt;x;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(mmp[j]==i||(abs(j-x)==abs(mmp[j]-mmp[x])))</span><br><span class="line">			&#123;</span><br><span class="line">				flag=0;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(flag)	dfs(x+1);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	for(n=1;n&lt;=10;n++)</span><br><span class="line">	&#123;</span><br><span class="line">		mid=0;</span><br><span class="line">		dfs(1);</span><br><span class="line">		ans[n]=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	int t;</span><br><span class="line">	while(cin&gt;&gt;t&amp;&amp;t)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;ans[t]&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Fox-And-Two-Dots"><a href="#Fox-And-Two-Dots" class="headerlink" title="Fox And Two Dots"></a>Fox And Two Dots</h3><p>Description：<br>Fox Ciel is playing a mobile puzzle game called &quot;Two Dots&quot;. The basic levels are played on a board of size n × m cells, like this:</p>
-<p><center><img src="https://i.loli.net/2019/07/24/5d3816e429b0036148.png" alt></center><br>Each cell contains a dot that has some color. We will use different uppercase Latin characters to express different colors.</p>
+<p><center><img src="http://drew.todest.cn//20190804094801.png" alt></center><br>Each cell contains a dot that has some color. We will use different uppercase Latin characters to express different colors.</p>
 <p>The key of this game is to find a cycle that contain dots of same color. Consider 4 blue dots on the picture forming a circle as an example. Formally, we call a sequence of dots d1, d2, ..., dk a cycle if and only if it meets the following condition:</p>
 <ol>
 <li>These k dots are different: if i ≠ j then di is different from dj.</li>
@@ -635,7 +647,7 @@
 <p>Problem solving:<br>跟n皇后很像的一个问题。判断条件还少了一个。注意回溯就行。</p>
 <p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,k,vis[10],ans,now;</span><br><span class="line">char s[10][10];</span><br><span class="line">void dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">	if(now==k)</span><br><span class="line">	&#123;</span><br><span class="line">		ans++;</span><br><span class="line">		return ;</span><br><span class="line">	&#125;</span><br><span class="line">	if(x&gt;=n)	return ;</span><br><span class="line">	for(int j=0;j&lt;n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(!vis[j]&amp;&amp;s[x][j]==&apos;#&apos;)</span><br><span class="line">		&#123;</span><br><span class="line">			vis[j]=1;</span><br><span class="line">			now++;</span><br><span class="line">			dfs(x+1);</span><br><span class="line">			now--;</span><br><span class="line">			vis[j]=0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(x+1);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	while(scanf(&quot;%d %d&quot;,&amp;n,&amp;k)&amp;&amp;n!=-1&amp;&amp;k!=-1)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(vis,0,sizeof(vis));</span><br><span class="line">		for(int i=0;i&lt;n;i++)	cin&gt;&gt;s[i];</span><br><span class="line">		ans=0,now=0;</span><br><span class="line">		dfs(0);</span><br><span class="line">		cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Sudoku"><a href="#Sudoku" class="headerlink" title="Sudoku"></a>Sudoku</h3><p>Description：<br>Sudoku is a very simple task. A square table with 9 rows and 9 columns is divided to 9 smaller squares 3x3 as shown on the Figure. In some of the cells are written decimal digits from 1 to 9. The other cells are empty. The goal is to fill the empty cells with decimal digits from 1 to 9, one digit per cell, in such way that in each row, in each column and in each marked 3x3 subsquare, all the digits from 1 to 9 to appear. Write a program to solve a given Sudoku-task.</p>
-<p><img src="https://i.loli.net/2019/07/24/5d3817f744d8511698.png" alt="JUT0QY($RVW[_(1EGZ@@)PK.png" title="JUT0QY($RVW[_(1EGZ@@)PK.png"></p>
+<p><img src="http://drew.todest.cn//20190804094825.png" alt="JUT0QY($RVW[_(1EGZ@@)PK.png" title="JUT0QY($RVW[_(1EGZ@@)PK.png"></p>
 <p>Input</p>
 <blockquote>
 <p>The input data will start with the number of the test cases. For each test case, 9 lines follow, corresponding to the rows of the table. On each line a string of exactly 9 decimal digits is given, corresponding to the cells in this line. If a cell is empty it is represented by 0.</p>
@@ -794,13 +806,13 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
-          
             <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
           
-            <a href="/blog/tags/CodeForces/" rel="tag"><i class="fa fa-tag"></i> CodeForces</a>
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
           
             <a href="/blog/tags/HDU/" rel="tag"><i class="fa fa-tag"></i> HDU</a>
+          
+            <a href="/blog/tags/CodeForces/" rel="tag"><i class="fa fa-tag"></i> CodeForces</a>
           
             <a href="/blog/tags/poj/" rel="tag"><i class="fa fa-tag"></i> poj</a>
           
@@ -901,7 +913,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

@@ -121,14 +121,14 @@
   <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
 
   <meta name="description" content="前段时间的一次选拔赛中遇到了这道题，没做出来。赛后搜索了一下相关的知识，发现有许多相应的函数可以直接用来做这道题。">
-<meta name="keywords" content="Algorithm,c&#x2F;c++">
+<meta name="keywords" content="c&#x2F;c++,Algorithm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="删除字符串中的子串">
 <meta property="og:url" content="https://cndrew.cn/blog/2019/03/26/PTA7-29/index.html">
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="前段时间的一次选拔赛中遇到了这道题，没做出来。赛后搜索了一下相关的知识，发现有许多相应的函数可以直接用来做这道题。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-25T02:24:32.975Z">
+<meta property="og:updated_time" content="2019-08-04T00:27:54.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="删除字符串中的子串">
 <meta name="twitter:description" content="前段时间的一次选拔赛中遇到了这道题，没做出来。赛后搜索了一下相关的知识，发现有许多相应的函数可以直接用来做这道题。">
@@ -390,7 +390,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -445,7 +445,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-25 10:24:32" itemprop="dateModified" datetime="2019-04-25T10:24:32+08:00">2019-04-25</time>
+                <time title="Modified: 2019-08-04 08:27:54" itemprop="dateModified" datetime="2019-08-04T08:27:54+08:00">2019-08-04</time>
               
             
           </span>
@@ -522,32 +522,32 @@
 <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>输入2个字符串S1和S2，要求删除字符串S1中出现的所有子串S2，即结果字符串中不能包含S2。</p>
 <p>输入格式：<br>输入在2行中分别给出不超过80个字符长度的、以回车结束的2个非空字符串，对应S1和S2。</p>
 <p>输出格式：<br>在一行中输出删除字符串S1中出现的所有子串S2后的结果字符串。</p>
-<p>输入样例：<br>Tomcat is a male ccatat<br>cat<br>输出样例：<br>Tom is a male </p>
+<p>输入样例：<br>Tomcat is a male ccatat<br>cat<br>输出样例：<br>Tom is a male</p>
 <h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><p>这道题还是比较容易懂的，就是输入两个字符串S1，S2，将S1中出现的S2全部删掉即可，需要注意的是有可能删掉一个S2之后会出现一个新的S2（如样例），此时就需要再删除一次。因为输入是有空格的，所以不能直接cin。</p>
 <h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	string a,b;</span><br><span class="line">	getline(cin,a);</span><br><span class="line">	getline(cin,b);</span><br><span class="line">	while(a.find(b,0)!=-1)</span><br><span class="line">	&#123;</span><br><span class="line">		int p=a.find(b,0);</span><br><span class="line">		a.erase(p,b.size());</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;a&lt;&lt;endl;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="知识（补）"><a href="#知识（补）" class="headerlink" title="知识（补）"></a>知识（补）</h3><p>不搜这道题都不知道string类型中也有这么多方便好用的函数，特此把这些常用的函数在我的博客总结一下，方便自己记忆。</p>
 <ul>
 <li>原帖链接：<a href="https://www.zybuluo.com/RabbitHu/note/658924" target="_blank" rel="noopener">十个你一定会用到的 C++ string 函数</a></li>
 </ul>
-<h4 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h4><p>将字符串2赋值给字符串1： </p>
+<h4 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h4><p>将字符串2赋值给字符串1：</p>
 <ol>
-<li>字符串1 = 字符串2; </li>
+<li>字符串1 = 字符串2;</li>
 <li>字符串1.assign(字符串2);<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string s1=&quot;Drew&quot;,s2;</span><br><span class="line">s2=s1;</span><br><span class="line">cout&lt;&lt;s2&lt;&lt;&quot; &quot;;</span><br><span class="line">s2=&quot;is handsome&quot;;</span><br><span class="line">s1.assign(s2);</span><br><span class="line">cout&lt;&lt;s1;</span><br><span class="line">//运行结果：Drew is handsome</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>将字符串2从第m个字符开始的n个字符赋值给字符串1：<br>字符串1.assign(字符串2, m, n);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string s1=&quot;Uncle &quot;,s2=&quot;drew&quot;;</span><br><span class="line">s1.assign(s2,1,3);</span><br><span class="line">cout&lt;&lt;s1&lt;&lt;endl;</span><br><span class="line">cout&lt;&lt;s2;</span><br><span class="line">//运行结果：rew</span><br><span class="line">//         drew</span><br></pre></td></tr></table></figure></p>
-<h4 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h4><p>返回字符串长度： </p>
+<h4 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h4><p>返回字符串长度：</p>
 <ol>
-<li>字符串1.length(); </li>
+<li>字符串1.length();</li>
 <li>字符串1.size();<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s1=&quot;Uncle&quot;,s2=&quot;drew&quot;;</span><br><span class="line">cout&lt;&lt;s1.length()&lt;&lt;&quot; &quot;&lt;&lt;s2.size();</span><br><span class="line">//运行结果：5 4</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><p><code>&quot;&gt;&quot;, &quot;&lt;&quot;, &quot;==&quot;, &quot;&gt;=&quot;, &quot;&lt;=&quot;</code>均可以用于字符串比较。<br>这个不需要例子了。直接比较就可以</p>
 <h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><p>在字符串1中从第m个字符开始查找字符串2，返回第一次出现的首字母位置，失败时返回-1：<br>字符串1.find(字符串2, m);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string s1=&quot;Uncle_drew!Uncle_drew!Uncle_drew!&quot;,s2=&quot;drew&quot;;</span><br><span class="line">int pos=-1;</span><br><span class="line">while(1)</span><br><span class="line">&#123;</span><br><span class="line">    pos = s1.find(s2,pos+1);</span><br><span class="line">    if(pos==-1) break;</span><br><span class="line">    cout&lt;&lt;pos&lt;&lt;&quot; &quot;;</span><br><span class="line">&#125;</span><br><span class="line">//运行结果：6 17 28</span><br></pre></td></tr></table></figure></p>
 <p>在字符串1中从第m个字符开始从后向前查找字符串2，返回第一次出现的首字母位置，失败时返回-1：<br>字符串1.rfind(字符串2, m);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">string s1=&quot;Uncle_drew!Uncle_drew!Uncle_drew!&quot;,s2=&quot;drew&quot;;</span><br><span class="line">int pos=s1.size();</span><br><span class="line">while(pos)</span><br><span class="line">&#123;</span><br><span class="line">    pos = s1.rfind(s2,pos-1);</span><br><span class="line">    if(pos&lt;0) break;</span><br><span class="line">    cout&lt;&lt;pos&lt;&lt;&quot; &quot;;</span><br><span class="line">&#125;</span><br><span class="line">//运行结果：28 17 6</span><br></pre></td></tr></table></figure></p>
-<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><p>将字符串2接到字符串1尾部： </p>
+<h4 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h4><p>将字符串2接到字符串1尾部：</p>
 <ol>
-<li>字符串1.append(字符串2); //字符不可 </li>
+<li>字符串1.append(字符串2); //字符不可</li>
 <li>字符串1 += 字符串2; //字符亦可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string s1=&quot;Uncle_&quot;,s2=&quot;drew is handsome&quot;;</span><br><span class="line">string s3=s1,s4=s2;</span><br><span class="line">s1.append(s2);</span><br><span class="line">cout&lt;&lt;s1&lt;&lt;&quot;\t&quot;;</span><br><span class="line">s3+=s4;</span><br><span class="line">cout&lt;&lt;s3;</span><br><span class="line">//运行结果：Uncle_drew is handsome  Uncle_drew is handsome</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -640,9 +640,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
-          
             <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
           
         </div>
       
@@ -660,8 +660,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/26/Notes/" rel="next" title="学习笔记">
-                <i class="fa fa-chevron-left"></i> 学习笔记
+              <a href="/blog/2019/03/26/POJ-2386/" rel="next" title="基础dfs之Lake Counting">
+                <i class="fa fa-chevron-left"></i> 基础dfs之Lake Counting
               </a>
             
           </div>
@@ -670,8 +670,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/26/POJ-2386/" rel="prev" title="基础dfs之Lake Counting">
-                基础dfs之Lake Counting <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/26/Google-search/" rel="prev" title="不翻墙使用谷歌搜索的方法">
+                不翻墙使用谷歌搜索的方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -739,7 +739,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

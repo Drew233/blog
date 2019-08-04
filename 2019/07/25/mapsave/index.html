@@ -128,12 +128,12 @@
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="今天的学习及刷题的过程中遇到了一些新的知识——树的直径，和前几天学到但没使用过的邻接表存图以及链式前向星存图。内容也不少，所以特意新开一篇文章进行介绍。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/07/25/5d3959f00f0cf36997.png">
-<meta property="og:updated_time" content="2019-07-25T14:25:29.060Z">
+<meta property="og:image" content="http://drew.todest.cn//20190804101208.png">
+<meta property="og:updated_time" content="2019-08-04T02:12:09.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树的直径以及邻接表，链式前向星的存图">
 <meta name="twitter:description" content="今天的学习及刷题的过程中遇到了一些新的知识——树的直径，和前几天学到但没使用过的邻接表存图以及链式前向星存图。内容也不少，所以特意新开一篇文章进行介绍。">
-<meta name="twitter:image" content="https://i.loli.net/2019/07/25/5d3959f00f0cf36997.png">
+<meta name="twitter:image" content="http://drew.todest.cn//20190804101208.png">
 
 
 
@@ -392,7 +392,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -430,12 +430,24 @@
                 
               
 
-              <time title="Created: 2019-07-25 22:23:57 / Modified: 22:25:29" itemprop="dateCreated datePublished" datetime="2019-07-25T22:23:57+08:00">2019-07-25</time>
+              <time title="Created: 2019-07-25 22:23:57" itemprop="dateCreated datePublished" datetime="2019-07-25T22:23:57+08:00">2019-07-25</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-04 10:12:09" itemprop="dateModified" datetime="2019-08-04T10:12:09+08:00">2019-08-04</time>
               
             
           </span>
@@ -514,7 +526,7 @@
 <li>有一个特定的结点被称为根结点或树根（root）；</li>
 <li>除根结点之外的其余数据元素被分为m（m≥0）个互不相交<br>的集合T1，T2，…Tm-1，其中每一个集合Tm-1（1≤i≤m）<br>本身也是一棵树，被称作原树的子树（subtree）。</li>
 </ul>
-<p>树中距离最大的两个结点之间的距离称为树的直径。<br><img src="https://i.loli.net/2019/07/25/5d3959f00f0cf36997.png" alt></p>
+<p>树中距离最大的两个结点之间的距离称为树的直径。<br><img src="http://drew.todest.cn//20190804101208.png" alt></p>
 <p>树的直径的求法：</p>
 <p>两次dfs或bfs。第一次任意选一个点进行dfs(bfs)找到离它最远的<br>点，此点就是最长路的一个端点，再以此点进行dfs（bfs），找到<br>离它最远的点，此点就是最长路的另一个端点，于是就找到了树<br>的直径。</p>
 <p>证明：<br>假设此树的最长路径是从s到t,我们选择的点为u。<br>反证法：假设搜到的点是v。<br>1、v在这条最长路径上，那么dis[u,v]&gt;dis[u,v]+dis[v,s],显然矛<br>盾。<br>2、v不在这条最长路径上，我们在最长路径上选择一个点为po，<br>则dis[u,v]&gt;dis[u,po]+dis[po,t]，那么有dis[s,v]=dis[s,po]+dis[po,u]<br>+dis[u,v]&gt;dis[s,po]+dis[po,t]=dis[s,t],即dis[s,v]&gt;dis[s,t],矛盾。<br>也许你想说u本身就在最长路径，或则其它的一些情况，但其实<br>都能用类似于上面的反证法来证明的。<br>综上所述，你两次dfs(bfs)就可以求出最长路径的两个端点和路<br>径长度。        以上内容参考与学长的PDF</p>
@@ -724,7 +736,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>

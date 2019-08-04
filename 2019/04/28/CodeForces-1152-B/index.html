@@ -128,12 +128,12 @@
 <meta property="og:site_name" content="Uncle_drew">
 <meta property="og:description" content="Someone asked me how good you are. I said how big the universe is, how good you are.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.loli.net/2019/04/27/5cc466ac8781a.png">
-<meta property="og:updated_time" content="2019-04-28T09:03:59.556Z">
+<meta property="og:image" content="http://drew.todest.cn//20190804101908.png">
+<meta property="og:updated_time" content="2019-08-04T02:19:10.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Neko Performs Cat Furrier Transform">
 <meta name="twitter:description" content="Someone asked me how good you are. I said how big the universe is, how good you are.">
-<meta name="twitter:image" content="https://i.loli.net/2019/04/27/5cc466ac8781a.png">
+<meta name="twitter:image" content="http://drew.todest.cn//20190804101908.png">
 
 
 
@@ -392,7 +392,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Uncle_drew">
       <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
-      <meta itemprop="image" content="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -430,12 +430,24 @@
                 
               
 
-              <time title="Created: 2019-04-28 06:02:06 / Modified: 17:03:59" itemprop="dateCreated datePublished" datetime="2019-04-28T06:02:06+08:00">2019-04-28</time>
+              <time title="Created: 2019-04-28 06:02:06" itemprop="dateCreated datePublished" datetime="2019-04-28T06:02:06+08:00">2019-04-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-04 10:19:10" itemprop="dateModified" datetime="2019-08-04T10:19:10+08:00">2019-08-04</time>
               
             
           </span>
@@ -520,7 +532,7 @@
 <p>If there are multiple possible answers, you can print any of them. It is possible to show, that there is at least one answer in the constraints of this problem.</p>
 <p>Examples<br>input<br>39<br>output<br>4<br>5 3<br>input<br>1<br>output<br>0<br>input<br>7<br>output<br>0<br>Note<br>In the first test, one of the transforms might be as follows: 39→56→57→62→63. Or more precisely:</p>
 <p>Pick n=5. x is transformed into 39⊕31, or 56.<br>Increase x by 1, changing its value to 57.<br>Pick n=3. x is transformed into 57⊕7, or 62.<br>Increase x by 1, changing its value to 63=26−1.<br>In the second and third test, the number already satisfies the goal requirement.</p>
-<p>There are some differences between the description on my blog and the real,so I put a real piture here.<br><img src="https://i.loli.net/2019/04/27/5cc466ac8781a.png" alt></p>
+<p>There are some differences between the description on my blog and the real,so I put a real piture here.<br><img src="http://drew.todest.cn//20190804101908.png" alt></p>
 <p>Intentional analysis:<br>The most important solution to this problem is to simulate.To solve this problem,you better use binary processing.If a number is equal to <code>pow(2,n)-1</code>,then its binary is 1 for each bit.So we only need to process the binary bits of the number to be processed.First, find the highest bit with a binary bit of 0.Then,Each of the next inversions.If the conditions are not met, add 1.This loops until the value that satisfies the condition appears.</p>
 <p><details><br>  <summary><font color="red">Click to see Chinese Intentional analysis</font></summary><br>这道题最重要的思想就是模拟，因为一个数如果是2的n次方减1，那么它的二进制位每一位都是1。因此这道题就可以对输入的数以二进制位的形式进行操作。首先找到最高位的0，然后对这一位以下的所有的二进制位与1进行异或，异或完判断是否满足条件，如果不满足就加一在进行判断，还不行的话就开始下一次循环，直到找到满足条件的数跳出循环即可。思想应该是很容易懂的，难得地方就是实现。一开始我想用bitset来做，但是没成功，还是老老实实的用数组做吧。<br></details><br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	vector&lt;int&gt; v;</span><br><span class="line">	int B[30],n,ans=0,t,now=0;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	t=n;</span><br><span class="line">	while(t)</span><br><span class="line">	&#123;</span><br><span class="line">		B[now++]=t%2;</span><br><span class="line">		t/=2;</span><br><span class="line">	&#125;</span><br><span class="line">	int i=now-1;</span><br><span class="line">	for(;i&gt;=0;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		if(B[i]==0)</span><br><span class="line">		&#123;</span><br><span class="line">			v.push_back(i+1);</span><br><span class="line">			bool flag=0;</span><br><span class="line">			for(int j=i;j&gt;=0;j--)</span><br><span class="line">			&#123;</span><br><span class="line">				B[j]^=1;</span><br><span class="line">				if(B[j]==0&amp;&amp;j!=0)</span><br><span class="line">					flag=1;</span><br><span class="line">			&#125;</span><br><span class="line">			ans++;</span><br><span class="line">			if(flag==0)</span><br><span class="line">			&#123;</span><br><span class="line">				if(B[0]==0)</span><br><span class="line">				&#123;</span><br><span class="line">					B[0]++;</span><br><span class="line">					ans++;</span><br><span class="line">				&#125;</span><br><span class="line">				i=-1;</span><br><span class="line">				break;</span><br><span class="line">			&#125;</span><br><span class="line">			B[0]++;</span><br><span class="line">			ans++;</span><br><span class="line">			for(int k=0;k&lt;i;k++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(B[k]&gt;1)</span><br><span class="line">				&#123;</span><br><span class="line">					B[k]=0;</span><br><span class="line">					B[k+1]++;</span><br><span class="line">				&#125;</span><br><span class="line">				else</span><br><span class="line">					break;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if(i==-1)</span><br><span class="line">		break;</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	for(int j=0;j&lt;v.size();j++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;v[j]&lt;&lt;&quot; &quot;;</span><br><span class="line">		if(j==v.size()-1)</span><br><span class="line">			puts(&quot;&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
@@ -697,7 +709,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://i.loli.net/2019/04/22/5cbd2d062ef94.jpg" alt="Uncle_drew">
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
             
               <p class="site-author-name" itemprop="name">Uncle_drew</p>
               <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
