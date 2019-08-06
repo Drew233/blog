@@ -114,13 +114,13 @@
     
       <category term="Greedy" scheme="https://cndrew.cn/blog/tags/Greedy/"/>
     
-      <category term="HPUOJ" scheme="https://cndrew.cn/blog/tags/HPUOJ/"/>
-    
       <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
     
-      <category term="BFS" scheme="https://cndrew.cn/blog/tags/BFS/"/>
+      <category term="HPUOJ" scheme="https://cndrew.cn/blog/tags/HPUOJ/"/>
     
       <category term="矩阵快速幂" scheme="https://cndrew.cn/blog/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+    
+      <category term="BFS" scheme="https://cndrew.cn/blog/tags/BFS/"/>
     
       <category term="树的直径" scheme="https://cndrew.cn/blog/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/"/>
     
@@ -512,9 +512,9 @@
     
       <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
     
-      <category term="DFS" scheme="https://cndrew.cn/blog/tags/DFS/"/>
-    
       <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
+    
+      <category term="DFS" scheme="https://cndrew.cn/blog/tags/DFS/"/>
     
       <category term="Simulation" scheme="https://cndrew.cn/blog/tags/Simulation/"/>
     

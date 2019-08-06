@@ -1505,7 +1505,6 @@ jQuery(document).ready(function($) {
 <!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
 
 
-<script src="/blog/live2d-widget-master/autoload.js"></script>
 
 
 <!-- 雪花特效 -->
@@ -1517,7 +1516,9 @@ jQuery(document).ready(function($) {
   else
     document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
 </script> -->
- sel.addRange(range);
+   range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
         ta.setSelectionRange(0, code.length);
         var result = document.execCommand('copy');
         
@@ -1583,7 +1584,6 @@ jQuery(document).ready(function($) {
 <!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
 
 
-<script src="/blog/live2d-widget-master/autoload.js"></script>
 
 
 <!-- 雪花特效 -->
