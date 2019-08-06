@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://cndrew.cn/blog/blog/2019/08/06/guide/</loc>
+    <lastmod>2019-08-06</lastmod>
+  </url>  <url>
+    <loc>https://cndrew.cn/blog/blog/2019/08/06/d21/</loc>
+    <lastmod>2019-08-06</lastmod>
+  </url>  <url>
+    <loc>https://cndrew.cn/blog/blog/2019/04/21/Change/</loc>
+    <lastmod>2019-08-06</lastmod>
+  </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/08/05/d20/</loc>
     <lastmod>2019-08-05</lastmod>
   </url>  <url>
@@ -68,9 +77,6 @@
     <lastmod>2019-08-04</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/07/26/d10/</loc>
-    <lastmod>2019-08-04</lastmod>
-  </url>  <url>
-    <loc>https://cndrew.cn/blog/blog/2019/04/21/Change/</loc>
     <lastmod>2019-08-04</lastmod>
   </url>  <url>
     <loc>https://cndrew.cn/blog/blog/2019/07/25/d9/</loc>

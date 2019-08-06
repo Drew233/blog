@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://cndrew.cn/blog/"/>
-  <updated>2019-08-05T14:37:22.218Z</updated>
+  <updated>2019-08-06T14:01:32.857Z</updated>
   <id>https://cndrew.cn/blog/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Weicome to Uncle_drew&#39;s blog</title>
+    <link href="https://cndrew.cn/blog/2019/08/06/guide/"/>
+    <id>https://cndrew.cn/blog/2019/08/06/guide/</id>
+    <published>2019-08-06T13:11:06.589Z</published>
+    <updated>2019-08-06T14:01:32.857Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p><center>感谢每一个来到我的博客的小伙伴。这里是欢迎页以及留言板</center><a id="more"></a></p><p><font color="red">前排友情提示 &#39;ctrl+D&#39;收藏本站，并订阅本站的RSS，每日获得<del>最新</del>资讯</font><br>Ps：听说收藏本站之后刷新会触发隐藏彩蛋哦</p><h2 id="关于本站"><a href="#关于本站" class="headerlink" title="关于本站"></a>关于本站</h2><p>本站是基于hexo的next主题经过各种魔改搭建而成的，托管在<a href="cndrew.cn">GitHub</a> &amp;&amp; <a href="blog.cndrew.cn">coding</a>上。</p><p>如果你对本站的某些特效或者各种奇怪的东西有兴趣但不知道如何实现的可以在下面评论或者联系我。</p><h2 id="关于友链"><a href="#关于友链" class="headerlink" title="关于友链"></a>关于友链</h2><p>如果你想跟我互换友链，可以在下方回复。<br>添加要求：</p><ol><li>不要求有几篇几篇文章，只要你是热爱于博客就行，勤于更新，严于律己即可。</li><li>已经添加了本站为友链。友链名字就叫Uncle_drew就行，如果需要描述，就是Hand down,man down.如果需要头像，这个就行。<br><img src="http://drew.todest.cn/dreww.jpg" alt></li><li>真善美不强制要求，但是黄赌毒是肯定不行的。</li><li>不要死链，我无聊的时候会看自己的友链。<br>满足了这上面的要求，在评论区说一下就好啦，我看见了一定会回应的！</li></ol><h2 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h2><p>这里借评论作为留言板，为所欲为吧！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;center&gt;感谢每一个来到我的博客的小伙伴。这里是欢迎页以及留言板&lt;/center&gt;
+    
+    </summary>
+    
+      <category term="Life" scheme="https://cndrew.cn/blog/categories/Life/"/>
+    
+    
+      <category term="life" scheme="https://cndrew.cn/blog/tags/life/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HPU Summer Day21(河南理工大学暑期第二十一天)</title>
+    <link href="https://cndrew.cn/blog/2019/08/06/d21/"/>
+    <id>https://cndrew.cn/blog/2019/08/06/d21/</id>
+    <published>2019-08-06T12:55:34.109Z</published>
+    <updated>2019-08-06T13:24:18.140Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>今天说来话长...<a id="more"></a><br>今天讲了最短路，可能是个人原因我觉得什么都没学到。做题也没做出来几道。就这吧，想补了再补，反正是没怎么写。</p><p>然后老师和会长组织我们在计蒜客上打了2018的ECNA的重现赛，一言难尽，自闭就完事了。。。</p><p>今天我被封了一个月还多的谷歌广告的账号回来了！！！然后我又加了几个广告(确实有点多了，但是我真的不知道怎么减少，等我前端学的不错了再说8)</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天说来话长...
+    
+    </summary>
+    
+      <category term="Training" scheme="https://cndrew.cn/blog/categories/Training/"/>
+    
+    
+      <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
+    
+      <category term="c/c++" scheme="https://cndrew.cn/blog/tags/c-c/"/>
+    
+      <category term="最短路" scheme="https://cndrew.cn/blog/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>HPU Summer Day 20(河南理工大学暑期第二十天)</title>
@@ -114,13 +162,13 @@
     
       <category term="Greedy" scheme="https://cndrew.cn/blog/tags/Greedy/"/>
     
-      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
-    
       <category term="HPUOJ" scheme="https://cndrew.cn/blog/tags/HPUOJ/"/>
     
-      <category term="矩阵快速幂" scheme="https://cndrew.cn/blog/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
+      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
     
       <category term="BFS" scheme="https://cndrew.cn/blog/tags/BFS/"/>
+    
+      <category term="矩阵快速幂" scheme="https://cndrew.cn/blog/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/"/>
     
       <category term="树的直径" scheme="https://cndrew.cn/blog/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/"/>
     
@@ -512,9 +560,9 @@
     
       <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
     
-      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
-    
       <category term="DFS" scheme="https://cndrew.cn/blog/tags/DFS/"/>
+    
+      <category term="Thinking" scheme="https://cndrew.cn/blog/tags/Thinking/"/>
     
       <category term="Simulation" scheme="https://cndrew.cn/blog/tags/Simulation/"/>
     
@@ -547,56 +595,6 @@
       <category term="STL" scheme="https://cndrew.cn/blog/tags/STL/"/>
     
       <category term="Binary" scheme="https://cndrew.cn/blog/tags/Binary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HPU Summer Training Day 5（河南理工大学暑期第五天）</title>
-    <link href="https://cndrew.cn/blog/2019/07/21/d5/"/>
-    <id>https://cndrew.cn/blog/2019/07/21/d5/</id>
-    <published>2019-07-21T09:32:00.890Z</published>
-    <updated>2019-08-04T01:34:18.770Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>昨天积分赛的结束给今天带来了一天的休息，虽然机房开放而且好多同学都在刻苦学习，但是我以为放假就应该休息（其实就是懒<a id="more"></a><br>跟几个玩的不错的朋友去看了银河补习班，一开始朋友邀请我去看的时候我是拒绝的，但一听说是邓超演的我就同意了，还是很喜欢邓超的。这个电影看之前就听说让自备纸巾，还是很有自信心的。一开始演的还不错，影片就是讲述了一个成功的儿子是如何在爸爸的帮助下变得成功的。看到后来有些无聊，不过还是很值的去看的，虽然我自己带的纸巾也没用上，主要是我泪点高？<br>没有刷题的一天，按理说应该挺开心的，但是看到旁边的人都在刷题，唉，这可能就是我菜的原因吧Orz。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;昨天积分赛的结束给今天带来了一天的休息，虽然机房开放而且好多同学都在刻苦学习，但是我以为放假就应该休息（其实就是懒
-    
-    </summary>
-    
-      <category term="Training" scheme="https://cndrew.cn/blog/categories/Training/"/>
-    
-    
-      <category term="life" scheme="https://cndrew.cn/blog/tags/life/"/>
-    
-      <category term="movie" scheme="https://cndrew.cn/blog/tags/movie/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>HPU Summer Training Day 4（河南理工大学暑期第四天）</title>
-    <link href="https://cndrew.cn/blog/2019/07/20/d4/"/>
-    <id>https://cndrew.cn/blog/2019/07/20/d4/</id>
-    <published>2019-07-20T14:07:04.105Z</published>
-    <updated>2019-08-04T01:35:03.745Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\blog\assets\css\APlayer.min.css"><script src="\blog\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>第四天啦。<a id="more"></a><br>又是自闭的一天，第一次积分赛暗淡收场，这种被打爆的感觉没人会喜欢的吧，好好补题，好好学习。<br>刷题日记：<a href="http://blog.cndrew.cn/blog/2019/07/20/jifen/" target="_blank" rel="noopener">http://blog.cndrew.cn/blog/2019/07/20/jifen/</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;第四天啦。
-    
-    </summary>
-    
-      <category term="Training" scheme="https://cndrew.cn/blog/categories/Training/"/>
-    
-    
-      <category term="Algorithm" scheme="https://cndrew.cn/blog/tags/Algorithm/"/>
-    
-      <category term="c/c++" scheme="https://cndrew.cn/blog/tags/c-c/"/>
-    
-      <category term="life" scheme="https://cndrew.cn/blog/tags/life/"/>
     
   </entry>
   
