@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="今天讲了拓扑排序，相比较而言还是挺简单的，我觉得这也是BFS的应用。不得不说，BFS和DFS是真的太重要了，在图论里面。">
+<meta name="keywords" content="Algorithm,c&#x2F;c++,BFS,邻接表,拓扑排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU Summer Day22(河南理工大学暑期第二十二天)">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/08/07/d22/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="今天讲了拓扑排序，相比较而言还是挺简单的，我觉得这也是BFS的应用。不得不说，BFS和DFS是真的太重要了，在图论里面。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://drew.todest.cn/xiao%20%282%29.png">
+<meta property="og:image" content="http://drew.todest.cn/xiao%20%281%29.png">
+<meta property="og:image" content="http://drew.todest.cn/B1.png">
+<meta property="og:updated_time" content="2019-08-07T14:02:38.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU Summer Day22(河南理工大学暑期第二十二天)">
+<meta name="twitter:description" content="今天讲了拓扑排序，相比较而言还是挺简单的，我觉得这也是BFS的应用。不得不说，BFS和DFS是真的太重要了，在图论里面。">
+<meta name="twitter:image" content="http://drew.todest.cn/xiao%20%282%29.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/08/07/d22/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU Summer Day22(河南理工大学暑期第二十二天) | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://cndrew.cn/" rel="section"><i class="menu-item-icon fa fa-fw fa-coffee"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-posts">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>posts</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/08/07/d22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU Summer Day22(河南理工大学暑期第二十二天)
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-07 22:02:23 / Modified: 22:02:38" itemprop="dateCreated datePublished" datetime="2019-08-07T22:02:23+08:00">2019-08-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/08/07/d22/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/08/07/d22/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天讲了拓扑排序，相比较而言还是挺简单的，我觉得这也是BFS的应用。不得不说，BFS和DFS是真的太重要了，在图论里面。<a id="more"></a></p>
+<h3 id="Genealogical-tree"><a href="#Genealogical-tree" class="headerlink" title="Genealogical tree"></a>Genealogical tree</h3><p>Description:<br>The system of Martians&#39; blood relations is confusing enough. Actually, Martians bud when they want and where they want. They gather together in different groups, so that a Martian can have one parent as well as ten. Nobody will be surprised by a hundred of children. Martians have got used to this and their style of life seems to them natural.<br>And in the Planetary Council the confusing genealogical system leads to some embarrassment. There meet the worthiest of Martians, and therefore in order to offend nobody in all of the discussions it is used first to give the floor to the old Martians, than to the younger ones and only than to the most young childless assessors. However, the maintenance of this order really is not a trivial task. Not always Martian knows all of his parents (and there&#39;s nothing to tell about his grandparents!). But if by a mistake first speak a grandson and only than his young appearing great-grandfather, this is a real scandal.<br>Your task is to write a program, which would define once and for all, an order that would guarantee that every member of the Council takes the floor earlier than each of his descendants.<br>Input</p>
+<blockquote>
+<p>The first line of the standard input contains an only number N, 1 &lt;= N &lt;= 100 — a number of members of the Martian Planetary Council. According to the centuries-old tradition members of the Council are enumerated with the natural numbers from 1 up to N. Further, there are exactly N lines, moreover, the I-th line contains a list of I-th member&#39;s children. The list of children is a sequence of serial numbers of children in a arbitrary order separated by spaces. The list of children may be empty. The list (even if it is empty) ends with 0.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>The standard output should contain in its only line a sequence of speakers&#39; numbers, separated by spaces. If several sequences satisfy the conditions of the problem, you are to write to the standard output any of them. At least one such sequence always exists.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>5<br>0<br>4 5 1 0<br>1 0<br>5 3 0<br>3 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>2 4 5 3 1</p>
+</blockquote>
+<p>Problem solving:<br>题意就是给你n个人，然后分别告诉你n个人后面有几个人，让你输出一种排列方式。</p>
+<p>一开始没看懂题意WA了一次。</p>
+<p>这道题就是拓扑排序的一道板子题。直接写就行了。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line">int sijia[105];</span><br><span class="line">vector&lt;int&gt; xiaozhu[105];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m,nn,mid;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    nn=n;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        while(cin&gt;&gt;m&amp;&amp;m)</span><br><span class="line">        &#123;</span><br><span class="line">                sijia[m]++;</span><br><span class="line">                xiaozhu[i].push_back(m);</span><br><span class="line">                continue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    queue&lt;int&gt; q;</span><br><span class="line">    for(int i=1;i&lt;=nn;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(sijia[i]==0)</span><br><span class="line">        &#123;</span><br><span class="line">             q.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    while(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        int qixi=q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        cout&lt;&lt;qixi&lt;&lt;&quot; &quot;;</span><br><span class="line">        for(int i=0;i&lt;xiaozhu[qixi].size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sijia[xiaozhu[qixi][i]]--;</span><br><span class="line">            if(sijia[xiaozhu[qixi][i]]==0)</span><br><span class="line">                q.push(xiaozhu[qixi][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Window-Pains"><a href="#Window-Pains" class="headerlink" title="Window Pains"></a>Window Pains</h3><p>Description:<br>Boudreaux likes to multitask, especially when it comes to using his computer. Never satisfied with just running one application at a time, he usually runs nine applications, each in its own window. Due to limited screen real estate, he overlaps these windows and brings whatever window he currently needs to work with to the foreground. If his screen were a 4 x 4 grid of squares, each of Boudreaux&#39;s windows would be represented by the following 2 x 2 windows:<br><img src="http://drew.todest.cn/xiao%20%282%29.png" alt><br>When Boudreaux brings a window to the foreground, all of its squares come to the top, overlapping any squares it shares with other windows. For example, if window 1 and then window 2 were brought to the foreground, the resulting representation would be:<br><img src="http://drew.todest.cn/xiao%20%281%29.png" alt><br>Unfortunately, Boudreaux&#39;s computer is very unreliable and crashes often. He could easily tell if a crash occurred by looking at the windows and seeing a graphical representation that should not occur if windows were being brought to the foreground correctly. And this is where you come in . . .<br>Input</p>
+<blockquote>
+<p>Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets.<br>A single data set has 3 components:<br>Start line - A single line:<br>START<br>Screen Shot - Four lines that represent the current graphical representation of the windows on Boudreaux&#39;s screen. Each position in this 4 x 4 matrix will represent the current piece of window showing in each square. To make input easier, the list of numbers on each line will be delimited by a single space.<br>End line - A single line:<br>END<br>After the last data set, there will be a single line:<br>ENDOFINPUT<br>Note that each piece of visible window will appear only in screen areas where the window could appear when brought to the front. For instance, a 1 can only appear in the top left quadrant.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each data set, there will be exactly one line of output. If there exists a sequence of bringing windows to the foreground that would result in the graphical representation of the windows on Boudreaux&#39;s screen, the output will be a single line with the statement:<br>THESE WINDOWS ARE CLEAN<br>Otherwise, the output will be a single line with the statement:<br>THESE WINDOWS ARE BROKEN</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>START<br>1 2 3 3<br>4 5 6 6<br>7 8 9 9<br>7 8 9 9<br>END<br>START<br>1 1 3 3<br>4 1 3 3<br>7 7 9 9<br>7 7 9 9<br>END<br>ENDOFINPUT</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>THESE WINDOWS ARE CLEAN<br>THESE WINDOWS ARE BROKEN</p>
+</blockquote>
+<p>Problem solving:<br>这道题的题意有点恶心。而且也不太好想+好写。</p>
+<p>这道题也是要用拓扑排序做的。反正我是绝对想不到的，先预处理，把4*4的矩阵初始化成这样的<br><img src="http://drew.todest.cn/B1.png" alt></p>
+<p>这个我还是放大佬链接吧，自认为莫得能力讲清楚。。。<br>点这里进行传送：<a href="https://blog.csdn.net/wang_123_zy/article/details/81391510" target="_blank" rel="noopener">某学姐</a></p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int ma[10][10],sijia[10];</span><br><span class="line">int dr[]=&#123;0,1,0,1&#125;,dc[]=&#123;0,0,1,1&#125;;</span><br><span class="line">vector&lt;int&gt; ve[10][10];</span><br><span class="line">bool solve()</span><br><span class="line">&#123;</span><br><span class="line">    queue&lt;int&gt; q;</span><br><span class="line">    for(int i=0;i&lt;9;i++)</span><br><span class="line">        if(sijia[i]==0) q.push(i);</span><br><span class="line">    int sum=0;</span><br><span class="line">    while(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        int u=q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        for(int v=0;v&lt;9;v++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(ma[u][v])</span><br><span class="line">            &#123;</span><br><span class="line">                ma[u][v]=0;</span><br><span class="line">                sijia[v]--;</span><br><span class="line">                if(sijia[v]==0)   q.push(v);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sum++;</span><br><span class="line">    &#125;</span><br><span class="line">    return sum==9;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    for(int i=0;i&lt;9;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int r=i/3,c=i%3;</span><br><span class="line">        for(int j=0;j&lt;4;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            int nr=r+dr[j],nc=c+dc[j];</span><br><span class="line">            ve[nr][nc].push_back(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    string s;</span><br><span class="line">    while(cin&gt;&gt;s&amp;&amp;s[0]!=&apos;E&apos;)</span><br><span class="line">    &#123;</span><br><span class="line">        memset(ma,0,sizeof(ma));</span><br><span class="line">        memset(sijia,0,sizeof(sijia));</span><br><span class="line">        for(int i=0;i&lt;4;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j=0;j&lt;4;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                int v;</span><br><span class="line">                cin&gt;&gt;v;</span><br><span class="line">                v--;</span><br><span class="line">                for(int k=0;k&lt;ve[i][j].size();k++)</span><br><span class="line">                &#123;</span><br><span class="line">                    if(ve[i][j][k]!=v)</span><br><span class="line">                    &#123;</span><br><span class="line">                        int x=ve[i][j][k];</span><br><span class="line">                        if(ma[x][v]==0)</span><br><span class="line">                        &#123;</span><br><span class="line">                            sijia[v]++;</span><br><span class="line">                            ma[x][v]=1;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(solve()) puts(&quot;THESE WINDOWS ARE CLEAN&quot;);</span><br><span class="line">        else    puts(&quot;THESE WINDOWS ARE BROKEN&quot;);</span><br><span class="line">        cin&gt;&gt;s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="确定比赛名次"><a href="#确定比赛名次" class="headerlink" title="确定比赛名次"></a>确定比赛名次</h3><p>Description:</p>
+<blockquote>
+<p>有N个比赛队（1&lt;=N&lt;=500），编号依次为1，2，3，。。。。，N进行比赛，比赛结束后，裁判委员会要将所有参赛队伍从前往后依次排名，但现在裁判委员会不能直接获得每个队的比赛成绩，只知道每场比赛的结果，即P1赢P2，用P1，P2表示，排名时P1在P2之前。现在请你编程序确定排名。</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>输入有若干组，每组中的第一行为二个数N（1&lt;=N&lt;=500），M；其中N表示队伍的个数，M表示接着有M行的输入数据。接下来的M行数据中，每行也有两个整数P1，P2表示即P1队赢了P2队。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>给出一个符合要求的排名。输出时队伍号之间有空格，最后一名后面没有空格。<br>其他说明：符合条件的排名可能不是唯一的，此时要求输出时编号小的队伍在前；输入数据保证是正确的，即输入数据确保一定能有一个符合要求的排名。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>4 3<br>1 2<br>2 3<br>4 3</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1 2 4 3</p>
+</blockquote>
+<p>Problem solving:<br>给出n个队伍以及队伍的胜负关系，让你输出他们的排名。</p>
+<p>也是一个简单的拓扑排序的板子题，注意以下输出，最后一个数后面没有空格，就行了。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int sijiaxiaozhu=521;</span><br><span class="line">int qixikuaile[sijiaxiaozhu];</span><br><span class="line">vector&lt;int&gt; yongyuan[sijiaxiaozhu];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int n,m,x,y;</span><br><span class="line">  while(cin&gt;&gt;n&gt;&gt;m)</span><br><span class="line">  &#123;</span><br><span class="line">    memset(qixikuaile,0,sizeof(qixikuaile));</span><br><span class="line">    for(int i=0;i&lt;=n;i++) yongyuan[i].clear();</span><br><span class="line">    for(int i=0;i&lt;m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">      qixikuaile[y]++;</span><br><span class="line">      yongyuan[x].push_back(y);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt; &gt; q ;</span><br><span class="line">    int flag=1;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">      if(qixikuaile[i]==0)  q.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    while(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">      int mid=q.top();</span><br><span class="line">      q.pop();</span><br><span class="line">      if(flag)</span><br><span class="line">      &#123;</span><br><span class="line">        cout&lt;&lt;mid;</span><br><span class="line">        flag=0;</span><br><span class="line">      &#125;</span><br><span class="line">      else  cout&lt;&lt;&quot; &quot;&lt;&lt;mid;</span><br><span class="line">      for(int i=0;i&lt;yongyuan[mid].size();i++)</span><br><span class="line">      &#123;</span><br><span class="line">        qixikuaile[yongyuan[mid][i]]--;</span><br><span class="line">        if(qixikuaile[yongyuan[mid][i]]==0) q.push(yongyuan[mid][i]);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">  &#125;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="产生冠军"><a href="#产生冠军" class="headerlink" title="产生冠军"></a>产生冠军</h3><p>Description:<br>有一群人，打乒乓球比赛，两两捉对撕杀，每两个人之间最多打一场比赛。<br>球赛的规则如下：<br>如果A打败了B，B又打败了C，而A与C之间没有进行过比赛，那么就认定，A一定能打败C。<br>如果A打败了B，B又打败了C，而且，C又打败了A，那么A、B、C三者都不可能成为冠军。<br>根据这个规则，无需循环较量，或许就能确定冠军。你的任务就是面对一群比赛选手，在经过了若干场撕杀之后，确定是否已经实际上产生了冠军。<br>Input</p>
+<blockquote>
+<p>输入含有一些选手群，每群选手都以一个整数n(n&lt;1000)开头，后跟n对选手的比赛结果，比赛结果以一对选手名字（中间隔一空格）表示，前者战胜后者。如果n为0，则表示输入结束。</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每个选手群，若你判断出产生了冠军，则在一行中输出“Yes”，否则在一行中输出“No”。</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3<br>Alice Bob<br>Smith John<br>Alice Smith<br>5<br>a c<br>c d<br>d e<br>b e<br>a d<br>0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>Yes<br>No</p>
+</blockquote>
+<p>Problem solving:<br>这道题跟上一题很像。也是给了你胜负关系，问你能不能确定冠军。但是胜负关系是通过字符串给出的。</p>
+<p>想一下这就是可以用拓扑排序写，但是胜负关系是以字符串给出的，如果直接套我们的板子会发现一个很尴尬的问题，存图的时候字符串不可以做下标。但是这个时候可以用map给每个字符串赋一个值，然后套板子。讲道理，这个应该是可以实现的(虽然我没成功。</p>
+<p>然后想一下，这道题可以这样做。确定冠军的话，就是有一个人一场都没输过。所以我们只需要比较出现的总人数以及输过的总人数的关系即可。如果差一个就说明有一个人一场都没输过。这就能确定冠军了。反之就不能。这样的话一个set就能解决了。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    string x,y;</span><br><span class="line">    while(cin&gt;&gt;n&amp;&amp;n)</span><br><span class="line">    &#123;</span><br><span class="line">        set&lt;string&gt; sijia;</span><br><span class="line">        set&lt;string&gt; xiaozhu;</span><br><span class="line">        for(int i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">            sijia.insert(x),sijia.insert(y);</span><br><span class="line">            xiaozhu.insert(y);</span><br><span class="line">        &#125;</span><br><span class="line">            if(sijia.size()-xiaozhu.size()==1)  puts(&quot;Yes&quot;);</span><br><span class="line">            else    puts(&quot;No&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Legal-or-not"><a href="#Legal-or-not" class="headerlink" title="Legal or not"></a>Legal or not</h3><p>Description:<br>ACM-DIY is a large QQ group where many excellent acmers get together. It is so harmonious that just like a big family. Every day,many &quot;holy cows&quot; like HH, hh, AC, ZT, lcc, BF, Qinz and so on chat on-line to exchange their ideas. When someone has questions, many warm-hearted cows like Lost will come to help. Then the one being helped will call Lost &quot;master&quot;, and Lost will have a nice &quot;prentice&quot;. By and by, there are many pairs of &quot;master and prentice&quot;. But then problem occurs: there are too many masters and too many prentices, how can we know whether it is legal or not?</p>
+<p>We all know a master can have many prentices and a prentice may have a lot of masters too, it&#39;s legal. Nevertheless，some cows are not so honest, they hold illegal relationship. Take HH and 3xian for instant, HH is 3xian&#39;s master and, at the same time, 3xian is HH&#39;s master,which is quite illegal! To avoid this,please help us to judge whether their relationship is legal or not.</p>
+<p>Please note that the &quot;master and prentice&quot; relation is transitive. It means that if A is B&#39;s master ans B is C&#39;s master, then A is C&#39;s master.<br>Input</p>
+<blockquote>
+<p>The input consists of several test cases. For each case, the first line contains two integers, N (members to be tested) and M (relationships to be tested)(2 &lt;= N, M &lt;= 100). Then M lines follow, each contains a pair of (x, y) which means x is y&#39;s master and y is x&#39;s prentice. The input is terminated by N = 0.<br>TO MAKE IT SIMPLE, we give every one a number (0, 1, 2,..., N-1). We use their numbers instead of their names.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, print in one line the judgement of the messy relationship.<br>If it is legal, output &quot;YES&quot;, otherwise &quot;NO&quot;.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3 2<br>0 1<br>1 2<br>2 2<br>0 1<br>1 0<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>YES<br>NO</p>
+</blockquote>
+<p>Problem solving:<br>题意就是告诉你n个关系，问你会不会产生矛盾。</p>
+<p>一道拓扑排序的板子题，判断是否成环就行。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int sijia[521];</span><br><span class="line">vector&lt;int&gt; xiaozhu[521];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m,a,b;</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        memset(sijia,0,sizeof(sijia));</span><br><span class="line">        for(int i=0;i&lt;=n;i++  )    xiaozhu[i].clear();</span><br><span class="line">        if(n==0&amp;&amp;m==0)  break;</span><br><span class="line">        for(int i=0;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">            sijia[b]++;</span><br><span class="line">            xiaozhu[a].push_back(b);</span><br><span class="line">        &#125;</span><br><span class="line">        queue&lt;int&gt; q;</span><br><span class="line">        for(int i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(sijia[i]==0)</span><br><span class="line">            q.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        while(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            int mid=q.front();</span><br><span class="line">            q.pop();</span><br><span class="line">            n--;</span><br><span class="line">            for(int i=0;i&lt;xiaozhu[mid].size();i++)</span><br><span class="line">            &#123;</span><br><span class="line">                sijia[xiaozhu[mid][i]]--;</span><br><span class="line">                if(sijia[xiaozhu[mid][i]]==0)</span><br><span class="line">                    q.push(xiaozhu[mid][i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(n)   puts(&quot;NO&quot;);//如果n不为0，说明成环</span><br><span class="line">        else    puts(&quot;YES&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Reward"><a href="#Reward" class="headerlink" title="Reward"></a>Reward</h3><p>Description:<br>Dandelion&#39;s uncle is a boss of a factory. As the spring festival is coming , he wants to distribute rewards to his workers. Now he has a trouble about how to distribute the rewards.<br>The workers will compare their rewards ,and some one may have demands of the distributing of rewards ,just like a&#39;s reward should more than b&#39;s.Dandelion&#39;s unclue wants to fulfill all the demands, of course ,he wants to use the least money.Every work&#39;s reward will be at least 888 , because it&#39;s a lucky number.<br>Input</p>
+<blockquote>
+<p>One line with two integers n and m ,stands for the number of works and the number of demands .(n&lt;=10000,m&lt;=20000)<br>then m lines ,each line contains two integers a and b ,stands for a&#39;s reward should be more than b&#39;s.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For every case ,print the least money dandelion &#39;s uncle needs to distribute .If it&#39;s impossible to fulfill all the works&#39; demands ,print -1.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>2 1<br>1 2<br>2 2<br>1 2<br>2 1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1777<br>-1</p>
+</blockquote>
+<p>Problem solving:<br>这道题还是很有意思的，告诉你每个人的最低工资是888，然后给你大小关系，告诉你大小关系大于后者的工资也得比后者的多，问你老板做少需要支付多少工资。</p>
+<p>虽然也是一道拓扑排序的板子题。但是中间的一些处理还是很难搞得。<br>我们把初始没经过处理的时候的入度为0的顶点的工资都设为888，然后在拓扑排序的过程中，送入队列的点的工资比他前一个加1就行，因为要求的是最少。<br>最后全布累加在一起，输出即可。</p>
+<p>这道题还有一个坑点就是。存图的时候跟输出是反着来的。这个坑到我了。</p>
+<p>注意还有输出-1的情况，就是出现了环的时候。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define maxn 10000</span><br><span class="line">queue&lt;int&gt; q;</span><br><span class="line">vector&lt;int&gt;t[10005];</span><br><span class="line">int in[10005],sum[10005],cnt,u,v,ans;</span><br><span class="line">void Init()   </span><br><span class="line">&#123;</span><br><span class="line">    for(int i=0;i&lt;maxn;i++)</span><br><span class="line">      t[i].clear();</span><br><span class="line">    while(!q.empty())</span><br><span class="line">      q.pop();</span><br><span class="line">    memset(in,0,sizeof(in));</span><br><span class="line">    ans=0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m;</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        Init();</span><br><span class="line">        for(int i=0;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;u&gt;&gt;v;</span><br><span class="line">            u--;v--;</span><br><span class="line">            in[u]++;</span><br><span class="line">            t[v].push_back(u);</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(!in[i])</span><br><span class="line">            &#123;</span><br><span class="line">                q.push(i);</span><br><span class="line">                sum[i]=888;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cnt=0;     </span><br><span class="line">        while(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            cnt++;    </span><br><span class="line">            int p=q.front();</span><br><span class="line">            q.pop();</span><br><span class="line">            for(int i=0;i&lt;t[p].size();i++)   </span><br><span class="line">            &#123;</span><br><span class="line">                in[t[p][i]]--;    </span><br><span class="line">                if(in[t[p][i]]==0)     </span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(t[p][i]);     </span><br><span class="line">                    sum[t[p][i]]=sum[p]+1;    //对工资的处理</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;n;i++)</span><br><span class="line">          ans+=sum[i];</span><br><span class="line">        if(cnt!=n)</span><br><span class="line">          ans=-1;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Ordering-Tasks"><a href="#Ordering-Tasks" class="headerlink" title="Ordering Tasks"></a>Ordering Tasks</h3><p>PDF题面:<a href="https://vj.ti12z.cn/10b4efc19562fa67c26851fd2b184af3?v=1565051545" target="_blank" rel="noopener">七夕快乐</a><br>Description:<br>John has n tasks to do. Unfortunately, the tasks are not independent and the execution of one task is<br>only possible if other tasks have already been executed.<br>Input</p>
+<blockquote>
+<p>The input will consist of several instances of the problem. Each instance begins with a line containing<br>two integers, 1 ≤ n ≤ 100 and m. n is the number of tasks (numbered from 1 to n) and m is the<br>number of direct precedence relations between tasks. After this, there will be m lines with two integers<br>i and j, representing the fact that task i must be executed before task j.<br>An instance with n = m = 0 will finish the input.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each instance, print a line with n integers representing the tasks in a possible order of execution.</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>5 4<br>1 2<br>2 3<br>1 3<br>1 5<br>0 0</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>1 4 2 5 3</p>
+</blockquote>
+<p>Problem solving:<br>题意就是有n个工作，但是有的工作需要在另一个工作完成的基础上才能完成，问你一个合理的顺序。</p>
+<p>拓扑排序板子题啦，输出就行。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int sijia[105];</span><br><span class="line">vector&lt;int&gt; xiaozhu[105];</span><br><span class="line">int n,m,x,y;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        memset(sijia,0,sizeof(sijia));</span><br><span class="line">        for(int i=0;i&lt;=n;i++)   xiaozhu[i].clear();</span><br><span class="line">        if(n==0&amp;&amp;m==0)  break;</span><br><span class="line">        for(int i=0;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">            sijia[y]++;</span><br><span class="line">            xiaozhu[x].push_back(y);</span><br><span class="line">        &#125;</span><br><span class="line">        queue&lt;int&gt; qixi;</span><br><span class="line">        for(int i=1;i&lt;=n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(sijia[i]==0) qixi.push(i);</span><br><span class="line">        &#125;</span><br><span class="line">        while(!qixi.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            int kuaile=qixi.front();</span><br><span class="line">            qixi.pop();</span><br><span class="line">            cout&lt;&lt;kuaile&lt;&lt;&quot; &quot;;</span><br><span class="line">            for(int i=0;i&lt;xiaozhu[kuaile].size();i++)</span><br><span class="line">            &#123;</span><br><span class="line">                sijia[xiaozhu[kuaile][i]]--;</span><br><span class="line">                if(sijia[xiaozhu[kuaile][i]]==0)</span><br><span class="line">                    qixi.push(xiaozhu[kuaile][i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Rank-of-Tetris"><a href="#Rank-of-Tetris" class="headerlink" title="Rank of Tetris"></a>Rank of Tetris</h3><p>Description:<br>自从Lele开发了Rating系统，他的Tetris事业更是如虎添翼，不久他遍把这个游戏推向了全球。</p>
+<p>为了更好的符合那些爱好者的喜好，Lele又想了一个新点子：他将制作一个全球Tetris高手排行榜，定时更新，名堂要比福布斯富豪榜还响。关于如何排名，这个不用说都知道是根据Rating从高到低来排，如果两个人具有相同的Rating，那就按这几个人的RP从高到低来排。</p>
+<p>终于，Lele要开始行动了，对N个人进行排名。为了方便起见，每个人都已经被编号，分别从0到N-1,并且编号越大，RP就越高。<br>同时Lele从狗仔队里取得一些（M个）关于Rating的信息。这些信息可能有三种情况，分别是&quot;A &gt; B&quot;,&quot;A = B&quot;,&quot;A &lt; B&quot;，分别表示A的Rating高于B,等于B,小于B。</p>
+<p>现在Lele并不是让你来帮他制作这个高手榜，他只是想知道，根据这些信息是否能够确定出这个高手榜，是的话就输出&quot;OK&quot;。否则就请你判断出错的原因，到底是因为信息不完全（输出&quot;UNCERTAIN&quot;），还是因为这些信息中包含冲突（输出&quot;CONFLICT&quot;）。<br>注意，如果信息中同时包含冲突且信息不完全，就输出&quot;CONFLICT&quot;。<br>Input</p>
+<blockquote>
+<p>本题目包含多组测试，请处理到文件结束。<br>每组测试第一行包含两个整数N,M(0&lt;=N&lt;=10000,0&lt;=M&lt;=20000),分别表示要排名的人数以及得到的关系数。<br>接下来有M行，分别表示这些关系</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>对于每组测试，在一行里按题目要求输出</p>
+</blockquote>
+<p>Sample Input</p>
+<blockquote>
+<p>3 3<br>0 &gt; 1<br>1 &lt; 2<br>0 &gt; 2<br>4 4<br>1 = 2<br>1 &gt; 3<br>2 &gt; 0<br>0 &gt; 1<br>3 3<br>1 &gt; 0<br>1 &gt; 2<br>2 &lt; 1</p>
+</blockquote>
+<p>Sample Output</p>
+<blockquote>
+<p>OK<br>CONFLICT<br>UNCERTAIN</p>
+</blockquote>
+<p>Problem solving:<br>题意就是告诉你n个人的rating大小关系。问你给的信息能否确定一个高手榜。如果信息不完全就输出<code>UNCERTAIN</code>，如果有冲突了就输出<code>CONFLICT</code>,如果可以就输出<code>OK</code>。并且如果rating相同的话，比较两个人的RP值，RP值的大小就是编号的大小。</p>
+<p>如果只有大小关系的话，就是一个简单板子题，但是它这里还存在着一种等于的关系。这就很麻烦了。我们需要用到并查集来处理。只要出现等于号，就把那两个人join(合并函数)起来，放在一起处理。然后在存图的过程中如果是等于的关系直接跳过就行，否则就先找一下两个点的父节点，用父节点存图，这样就完美的解决了出现等号的情况——这点可能不是很清楚，自己在脑子里模拟一下想一下就可以了。接下来就是拓扑排序了。</p>
+<p>再说一下三种输出。OK的话当然就是可以构建出来高手榜的时候输出，但是CONFLICT和UNCERTAIN有什么区别呢？</p>
+<p>CONFLICT就是有了冲突，有了冲突是什么情况呢？就是存的图里面出现了有环存在的情况，也就是最后还有入度不为0的结点存在。<br>UNCERTAIN就是不确定，不确定是什么情况呢？就是有两个节点的大小关系不知道，也就是存着入度为0的节点的队列中存在两个以上的节点，这个应该还挺好理解的，如果在同一次循环中出现了两个入度为0的节点，说明这两个点之间没有任何边连接着，所以他俩的大小关系自然是不确定了。</p>
+<p>到这里我们发现并没有处理rating相同然后比较RP的问题，这是为什么呢？<br>因为如果出现了等于关系，那么按照题意来说我们应该比较两者的RP值，但是RP值得大小关系是和和编号的大小一样的，而编号每个人都是不一样的，所以就算出现了相等的情况，在不考虑别的情况下一定能比较出大小。所以不需要考虑这个问题。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;vector&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int n,m,sijia[52121],p[52121],sum;</span><br><span class="line">vector&lt;int&gt; ma[52121];</span><br><span class="line">struct node&#123;</span><br><span class="line">    int x,y;</span><br><span class="line">    char s;</span><br><span class="line">&#125;xiaozhu[52121];</span><br><span class="line">int find(int x)</span><br><span class="line">&#123;</span><br><span class="line">    return p[x]!=x?p[x]=find(p[x]):x;//并查集的查找函数</span><br><span class="line">&#125;</span><br><span class="line">bool join(int x,int y)//并查集的合并函数，这里设置成bool类型是为了下面方便</span><br><span class="line">&#123;</span><br><span class="line">    x=find(x),y=find(y);</span><br><span class="line">    if(x==y)//如果x和y的父节点已经相等了，就不用在处理了</span><br><span class="line">        return 0;</span><br><span class="line">    p[x]=y;</span><br><span class="line">    return 1;</span><br><span class="line">&#125;</span><br><span class="line">void solve()//拓扑排序</span><br><span class="line">&#123;</span><br><span class="line">    queue&lt;int&gt; q;</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(p[i]==i&amp;&amp;sijia[i]==0)    q.push(i);</span><br><span class="line">    &#125;</span><br><span class="line">    int flag=0;</span><br><span class="line">    while(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        if(q.size()&gt;1)  flag=1;   //入度为0的点同时出现了两个</span><br><span class="line">        int mid=q.front();</span><br><span class="line">        q.pop();sum--;</span><br><span class="line">        for(int i=0;i&lt;ma[mid].size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            sijia[ma[mid][i]]--;</span><br><span class="line">            if(sijia[ma[mid][i]]==0)    q.push(ma[mid][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(sum&gt;0)   puts(&quot;CONFLICT&quot;);  //有环存在</span><br><span class="line">    else if(flag)   puts(&quot;UNCERTAIN&quot;);//sum大于0说明同一等级上不是只有唯一的一个</span><br><span class="line">    else    puts(&quot;OK&quot;);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    while(cin&gt;&gt;n&gt;&gt;m)</span><br><span class="line">    &#123;</span><br><span class="line">        memset(sijia,0,sizeof(sijia));</span><br><span class="line">        memset(ma,0,sizeof(ma));</span><br><span class="line">        sum=n;</span><br><span class="line">        for(int i=0;i&lt;n;i++)    p[i]=i;</span><br><span class="line">        for(int i=0;i&lt;m;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin&gt;&gt;xiaozhu[i].x&gt;&gt;xiaozhu[i].s&gt;&gt;xiaozhu[i].y;</span><br><span class="line">            if(xiaozhu[i].s==&apos;=&apos;)//如果出现了等号，就把两个合并</span><br><span class="line">            &#123;</span><br><span class="line">                if(join(xiaozhu[i].x,xiaozhu[i].y))</span><br><span class="line">                &#123;</span><br><span class="line">                    sum--;//因为合并起来了两个，所以总的拓扑排序用到的节点数减一</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i=0;i&lt;m;i++)//存图</span><br><span class="line">        &#123;</span><br><span class="line">            if(xiaozhu[i].s==&apos;=&apos;)   continue;</span><br><span class="line">            int xx=find(xiaozhu[i].x),yy=find(xiaozhu[i].y);</span><br><span class="line">            if(xiaozhu[i].s==&apos;&gt;&apos;)</span><br><span class="line">            &#123;</span><br><span class="line">                ma[xx].push_back(yy);</span><br><span class="line">                sijia[yy]++;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                ma[yy].push_back(xx);</span><br><span class="line">                sijia[xx]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        solve();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\26\d10\" rel="bookmark">HPU Summer Training Day 10(河南理工大学暑期第十天)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\08\03\jifen3\" rel="bookmark">河南理工大学算法协会暑期集训积分赛（三）</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\07\25\mapsave\" rel="bookmark">树的直径以及邻接表，链式前向星的存图</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+            <a href="/blog/tags/BFS/" rel="tag"><i class="fa fa-tag"></i> BFS</a>
+          
+            <a href="/blog/tags/邻接表/" rel="tag"><i class="fa fa-tag"></i> 邻接表</a>
+          
+            <a href="/blog/tags/拓扑排序/" rel="tag"><i class="fa fa-tag"></i> 拓扑排序</a>
+          
+        </div>
+      
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="6957101534"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/08/06/guide/" rel="next" title="Weicome to Uncle_drew's blog">
+                <i class="fa fa-chevron-left"></i> Weicome to Uncle_drew's blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/08/07/super/" rel="prev" title="Win10 or Win7 下下载并配置gcc/g++编译环境">
+                Win10 or Win7 下下载并配置gcc/g++编译环境 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">114</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">74</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hpu-yz.github.io/" title="https://hpu-yz.github.io/" rel="noopener" target="_blank">The Flaneurs</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blogzhy.cn/" title="http://blogzhy.cn/" rel="noopener" target="_blank">blogzhy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mewhz.com/" title="https://mewhz.com/" rel="noopener" target="_blank">若当来世</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Genealogical-tree"><span class="nav-number">1.</span> <span class="nav-text">Genealogical tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-Pains"><span class="nav-number">2.</span> <span class="nav-text">Window Pains</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#确定比赛名次"><span class="nav-number">3.</span> <span class="nav-text">确定比赛名次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产生冠军"><span class="nav-number">4.</span> <span class="nav-text">产生冠军</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Legal-or-not"><span class="nav-number">5.</span> <span class="nav-text">Legal or not</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reward"><span class="nav-number">6.</span> <span class="nav-text">Reward</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ordering-Tasks"><span class="nav-number">7.</span> <span class="nav-text">Ordering Tasks</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rank-of-Tetris"><span class="nav-number">8.</span> <span class="nav-text">Rank of Tetris</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 181.6kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+
+
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+
+
+
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->
