@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en,default">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/blog/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" href="/blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon.ico?v=7.0.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"expandIn","post_header":"expandIn","post_body":"expandIn","coll_header":"bounceIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7495139204844693",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+
+  <meta name="description" content="今天跟大二一起打了一场训练赛，说来话长。。。">
+<meta name="keywords" content="Algorithm,c&#x2F;c++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HPU算法协会一二年级联合训练赛">
+<meta property="og:url" content="https://cndrew.cn/blog/2019/08/09/sadcontest/index.html">
+<meta property="og:site_name" content="Uncle_drew">
+<meta property="og:description" content="今天跟大二一起打了一场训练赛，说来话长。。。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-09T09:29:25.433Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HPU算法协会一二年级联合训练赛">
+<meta name="twitter:description" content="今天跟大二一起打了一场训练赛，说来话长。。。">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="Uncle_drew" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://cndrew.cn/blog/2019/08/09/sadcontest/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HPU算法协会一二年级联合训练赛 | Uncle_drew</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Uncle_drew</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Hand down,man down</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="https://cndrew.cn/" rel="section"><i class="menu-item-icon fa fa-fw fa-coffee"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-posts">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>posts</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+    <p id="hitokoto">:D 获取中...</p>
+    <div id="hitokoto"><script>hitokoto()</script></div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cndrew.cn/blog/blog/2019/08/09/sadcontest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Uncle_drew">
+      <meta itemprop="description" content="This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.">
+      <meta itemprop="image" content="http://drew.todest.cn//20190804105405.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Uncle_drew">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HPU算法协会一二年级联合训练赛
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-09 17:29:19 / Modified: 17:29:25" itemprop="dateCreated datePublished" datetime="2019-08-09T17:29:19+08:00">2019-08-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Training/" itemprop="url" rel="index"><span itemprop="name">Training</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/blog/2019/08/09/sadcontest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/2019/08/09/sadcontest/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天跟大二一起打了一场训练赛，说来话长。。。<a id="more"></a><br>13道题，全是英文题，懒得没拿词典，后来才知道可以用电子词典(当然正经比赛里面是不可以的。先写一下我做出来的题解在总结吧。</p>
+<h3 id="MaratonIME-helps-Pablito"><a href="#MaratonIME-helps-Pablito" class="headerlink" title="MaratonIME helps Pablito"></a>MaratonIME helps Pablito</h3><p>Description:<br>♬ Caloventor tiene miedo... ♬<br>Benedetto, Nathan<br>As is well known by any cultured person, rats are the smartest beings on earth. Followed directly by dolphins.</p>
+<p>MaratonIME knows about the species hierarchy and uses this knowledge in it&#39;s regard. Usually, when they need some resource, they know it&#39;s always useful to have a smart rat available. Unfortunately, rats are not very fond of us, primates, and will only help us if they owe us some favour.</p>
+<p>With that in mind, MaratonIME decided to help a little rat called Pablito. Pablito is studying rat&#39;s genealogy, to help with cloning and genetic mapping. luckily, the way rats identify themselves make the job much easier.</p>
+<p>The rat society is, historically, matriarchal. At first, there were little families, each of which had it&#39;s own leading matriarch. At that time, it was decided that rats would organize themselves according to the following rules:</p>
+<p>Each martiarch had an id number greater than one.<br>Each of these ids were chosen in a way such that they would have the least amount of divisors possible.<br>Each family member had the same id as the matriarch.<br>The id of any newborn rat would be the product of its parents id&#39;s.<br>For instance, the offspring of a rat with id 6 and another with id 7 is 42.</p>
+<p>Pablito needs to know if two given rats have a common ancestor, but his only tool is the id number of each of the two rats, which is always a positive integer greater than 1 with no more than 16 digits. Can you help him?</p>
+<p>Create a program that decides if a pair of rats have some common ancestor.</p>
+<p>Input</p>
+<blockquote>
+<p>The input begins with a positive integer t ≤ 105, the number of test cases.<br>After that, follows t lines, each with two integers ai e bi identifying two rats.<br>Every rat&#39;s id is a positive integer greater than 1 and with no more than 16 digits.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each test case, print &quot;Sim&quot; if the rats ai and bi share a common ancestor and &quot;Nao&quot; otherwise.</p>
+</blockquote>
+<p>Example<br>Input</p>
+<blockquote>
+<p>2<br>2 4<br>3 5</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Sim<br>Nao</p>
+</blockquote>
+<p>Problem solving:<br>这道题我没看太懂意思。<br>题意好像就是如果两个数gcd不为1的话就说明有相同的祖先。</p>
+<p>看着样例感觉像是简单题，看了一下一血时间，准备试一下gcd，然后，就过了。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	long long n,a,b;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	while(n--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">		if(__gcd(a,b)==1)	puts(&quot;Nao&quot;);</span><br><span class="line">		else	puts(&quot;Sim&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-plays-Cirokime"><a href="#MaratonIME-plays-Cirokime" class="headerlink" title="MaratonIME plays Cîrokime"></a>MaratonIME plays Cîrokime</h3><p>Description:<br>Have you ever seen flavored vodka?<br>Everaldo, Glauber<br>The MaratonIME members like to have fun. As they enjoy having fun so much, they have invented a game named &quot;Cîrokime&quot;. The game works as follows:</p>
+<p>First, n cups with Cîroc1 are lined up. In front of the i-th cup a number ai is written. It is guaranteed that ai &lt; ai + 1, for all 1 ≤ i &lt; n. Then, the numbers are covered and the game starts.</p>
+<p>The player must then find the cup that has a certain number x. It is guaranteed that this cup exists. For this, he has to choose a cup i and drink the beverage. Then, the cup&#39;s number ai is revealed and if this number is equal to x the game finished. Otherwise, the player has to choose another cup and so on.</p>
+<p>&quot;Cîrokime&quot; is a traditional game among MaratonIME members, they play it every party. At the last party, Sussu had to drink all of the n cups because he found the right cup only at the end. He got sick for drinking so much and had to be carried home3</p>
+<p>However, the DESMAME4 is scheduled for May 13 and Sussu wants to restore his dignity. For this, he wants to know, in the worst case, what is the maximum number of cups that he will have to drink if he plays in the optimal way.</p>
+<p>Input</p>
+<blockquote>
+<p>The first line has a single integer n, the number of cups. The second line has n integers ai, the values hidden in each cup.<br>1 ≤ n ≤ 1e5<br>For all i, 1 ≤ ai ≤ 1e9<br>For i &lt; n, ai &lt; ai + 1</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>The output has a single line with a single integer: the minimum number of cups that Sussu should drink, in the worst case, if he plays in the optimal way.</p>
+</blockquote>
+<p>Examples<br>Input</p>
+<blockquote>
+<p>3<br>2 5 7</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>8<br>1 2 3 4 5 6 7 8</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>4</p>
+</blockquote>
+<p>Note</p>
+<blockquote>
+<p>1: Cîroc is a vodka brand made in France, known by its high sales price in market2<br>2: Balalaika also works<br>3: Based on real facts<br>4: Pre-BIFE5 party<br>5: University games that IME6 attends<br>6: Institute of Mathematics and Statistics</p>
+</blockquote>
+<p>Problem solving:<br>这道题其实就是个猜数问题。问你在最差的情况下需要猜几次。</p>
+<p>题意知道了，就很简单了，答案只跟n有关，中间的数都没用。看n可以除以2几次，就是答案。<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ll n,a;</span><br><span class="line">	scanf(&quot;%lld&quot;,&amp;n);</span><br><span class="line">	for(int i=0;i&lt;n;i++)	scanf(&quot;%lld&quot;,&amp;a);</span><br><span class="line">	ll ans=0;</span><br><span class="line">	while(n)</span><br><span class="line">	&#123;</span><br><span class="line">		n/=2;</span><br><span class="line">		ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%lld\n&quot;,ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-plays-Nim"><a href="#MaratonIME-plays-Nim" class="headerlink" title="MaratonIME plays Nim"></a>MaratonIME plays Nim</h3><p>Description:<br>Ai Fox!<br>UnionFind, Germano<br>You open your eyes, but everything remains dark. The world is dark, and everything shakes. You realize you are locked in, but before desperation takes hold, you hear the door opening and the light invades your sight and blinds you for a few moments.</p>
+<p>They help you out, you had been locked inside a trunk. You don&#39;t know the masked faces before you, but remember that in the last competitive programming practice they told you that &quot;the beginning is yet to come&quot;. &quot;So this is the fabled MaratonIME&#39;s initiation challenge&quot;, you had heard rumors of this event, and you feel honored to be chosen.</p>
+<p>After walking into and abandoned building, they sit you on an old chair. The first test is to watch a soccer game without any show of excitement. Easy. The second is to install Linux on a notebook in less than 5 minutes. You were prepared, carrying the Arch Linux pendrive as usual, just in case. You face more tests, and manage to pass all of them despite a few difficulties.</p>
+<p>Hours go by, the members remove their masks, and each take a coin out of their pocket. &quot;I won! And I even got rich&quot; you think, but realize they place the coins in a table in front of you, divided in two piles. Renzo, MaratonIME&#39;s great boss, takes a chair and sits in front of you. You will play a match of Nim, and if you win you will become an honorary member of MaratonIME, that is, you win a balloon.</p>
+<p>Nim is a game of two players, alternating their turns. Two piles of coins are placed on a table and in each turn you can remove any non zero quantity of coins from one of the piles. The last player to take their turn (leaving both piles empty) wins.</p>
+<p>You start the game. So it would not be unfair, it is guaranteed that it is possible for you to win. Write a program than beats Renzo 100% of the time.</p>
+<p>Input</p>
+<blockquote>
+<p>In the first line, two integers, x and y, the size of the piles, such that 0 ≤ x, y ≤ 1e4. It is guaranteed that you can win the game.</p>
+</blockquote>
+<p>Interaction</p>
+<blockquote>
+<p>In your turn, print two integers, i and x, where i is the number of the pile from which you will remove the coins (), and x is the number of coins you will remove (x ≥ 1, such that i has at least x coins).<br>In Renzo&#39;s turn, read two integers, in the same format as in your turn.</p>
+</blockquote>
+<p>Example<br>Input</p>
+<blockquote>
+<p>2 1<br>1 1</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>1 1<br>2 1</p>
+</blockquote>
+<p>Note</p>
+<blockquote>
+<p>Of course we do not do an initiation challenge like this :P<br>In the example, we have a pile with 2 coins and another with 1. You remove 1 coin from the first pile, and now no matter what coin Renzo removes, you can remove the other and win.<br>Remember, after printing your play, flush the output, like: fflush(stdout); in C, cout.flush(); in C++, or sys.stdout.flush() in Python.</p>
+</blockquote>
+<p>Problem solving:<br>据说是nim博弈，毫无思路。<br>以后再补吧。。。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *　　　　　　　　┏┓　　 　┏┓</span><br><span class="line"> * 　　　　　　　┏┛┗━━━━━━━┛┗━━━┓</span><br><span class="line"> * 　　　　　　　┃　　　　　　　┃ 　</span><br><span class="line"> * 　　　　　　　┃　　　━　　 　┃</span><br><span class="line"> * 　　　　　　　┃　＞　　　＜　┃</span><br><span class="line"> * 　　　　　　　┃　　　　　　　┃</span><br><span class="line"> * 　　　　　　　┃...　⌒　... 　┃</span><br><span class="line"> * 　　　　　　　┃　　　　　　　┃</span><br><span class="line"> * 　　　　　　　┗━┓　　　┏━┛</span><br><span class="line"> * 　　　　　　　　　┃　　　┃　Code is far away from bug with the animal protecting　　　　　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┃   神兽保佑,代码无bug</span><br><span class="line"> * 　　　　　　　　　┃　　　┃　　　　　　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┃  　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┃</span><br><span class="line"> * 　　　　　　　　　┃　　　┃　　　　　　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┗━━━┓</span><br><span class="line"> * 　　　　　　　　　┃　　　　　　　┣┓</span><br><span class="line"> * 　　　　　　　　　┃　　　　　　　┏┛</span><br><span class="line"> * 　　　　　　　　　┗┓┓┏━┳┓┏┛</span><br><span class="line"> * 　　　　　　　　　　┃┫┫　┃┫┫</span><br><span class="line"> * 　　　　　　　　　　┗┻┛　┗┻┛</span><br><span class="line"> */</span><br><span class="line">// warm heart, wagging tail,and a smile just for you!</span><br><span class="line">//</span><br><span class="line">//                            _ooOoo_</span><br><span class="line">//                           o8888888o</span><br><span class="line">//                           88&quot; . &quot;88</span><br><span class="line">//                           (| -_- |)</span><br><span class="line">//                           O\  =  /O</span><br><span class="line">//                        ____/`---&apos;\____</span><br><span class="line">//                      .&apos;  \|     |//  `.</span><br><span class="line">//                     /  \|||  :  |||//  \</span><br><span class="line">//                    /  _||||| -:- |||||-  \</span><br><span class="line">//                    |   | \\  -  /// |   |</span><br><span class="line">//                    | \_|  &apos;&apos;\---/&apos;&apos;  |   |</span><br><span class="line">//                    \  .-\__  `-`  ___/-. /</span><br><span class="line">//                  ___`. .&apos;  /--.--\  `. . __</span><br><span class="line">//               .&quot;&quot; &apos;&lt;  `.___\_&lt;|&gt;_/___.&apos;  &gt;&apos;&quot;&quot;.</span><br><span class="line">//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |</span><br><span class="line">//              \  \ `-.   \_ __\ /__ _/   .-` /  /</span><br><span class="line">//         ======`-.____`-.___\_____/___.-`____.-&apos;======</span><br><span class="line">//                            `=---=&apos;</span><br><span class="line">//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br><span class="line">//</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-plays-Chess"><a href="#MaratonIME-plays-Chess" class="headerlink" title="MaratonIME plays Chess"></a>MaratonIME plays Chess</h3><p>Description:<br>This problem is boring as duck.<br>Kawakami, Marcos<br>Our dear Nathan, when a little child, used to like chess a lot, but this was a long time ago. One of these days he was challenged by @luisgust to a chess match and, as he is a guy that likes hard challenges, he accepted it. The problem is that Nathan keeps forgetting the rules of the game, so he asked you to help him determine if a given opponent&#39;s piece can be captured in one move.</p>
+<p>Chess, in MaratonIME, is represented as a matrix of characters. Instead of playing with black and white pieces, they play with uppercase and lowercase letters. Nathan has chosen to play with the lowercase letters.</p>
+<p>Besides that, as usual, the positions on the matrix are given in the following coordinates system: Each position is a pair with a character between a and h (inclusive), representing the column, and an integer between 1 and 8 (inclusive), representing the row. For exemple, the position d2 refers to the fourth column (from left to right) and second row (from bottom to top), and the position f6 refers to the sixth column and sixth row. Lowercase letters start on the bottom of the grid, on lines 1 and 2.</p>
+<p>Here position A is adjacent position B if A shares a vertex with B, that is, if the distance between their rows is at most one and the distance between their columns is at most one. For example, the position c4 is adjacent to 8 positions: b3, b4, b5, c3, c5, d3, d4 and d5.</p>
+<p>They decided to play a simplified version of chess. To help you, they gave you the following manual on how to play it:</p>
+<p>The pawn, represented by p or P, can capture pieces that share a diagonal and is in front of it, that is, the lowercase pawn on c4 can capture pieces at b5 or d5.<br>The knight, represented by c or C, makes L-shaped moves in any of the 8 possible directions, that is, it moves two positions in any direction and after that one position in a direction that is perpenticular to the first one. A knight on c4 can capture, in one move, pieces on positions a3, a5, b2, b6, d2, d6, e3 and e5.<br>The rook, represented by t or T, can capture pieces that are on the same row or the same column as it, as long as no other piece lies between them. For example, a rook on c4 can capture any piece on column c or row 4, as long as there is no other piece in between. If the rook is on c4 and there is another piece on c6, the rook can&#39;t capture pieces on c7 and c8.<br>The bishop, represented by b or B, can capture any piece on one of its diagonals as long as there are no piece between them (diagonaly). For example, the bishop on c4 can capture a piece on f7 as long as there are no piece on d5 and e6.<br>The queen, represented by r or R, can capture any piece that lies on the same row, column or diagonal, given there are no pieces in between, as if it were a bishop and a rook at the same time.<br>The king, represented by k or K, can capture any piece that is adjacent to it.<br>The character . represents an empty position.<br>Given a matrix representing a chess board and an opponent&#39;s piece, your program needs to determine whether you can capture it with one of your pieces. It is guaranteed that each player has at most two bishops, two rooks, two knights, eight pawns, one king and one queen.</p>
+<p>Input</p>
+<blockquote>
+<p>The input begins with 8 lines with 8 characters each, representing the chess board. The first line contains the characters on the positions a8, b8, ... , h8. The second line contains the characters on positions a7, b7, ... , h7, and so on. After that follows a line containing the position of the opponent&#39;s piece you wish to capture.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Print a single line containing the word Sim if it is possible to capture the piece or Nao otherwise.</p>
+</blockquote>
+<p>Examples<br>Input</p>
+<blockquote>
+<p>TCBRKBCT<br>PPPPPPPP<br>........<br>........<br>........<br>........<br>pppppppp<br>tcbrkbct<br>d8</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Nao</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>........<br>........<br>........<br>..R.....<br>...p....<br>........<br>........<br>........<br>c5</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Sim</p>
+</blockquote>
+<p>Problem solving:<br>毫无思路题。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *　　　　　　　　┏┓　　 　┏┓</span><br><span class="line"> * 　　　　　　　┏┛┗━━━━━━━┛┗━━━┓</span><br><span class="line"> * 　　　　　　　┃　　　　　　　┃ 　</span><br><span class="line"> * 　　　　　　　┃　　　━　　 　┃</span><br><span class="line"> * 　　　　　　　┃　＞　　　＜　┃</span><br><span class="line"> * 　　　　　　　┃　　　　　　　┃</span><br><span class="line"> * 　　　　　　　┃...　⌒　... 　┃</span><br><span class="line"> * 　　　　　　　┃　　　　　　　┃</span><br><span class="line"> * 　　　　　　　┗━┓　　　┏━┛</span><br><span class="line"> * 　　　　　　　　　┃　　　┃　Code is far away from bug with the animal protecting　　　　　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┃   神兽保佑,代码无bug</span><br><span class="line"> * 　　　　　　　　　┃　　　┃　　　　　　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┃  　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┃</span><br><span class="line"> * 　　　　　　　　　┃　　　┃　　　　　　　　　　　</span><br><span class="line"> * 　　　　　　　　　┃　　　┗━━━┓</span><br><span class="line"> * 　　　　　　　　　┃　　　　　　　┣┓</span><br><span class="line"> * 　　　　　　　　　┃　　　　　　　┏┛</span><br><span class="line"> * 　　　　　　　　　┗┓┓┏━┳┓┏┛</span><br><span class="line"> * 　　　　　　　　　　┃┫┫　┃┫┫</span><br><span class="line"> * 　　　　　　　　　　┗┻┛　┗┻┛</span><br><span class="line"> */</span><br><span class="line">// warm heart, wagging tail,and a smile just for you!</span><br><span class="line">//</span><br><span class="line">//                            _ooOoo_</span><br><span class="line">//                           o8888888o</span><br><span class="line">//                           88&quot; . &quot;88</span><br><span class="line">//                           (| -_- |)</span><br><span class="line">//                           O\  =  /O</span><br><span class="line">//                        ____/`---&apos;\____</span><br><span class="line">//                      .&apos;  \|     |//  `.</span><br><span class="line">//                     /  \|||  :  |||//  \</span><br><span class="line">//                    /  _||||| -:- |||||-  \</span><br><span class="line">//                    |   | \\  -  /// |   |</span><br><span class="line">//                    | \_|  &apos;&apos;\---/&apos;&apos;  |   |</span><br><span class="line">//                    \  .-\__  `-`  ___/-. /</span><br><span class="line">//                  ___`. .&apos;  /--.--\  `. . __</span><br><span class="line">//               .&quot;&quot; &apos;&lt;  `.___\_&lt;|&gt;_/___.&apos;  &gt;&apos;&quot;&quot;.</span><br><span class="line">//              | | :  `- \`.;`\ _ /`;.`/ - ` : | |</span><br><span class="line">//              \  \ `-.   \_ __\ /__ _/   .-` /  /</span><br><span class="line">//         ======`-.____`-.___\_____/___.-`____.-&apos;======</span><br><span class="line">//                            `=---=&apos;</span><br><span class="line">//        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span><br><span class="line">//</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-rides-the-university-bus"><a href="#MaratonIME-rides-the-university-bus" class="headerlink" title="MaratonIME rides the university bus"></a>MaratonIME rides the university bus</h3><p>Description:<br>If we organize it correctly, ...<br>Unknown<br>To make the trip to the subway less boring and tiring, the SPSU, Sao Paulo State University, tried one of its most famous inventions: buses with Infinite Inner Length! In such a modern engineering wonder, there&#39;s always a couple of empty seats for the students to sit and chat during the trip.</p>
+<p>MaratonIME crew is very popular, so popular that they have friends at every SPSU institute. Like everyone else from this university, they need to take the bus after a long day learning how to fix the Wi-Fi network. Because they don&#39;t practice sports like rowing, every SPSU student sits right after entering the bus, making pairs whenever possible. Thinking about that, Gi, an ICPC expert, comes with a problem to think on the way to the subway: given a number n which indicates the number of institutes at SPSU and n integers ai representing the amount of people waiting for the bus at the institute i, Gi wants to know for m pairs lj, rj (lj ≤ rj) if all the people waiting for the bus at any point between lj e rj (inclusive) took an empty bus, they could sit together in pairs (nobody would sit alone).</p>
+<p>Input</p>
+<blockquote>
+<p>The input consist in one line with two integers n and m, the number of institutes and the number of Gi&#39;s questions. In the second line there are n integers ai, the number of people waiting for the bus at the ith institute. Then follows m lines with two integers each, li and ri, the first and last institute of Gi&#39;s question.<br>1 ≤ n, m ≤ 1e5<br>0 ≤ ai ≤ 1e5<br>1 ≤ li ≤ ri ≤ n</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Output &quot;Sim&quot; if it is possible to organize all the pairs in a way nobody sits alone or &quot;Nao&quot; otherwise.</p>
+</blockquote>
+<p>Example<br>Input</p>
+<blockquote>
+<p>5 2<br>1 4 10 3 2<br>3 5<br>2 3</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Nao<br>Sim</p>
+</blockquote>
+<p>Note</p>
+<blockquote>
+<p>In the first sample we have 5 institutes with 1, 4, 10, 3 and 2 students. Gi asks if it is possible to form only couples if the ones between the 3rd and the 5th institutes takes an empty bus and the ones between the 2nd and the 3rd. For the first we have 15 so we can&#39;t and for the second we have 14 so we can.</p>
+</blockquote>
+<p>Problem solving:<br>这道题的意思就是给你一组数，问你第i个数到第j个数的和的奇偶。</p>
+<p>不知道直接查询会不会超时，但是我用了前缀和数组。也算是个简单题吧。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll a[213344],b[213344];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ll n,m,x,y;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	for(int i=0;i&lt;n;i++)	cin&gt;&gt;a[i];</span><br><span class="line">	b[0]=a[0];</span><br><span class="line">	for(int i=1;i&lt;n;i++)	b[i]=b[i-1]+a[i];</span><br><span class="line">	while(m--)</span><br><span class="line">	&#123;</span><br><span class="line">		cin&gt;&gt;x&gt;&gt;y;</span><br><span class="line">		x--,y--;</span><br><span class="line">		if((b[y]-b[x-1])%2!=0)	puts(&quot;Nao&quot;);</span><br><span class="line">		else	puts(&quot;Sim&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-attends-the-lecture-or-not"><a href="#MaratonIME-attends-the-lecture-or-not" class="headerlink" title="MaratonIME attends the lecture (or not)"></a>MaratonIME attends the lecture (or not)</h3><p>Description:<br>Has the prof taken attendance yet?<br>Student, IME&#39;s<br>In MaratonIME, as many other groups, some students want to attend lectures just enough to not be flunked by frequency (as we know, in USP, University of Sao Paulo, it is necessary to have 70 percent frequency), however some others are dedicated and try to accomplish the most frequency percent possible, going to school even when they are ill or tired. Curiously, there is not any other kind of students in MaratonIME.</p>
+<p>Wood, an old MaratonIME&#39;s member, needs help. He is taking the course MAC4815162342, and attended k of m lectures that were given. Consider that MAC4815162342 has n lectures in total per semester. He ask you to help finding the best way to accomplish his objectives, but, as you are new in MaratonIME, you don&#39;t know the kind of student that he is. Embarassed to ask more, you decide to solve two problems, so there is not way to go wrong.</p>
+<p>Input</p>
+<blockquote>
+<p>The input consists of a just one line. In this line, you are given three integers n, m and k, with 1 ≤ n ≤ 1e7 and 0 ≤ k ≤ m ≤ n.<br>n is the number of lectures of MAC4815162342 per semester, m is the quantity of lectures that were given and k is the number of lectures attended by Wood.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>In the first line, print the minimum number of lectures that Wood needs to attend to accomplish at least 70% frequency, or  - 1 if it is impossible to accomplish 70% frequency.<br>In the second line, print the maximum frequency percent that Wood can accomplish, if he goes to all of the lectures from the next lecture. This value has to be rounded down to the closest integer. Don&#39;t print &#39;%&#39;.</p>
+</blockquote>
+<p>Examples<br>Input</p>
+<blockquote>
+<p>10 5 2</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>5<br>70</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>11 2 1</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>7<br>90</p>
+</blockquote>
+<p>Note</p>
+<blockquote>
+<p>On the second example, the maximum percentage that Wood can get is 90.9090.</p>
+</blockquote>
+<p>Problem solving:<br>这道题意思就是有一门课本学期只上n节，现在已经上了m节，这个同学m节里面只去了k节，问你他还能不能达到70%的出勤率，如果不能输出-1，如果可以输出他最少再去上几次课就可以达到70%，然后输出他能达到的最大的出勤率。</p>
+<p>题挺简单的，最大出勤率也好算，就是(n-m+k)/n<br>还有个坑点就是你需要先判断一下他现在的出勤率是不是已经够了。这个也可以不处理，就像我用的那个max一样也行。</p>
+<p>但是这道题我WA了n发，因为这个题它对精度要求比(ka)较(jing)高(du)。</p>
+<p>这里涉及到高精度，我就想到用python写了，其实c++一样的</p>
+<p>Code:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">a,b,c=input().split()</span><br><span class="line">a=eval(a)</span><br><span class="line">b=eval(b)</span><br><span class="line">c=eval(c)</span><br><span class="line">x=a-b</span><br><span class="line">y=int((a*<span class="number">70</span>+<span class="number">99</span>)/<span class="number">100</span>)   <span class="comment">#精度问题</span></span><br><span class="line">z=y-c</span><br><span class="line"><span class="keyword">if</span> x&lt;z:</span><br><span class="line">    print(<span class="string">"-1"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(max(<span class="number">0</span>,int(y)-c)) <span class="comment">#处理如果当前出勤率已经到了%70的情况</span></span><br><span class="line">ans=int((x+c)*<span class="number">100</span>/a)</span><br><span class="line">print(ans)</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-goes-rowing"><a href="#MaratonIME-goes-rowing" class="headerlink" title="MaratonIME goes rowing"></a>MaratonIME goes rowing</h3><p>Description:<br>Speed down, Colombooo!!!<br>rowing coach, Gabi<br>As common sense tells us, competitive programmers excel at rowing. The olympic lane is a wonderful place to row, run and work out. What few take their time to appreciate are the capybaras that inhabit the region. Capybaras are fascinating animals! Aside from their beauty, they possess many interesting behaviours. Did you know that capybaras can live in packs as big as 100 individuals?</p>
+<p>In a pleasant sunny morning, Yan was running, as usual. Watching the capybaras, he noticed that they would line up to sunbath. Each capybara was paired with another one, and only another one. Two capybaras can be paired if and only if both see each other. A capybara sees everything in the direction it is looking.</p>
+<p>Curious, Yan decided to represent the capybaras by the letters A and B, where A indicates that the capybara is looking right, and B indicates that the capybara is looking left.</p>
+<p>For example, the sequence AABABB accurately represents capybaras sunbathing, because it is possible to pair every capybara according to the rules above. Yan was so fascinate by this that he slipped and felt into the water, messing his representations. He was able to recover some, but now they are all messed up with each other. Can you help him and find out if a given sequence represent capybaras sunbathing?</p>
+<p>Input</p>
+<blockquote>
+<p>Every instance contains a sequence S of characters, composed only of &#39;A&#39; and &#39;B&#39; – Yan&#39;s representation. You may assume that 1 ≤ |S| ≤ 105.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>The output should contain a single line. Print &quot;Sim&quot; if the sequence represents capybaras sunbathing, or &quot;Nao&quot; otherwise.</p>
+</blockquote>
+<p>Example<br>Input</p>
+<blockquote>
+<p>AABABB</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Sim</p>
+</blockquote>
+<p>Problem solving:<br>这道题的意思就是一个a能和一个b能配对。但必须是a在左面b在右面，给你一串字符串问你可不可以全部配对。</p>
+<p>这道题跟括号匹配很像，用一个栈实现就行了。</p>
+<p>然后，，我比赛时候没想到，也不知道咋想到一个很zz的贪心算法，现在仔细一想才发现是错的，关键是。。还过了。。。数据水了吧。(我打败了它，滑稽</p>
+<p>Code:<br>这是我的水过的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	string s;</span><br><span class="line">	int x=0,y=0;</span><br><span class="line">	cin&gt;&gt;s;</span><br><span class="line">	if(s[0]==&apos;B&apos;||s[s.size()-1]==&apos;A&apos;)</span><br><span class="line">		puts(&quot;Nao&quot;);</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		for(int i=0;i&lt;s.size();i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(s[i]==&apos;A&apos;)x++;</span><br><span class="line">			else y++;</span><br><span class="line">		&#125;</span><br><span class="line">		if(x!=y)	puts(&quot;Nao&quot;);</span><br><span class="line">		else	puts(&quot;Sim&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是一血大佬<a href="https://blog.csdn.net/cloudy_happy" target="_blank" rel="noopener">cloudy_happy</a>的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define ll long long</span><br><span class="line">typedef pair&lt;int,int&gt; pii;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    ios::sync_with_stdio(false);</span><br><span class="line">    string s;</span><br><span class="line">    cin&gt;&gt;s;</span><br><span class="line">    stack&lt;int&gt; st;</span><br><span class="line">    for (int i = 0;i &lt; s.size();i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (s[i] == &apos;A&apos;)</span><br><span class="line">            st.push(1);</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if (!st.empty()) st.pop();</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                cout&lt;&lt;&quot;Nao&quot;&lt;&lt;&apos;\n&apos;;</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (st.empty()) cout&lt;&lt;&quot;Sim&quot;&lt;&lt;&apos;\n&apos;;</span><br><span class="line">    else cout&lt;&lt;&quot;Nao&quot;&lt;&lt;&apos;\n&apos;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-goes-to-the-movies"><a href="#MaratonIME-goes-to-the-movies" class="headerlink" title="MaratonIME goes to the movies"></a>MaratonIME goes to the movies</h3><p>Description:<br>Better than &quot;Fifth Wave&quot;<br>in the World, Everyone<br>Believe it if you can, studies show that we in MaratonIME live not only out of competitive programming.</p>
+<p>In a saturday, after taking part in a virtual contest, our heroes decide to enjoy the afternoon watching a movie session. But they didn&#39;t choose any movie, but an n-D movie, that is, a movie with n dimensions.</p>
+<p>During a chase scene, the main character jumps over a chain in the parking lot. Of course this was done in a very athletic way, and for some reason that drove Yan, one of the competitive programmers, mad.</p>
+<p>&quot;Hollywood makes everything seem easy, but jumping over a chain is really hard!&quot;</p>
+<p>The rest of the crowd, after the movie, argued with Yan that the actor surely jumped over the chain, but Yan disagreed, saying that it was done by some camera trick or by special effects.</p>
+<p>To prove his point, he bought another ticket for the movie and this time he took highly precise measuring instruments to the session. Yan&#39;s plan was to show that the distance from the actor&#39;s foot to the floor was smaller than the distance from the chain to the floor, and that would prove that the actor didn&#39;t actually jump over the chain.</p>
+<p>But math in n dimensions is hard. Everyone knows that distance in the 2D plane between two points (x0, y0) and (x1, y1) is given by the formula<br><img src alt><br>Most people also know that distance between two points (x0, y0, z0) e (x1, y1, z1) in 3D space is given by the formula<br><img src alt><br>Both formulas describe the euclidean distance, in the 2 and 3 dimensional case. Your task is, given three points in an n dimensional space, tell if the the closest ones are the foot and the floor or the chain and the flooor, according to euclidean distance.</p>
+<p>Input</p>
+<blockquote>
+<p>The input begins with an integer n, followed by three lines, each with the representation of a point in an n-dimensional space.<br>Dimensions confuse us, humans, so you can assume that 1 ≤ n ≤ 1e5.<br>The second line represents the coordinates of the floor, and contains n integers a1, ..., an.<br>The third line represents the coordinates of the foot of the main character, and contains n integers b1, ..., bn.<br>The fourth line represents the coordinates of the chain, and contains n integers c1, ..., cn.<br>The movie theather is not arbitrarily large, so you can assume that the absolute value of these coordinates are not greater than 1e4.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Print who wins the argument, that is, print &quot;Yan&quot; if the distance between the floor and the foot is not greater than the distance between the floor and the chain, or &quot;MaratonIME&quot; otherwise.</p>
+</blockquote>
+<p>Examples<br>Input</p>
+<blockquote>
+<p>2<br>0 0<br>1 1<br>2 2</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Yan</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>4<br>0 0 0 0<br>2 2 2 2<br>1 1 1 1</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>MaratonIME</p>
+</blockquote>
+<p>Problem solving:<br>这道题如果看懂了也不难。就是问你两个点的距离的大小，然后再比较一下，只不过是n维的，跟二维三维的公式一样，往里面套就行了。一个for循环，然后最后在开根号。</p>
+<p>输入三行对应着三个点，比较的是第二个和第三个点相对于第一个点的距离的大小。<br>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int sijia = 211314;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll f[sijia],m[sijia],gj[sijia];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	for(int i=0;i&lt;n;i++)	cin&gt;&gt;f[i];</span><br><span class="line">	for(int i=0;i&lt;n;i++)	cin&gt;&gt;m[i];</span><br><span class="line">	for(int i=0;i&lt;n;i++)	cin&gt;&gt;gj[i];</span><br><span class="line">	double x,y;</span><br><span class="line">	x=y=0;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		x+=(m[i]-f[i])*(m[i]-f[i]);</span><br><span class="line">		y+=(gj[i]-f[i])*(gj[i]-f[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	if(x&lt;=y)</span><br><span class="line">		puts(&quot;Yan&quot;);</span><br><span class="line">	else	puts(&quot;MaratonIME&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-goes-to-a-japanese-restaurant"><a href="#MaratonIME-goes-to-a-japanese-restaurant" class="headerlink" title="MaratonIME goes to a japanese restaurant"></a>MaratonIME goes to a japanese restaurant</h3><p>Description:<br>Matsu?<br>Member, MaratonIME&#39;s<br>Nathan and Yan are very dedicated programmers. They apply their knowledge in algorithms in problems beyond the programming competitions themselves, optimizing even the most trivial every day things.</p>
+<p>Some question if they aren&#39;t just crazy, and if it wouldn&#39;t be better to just do what has to be done.</p>
+<p>Anyhow, eventually some conflicts happen when their approaches differ about what has to be done. That always happens when they decide to go to japanese restaurants.</p>
+<p>Everybody knows that the objective in an all-you-can eat it to try to eat many distinct kinds of food. Nathan and Yan differ in opinions on how to achieve that. Both competitors, when sitting to eat an asian delicacy, eat until nothing is left on their plates.</p>
+<p>The difference is that Yan, respecting the wisdom of the nipponic masters, eats in the order the food arrives, whereas Nathan claims that the food is better the latter it arrives, to spare the most expensive ingredients, and so asks that his plates come in inverted order.</p>
+<p>Given the default order the dishes will arrive and the time Nathan and Yan will stay at the restaurant, determine who is going to eat the most different kinds of food, or if both ate the same number of different kinds of food, given that Yan eats the food in order and Nathan in inverted order.</p>
+<p>Input</p>
+<blockquote>
+<p>The first line of input has two integers: 0 &lt; n ≤ 1e5, how many plates will be served and 0 &lt; T ≤ 1e6, how long (in minutes) Yan and Nathan will stay at the restaurant.<br>In the following line, n integers 0 &lt; ti ≤ 1e3, ti is how long it takes to eat the i-th dish (in minutes).<br>The restaurants are very well administrated, so you can assume that when one of the competitors finishes his dish, the following dish is already on the table.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>If Yan is going to taste more dishes than Nathan, print &quot;Yan&quot;. If Nathan is going to taste more dishes than Yan, print &quot;Nathan&quot;. Otherwise, if we have a tie, print &quot;Empate&quot;.</p>
+</blockquote>
+<p>Examples<br>Input</p>
+<blockquote>
+<p>10 45<br>1 2 3 4 5 6 7 8 9 10</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Yan</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>10 45<br>10 2 3 4 5 6 7 8 9 1</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>Nathan</p>
+</blockquote>
+<p>Problem solving:<br>这道题的意思就是给你一个序列代表每个菜吃完需要用的时间，然后给你一个整数，代表你总共可以用的时间。现在有两个顺序，一个是正序一个是倒序，问你在那种情况下，可以吃到菜的种类比较多。并且每个菜都必须吃完。</p>
+<p>所以用两次for循环遍历直到给的整数不大于当前菜所需要的时间退出循环。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">ll a[211314];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ll n,m;</span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	for(ll i=0;i&lt;n;i++)</span><br><span class="line">		cin&gt;&gt;a[i];</span><br><span class="line">	ll x,y,s1=0,s2=0;</span><br><span class="line">	x=m,y=m;</span><br><span class="line">	for(ll i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(x&gt;=a[i])</span><br><span class="line">		&#123;</span><br><span class="line">			x-=a[i];</span><br><span class="line">			s1++;</span><br><span class="line">		&#125;</span><br><span class="line">		else	break;</span><br><span class="line">	&#125;</span><br><span class="line">	for(ll i=n-1;i&gt;=0;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		if(y&gt;=a[i])</span><br><span class="line">		&#123;</span><br><span class="line">			y-=a[i];</span><br><span class="line">			s2++;</span><br><span class="line">		&#125;</span><br><span class="line">		else break;</span><br><span class="line">	&#125;</span><br><span class="line">	if(s1&gt;s2)	puts(&quot;Yan&quot;);</span><br><span class="line">	else if(s1&lt;s2)	puts(&quot;Nathan&quot;);</span><br><span class="line">	else	puts(&quot;Empate&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-goes-to-the-japanese-restaurant-again"><a href="#MaratonIME-goes-to-the-japanese-restaurant-again" class="headerlink" title="MaratonIME goes to the japanese restaurant (again)"></a>MaratonIME goes to the japanese restaurant (again)</h3><p>Description:<br>Nakato?<br>from MaratonIME, Members<br>After a long day of hard training, MaratonIME (マラトニメ) members decided to go to a Japanese restaurant. Yeah, we love Japanese food.</p>
+<p>After a lot of sushi boats, when everyone was more than satisfied, they asked the sushi-man Sussushi (ススシ) for the last boat. Sussushi felt challenged and answered:</p>
+<p>– You want one more boat? You shall have one more boat...</p>
+<p>The sushi boat that he brought was the biggest that any contestant had ever seen. Some contestants even dare saying that was the biggest sushi boat that ever existed, exceeding the previous limit of 105 sushis made by the suhiwoman Gioza (ジョザ) in 742, in a festival for the king that year, Carlos-sama (カーロス様).</p>
+<p>Besides that the contestants accepted the challenge, and together they managed to eat all the sushis. After that, the contestants we&#39;re so full that they couldn&#39;t touch each other. They couldn&#39;t even think about programming problems. Help them find what pair of friends are touching themselves, so they can move away from each other.</p>
+<p>The contestant are represented as circles in plane, and two contestants touch each other if the circles touch each other. It&#39;s guaranteed that the intersection area of any two circles is null.</p>
+<p>Input</p>
+<blockquote>
+<p>In the first line there is a single integer, n indicating the number of contestants (2 ≤ n ≤ 1000).<br>Each one of the next n lines has 3 integers xi, yi e ri, the (i + 1)-th line describes the ith contestant. (xi, yi) are the coordinates of the center of the circle, and ri is the radius. ( - 1e4 ≤ xi, yi ≤ 1e4, 1 ≤ ri ≤ 2·1e4)<br>It is guaranteed that the intersection area of any two circles is null.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each pair of circles that touch each other, print in one line the indexes of these circles. The collisions can be printed in any order, the indexes of both circles can also be printed in any order.<br>Don&#39;t print the collisions more than once, that means, if i intersects with j, print i j or j i, but not both.</p>
+</blockquote>
+<p>Example<br>Input</p>
+<blockquote>
+<p>3<br>0 0 2<br>5 0 3<br>10 10 1</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>1 2</p>
+</blockquote>
+<p>Problem solving:<br>这道题的意思就是给你几个圆的圆心以及半径，问你哪几个圆是相交的，有的话输出。</p>
+<p>输入的时候我用了结构体直接存的，然后两个for进行查找，因为n最大时1000，所以不会超时。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">struct node&#123;</span><br><span class="line">	int x,y,r;</span><br><span class="line">&#125;a[1314];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int n;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">		cin&gt;&gt;a[i].x&gt;&gt;a[i].y&gt;&gt;a[i].r;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		for(int j=i+1;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(sqrt((a[j].y-a[i].y)*(a[j].y-a[i].y)+(a[j].x-a[i].x)*(a[j].x-a[i].x))&lt;=(a[i].r+a[j].r))</span><br><span class="line">				cout&lt;&lt;i &lt;&lt;&quot; &quot;&lt;&lt;j&lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-goes-to-the-karaoke"><a href="#MaratonIME-goes-to-the-karaoke" class="headerlink" title="MaratonIME goes to the karaoke"></a>MaratonIME goes to the karaoke</h3><p>Description:<br>♬ Hit me, lock me up, do anything with me, ... ♬<br>and Marrone, Bruno<br>After thousands of years repeating the title of this problem statement, always with an excited and inviting tone, Nathan finally persuaded his colleagues to go to the karaoke. He is feeling radiant with this achievement.</p>
+<p>But there is a problem. After so much time trying to make his friends go to the karaoke, Nathan is afraid of embarrassing himself when he goes to sing the following classics of Brazilian music:</p>
+<p>Waitress – Reginaldo Rossi<br>Blue Nightclub – Joaquim and Manuel<br>Paper Heart – Sérgio Kings<br>Love Bubble – Fagner<br>You did not teach me to forget – Fernando Mendes<br>To avoid the humiliation, and to not discourage his fellows in future hang outs at the karaoke, Nathan decided to print all the song’s ciphers that are available in the karaoke, to check while he sings. However, this resulted in a colossal amount of paper, that he is not able to carry.</p>
+<p>But the perseverance and ingenuity of an envious programmer is not something you should underestimate.</p>
+<p>Nathan realized that, after all, there were only 7 musical notes. The specialists in this matter used to represent this notes with the letters A, B, C, D, E, F and G. Even more, it’s common that the same note appears several times in sequence. He decided then, to compress the songs, changing every occurrence of repeated notes with the note followed by how many times it occurs.</p>
+<p>For instance, given the sequence</p>
+<p>[(A,A,A,B,B,B,C,G,G,G,G,G,G,G,G,G,G,G)] the compressed version is [A3B3C1G11]</p>
+<p>Unfortunately, Nathan also needs to pack his floral suit and to comb his beard – two homeric jobs – and he is out of time to compress the notes. Help him to not embarrass himself by writing a program that can solve this task.</p>
+<p>Input</p>
+<blockquote>
+<p>Each input consist of a single line, a sequence of caracteres S such as |S| ≤ 105, formed only by the letters A, B, C, D, E, F and G.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>For each input, print in a single line, such as each sequence of similar notes are replaced by the note that occurs and how many times it occurs, as showed in the example.</p>
+</blockquote>
+<p>Examples</p>
+<p>Input</p>
+<blockquote>
+<p>ABBGA</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>A1B2G1A1</p>
+</blockquote>
+<p>Input</p>
+<blockquote>
+<p>AAABBBCGGGGGGGGGGG</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>A3B3C1G11</p>
+</blockquote>
+<p>Problem solving:<br>这道题我没看题，直接看的样例哈哈。<br>这道题是给你一个字符串问你这个字符串中连续出现的字符以及个数。我用结构体存了一下，然后输出。<br>注意：同一个字母如果没有连着出现是不能算在一起的，这个看样例应该就可以看出来。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;string&gt;</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">const int xiaozhu=1e5+10;</span><br><span class="line">struct node&#123;</span><br><span class="line">	char s;</span><br><span class="line">	int ti;</span><br><span class="line">&#125;sijia[xiaozhu];</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	string s;</span><br><span class="line">	cin&gt;&gt;s;</span><br><span class="line">	sijia[0].s=s[0];sijia[0].ti=1;</span><br><span class="line">	int pos=0;</span><br><span class="line">	for(int i=1;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(s[i]==sijia[pos].s)</span><br><span class="line">		&#123;</span><br><span class="line">			sijia[pos].ti++;</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			pos++;</span><br><span class="line">			sijia[pos].s=s[i];</span><br><span class="line">			sijia[pos].ti=1;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=0;i&lt;=pos;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout&lt;&lt;sijia[i].s&lt;&lt;sijia[i].ti;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-goes-karting"><a href="#MaratonIME-goes-karting" class="headerlink" title="MaratonIME goes karting"></a>MaratonIME goes karting</h3><p>Description:<br>Yan, it&#39;s red!!!<br>desperate, Passengers<br>Once after a contest, the competitive programmers were sad because of bad results. Seeing the situation, Renzo, MaratonIME&#39;s coach, suggested they should do something fun to relax. After a big discussion, they decided to go karting. Looking for a place that was viable to all students, they found Kartforces, a kart track near Cidade Universitária. However, the track was too small and only fitted two racers by race. As passionate competitive programmers, they organised a fair tournament where everyone raced against everyone, two by two, only once. In each race, the winner got one point on the scoreboard. Draws were allowed and no one scored in this case. The winner was the biggest scorer. There were N competitive programmers present and:</p>
+<p>Each competitive programmer had a skill hi.<br>If hi &gt; hj where 1 ≤ i, j ≤ N and i ≠ j, then the competitive programmer i won the race against j.<br>You had access to the skills of all competitive programmers and now asks who was the champion.</p>
+<p>Input</p>
+<blockquote>
+<p>The first line consists on a single integer N, the number of competitive programmers. The second line contains N integers hi, the skill of the i - th competitive programmer.<br>1 ≤ N ≤ 1e5<br>0 ≤ hi ≤ 1e9</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>The output consists in a single integer i, the champion competitive programmer. If it&#39;s not possible to determine the champion, print  - 1.</p>
+</blockquote>
+<p>Example</p>
+<p>Input</p>
+<blockquote>
+<p>3<br>2 4 6</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>3</p>
+</blockquote>
+<p>Problem solving:<br>这道题的题意我没看很懂，但是就是给你一组数据问是否能确定一个冠军出来。</p>
+<p>什么情况下才不会产生冠军呢？就是如果有两个人得分相等的时候就不会产生冠军。而且题目说的是相邻两个人的比赛，所以只需要一个for循环比较一下看相邻的有没有相等的，如果有直接输出-1，没有的话直接输出最大值即可。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long ll;</span><br><span class="line">struct node&#123;</span><br><span class="line">	ll x,id;</span><br><span class="line">&#125;a[100005];</span><br><span class="line">bool cmp(node a,node b)</span><br><span class="line">&#123;</span><br><span class="line">	return a.x&gt;b.x;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	ll n;</span><br><span class="line">	scanf(&quot;%lld&quot;,&amp;n);</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf(&quot;%lld&quot;,&amp;a[i].x);</span><br><span class="line">		a[i].id=i;</span><br><span class="line">	&#125;</span><br><span class="line">	for(int i=1;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(a[i].x==a[i+1].x)</span><br><span class="line">		&#123;</span><br><span class="line">			puts(&quot;-1&quot;);</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a+1,a+n+1,cmp);</span><br><span class="line">	printf(&quot;%lld\n&quot;,a[1].id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="MaratonIME-returns-home"><a href="#MaratonIME-returns-home" class="headerlink" title="MaratonIME returns home"></a>MaratonIME returns home</h3><p>Description:<br>♬ Renzo, they&#39;re calling. Renzo, pick up the phone ♬<br>Ringtones, Top<br>Popular among the most traditional coders, the Summer Camp is famous for its fancy parties. After each party all attendees must return to their homes, but the way back home is not always easy: mildly drunk coders walk weird and often find or lose money along the way. However, MaratonIME always has a sober member in the group, who assures no one will lose money, except when they are robbed.</p>
+<p>On its way back MaratonIME knows that they can call their coach, Renzo, who will pick them up immediately. Instead of doing that right after the party, they want to know what is the maximum amount of money they can carry back to their homes.</p>
+<p>Your task is to write a program that solves this problem. Consider the following facts:</p>
+<p>The city map can be seen as an N by M grid;<br>Members of MaratonIME are initially at the top left corner, and start walking right, carrying no money;<br>Whenever they reach the end of a row, they walk to the row below and start walking in the opposite direction (if they were walking right, they walk left the next row, and vice-versa);<br>They cannot go past the last row;<br>Whenever they meet a burglar, they lose all their money;<br>They can call Renzo at anytime, and he will pick them up instantly.<br>Input</p>
+<blockquote>
+<p>The first line of the input contains two integers N and M (1 ≤ N, M ≤ 103), respectively, the number of rows and columns of the grid. Then follows N lines, each containing M characters, representing the city map. Each cell of the city map can be either:<br>, <code>_</code> meaning there is nothing at this cell of the grid;<br>, &#39;.&#39;  meaning there is a coin worth 1 unit of money at this cell;<br>, &#39;L&#39; meaning there is a burglar at that cell.</p>
+</blockquote>
+<p>Output</p>
+<blockquote>
+<p>The output must contain a single integer: the maximum amount of money MaratonIME can carry back home.</p>
+</blockquote>
+<p>Example<br>Input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 3</span><br><span class="line">__.</span><br><span class="line">_._</span><br><span class="line">L._</span><br></pre></td></tr></table></figure></p>
+<p>Output</p>
+<blockquote>
+<p>2</p>
+</blockquote>
+<p>Note</p>
+<blockquote>
+<p>In the example above, MaratonIME follows the following path: (1, 1)  (1, 2)  (1, 3)  (2, 3)  (2, 2)  (2, 1)  (3, 1)  (3, 2)  (3, 3). When they reach (2, 2) or (2, 1) they will have 2 coins, and that is the highest value they can get before calling Renzo.</p>
+</blockquote>
+<p>Problem solving:</p>
+<p>这道题就是给你一个图，问你在走的过程中能够拿到的最多的金币数。但是图里会有强盗，用L表示，如果你经过强盗，那么金币清零。但是因为方向是固定的，所以可以直接特殊的遍历一下图就行，或者可以像我一样构建一个新的字符串。<br>然后遍历整个字符串取每个状态下金币数的最大值就是答案。</p>
+<p>Code:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int xiao =1314;</span><br><span class="line">const int zhu =1314;</span><br><span class="line">char sijia[xiao][zhu];</span><br><span class="line">int n,m,ans,flag;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	scanf(&quot;%d %d&quot;,&amp;n,&amp;m);</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">		scanf(&quot;%s&quot;,sijia[i]);</span><br><span class="line">	string s;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(i%2==0)</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=0;j&lt;m;j++)</span><br><span class="line">				s+=sijia[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">		else</span><br><span class="line">		&#123;</span><br><span class="line">			for(int j=m-1;j&gt;=0;j--)</span><br><span class="line">				s+=sijia[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	int now=0;</span><br><span class="line">	for(int i=0;i&lt;s.size();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(s[i]==&apos;.&apos;)	now++;</span><br><span class="line">		if(s[i]==&apos;L&apos;)	now=0;</span><br><span class="line">		ans=max(ans,now);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>最后再总结一下吧，今天好多题都没读懂，于是有了罚时换题意。。。英语能力需要提升！</p>
+
+      
+    </div>
+
+    
+      
+
+  <div class="popular-posts-header"><center><font color="red">Related Posts</font></center></div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\08\08\d23\" rel="bookmark">HPU Summer Day23(河南理工大学暑期第二十三天)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\08\07\d22\" rel="bookmark">HPU Summer Day22(河南理工大学暑期第二十二天)</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="\blog\2019\08\06\d21\" rel="bookmark">HPU Summer Day21(河南理工大学暑期第二十一天)</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Received your money, we are friends</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById(&quot;QR&quot;); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/blog/images/wechat.jpg" alt="Uncle_drew WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/blog/images/alipay.jpg" alt="Uncle_drew Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Algorithm/" rel="tag"><i class="fa fa-tag"></i> Algorithm</a>
+          
+            <a href="/blog/tags/c-c/" rel="tag"><i class="fa fa-tag"></i> c/c++</a>
+          
+        </div>
+      
+       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="6957101534"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+      <div>
+      
+        
+      
+      </div>
+	  
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/08/08/d23/" rel="next" title="HPU Summer Day23(河南理工大学暑期第二十三天)">
+                <i class="fa fa-chevron-left"></i> HPU Summer Day23(河南理工大学暑期第二十三天)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+ 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7495139204844693" data-ad-slot="8004770572"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="http://drew.todest.cn//20190804105405.gif" alt="Uncle_drew">
+            
+              <p class="site-author-name" itemprop="name">Uncle_drew</p>
+              <p class="site-description motion-element" itemprop="description">This is a new and white site, mainly related to the experience of hexo build blog, c/c++ contest title, and python.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">76</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Drew233" title="GitHub &rarr; https://github.com/Drew233" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" title="E-Mail(qq) &rarr; http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1120437716@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail(qq)</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:miaodrew@gmail.com" title="Google Mail &rarr; mailto:miaodrew@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>Google Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                New worlds
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://boctorio.com/" title="https://boctorio.com/" rel="noopener" target="_blank">boctorio</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.todest.cn/" title="https://blog.todest.cn/" rel="noopener" target="_blank">todest</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/chuyds/" title="https://www.cnblogs.com/chuyds/" rel="noopener" target="_blank">chu_yds</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.sqdxwz.com/" title="http://www.sqdxwz.com/" rel="noopener" target="_blank">赴京书生</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://asdfv1929.github.io/" title="https://asdfv1929.github.io/" rel="noopener" target="_blank">asdfv1929</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://angelni.github.io/" title="https://angelni.github.io/" rel="noopener" target="_blank">angel</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://weakdouqing.github.io/" title="https://weakdouqing.github.io/" rel="noopener" target="_blank">douqing</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://inkwall233.github.io" title="https://inkwall233.github.io" rel="noopener" target="_blank">城墙墨</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hpu-yz.github.io/" title="https://hpu-yz.github.io/" rel="noopener" target="_blank">The Flaneurs</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://blogzhy.cn/" title="http://blogzhy.cn/" rel="noopener" target="_blank">blogzhy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://mewhz.com/" title="https://mewhz.com/" rel="noopener" target="_blank">若当来世</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dyingdown.github.io/" title="https://dyingdown.github.io/" rel="noopener" target="_blank">o_oyao</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+
+          
+            
+          
+          <!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-helps-Pablito"><span class="nav-number">1.</span> <span class="nav-text">MaratonIME helps Pablito</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-plays-Cirokime"><span class="nav-number">2.</span> <span class="nav-text">MaratonIME plays Cîrokime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-plays-Nim"><span class="nav-number">3.</span> <span class="nav-text">MaratonIME plays Nim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-plays-Chess"><span class="nav-number">4.</span> <span class="nav-text">MaratonIME plays Chess</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-rides-the-university-bus"><span class="nav-number">5.</span> <span class="nav-text">MaratonIME rides the university bus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-attends-the-lecture-or-not"><span class="nav-number">6.</span> <span class="nav-text">MaratonIME attends the lecture (or not)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-goes-rowing"><span class="nav-number">7.</span> <span class="nav-text">MaratonIME goes rowing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-goes-to-the-movies"><span class="nav-number">8.</span> <span class="nav-text">MaratonIME goes to the movies</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-goes-to-a-japanese-restaurant"><span class="nav-number">9.</span> <span class="nav-text">MaratonIME goes to a japanese restaurant</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-goes-to-the-japanese-restaurant-again"><span class="nav-number">10.</span> <span class="nav-text">MaratonIME goes to the japanese restaurant (again)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-goes-to-the-karaoke"><span class="nav-number">11.</span> <span class="nav-text">MaratonIME goes to the karaoke</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-goes-karting"><span class="nav-number">12.</span> <span class="nav-text">MaratonIME goes karting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MaratonIME-returns-home"><span class="nav-number">13.</span> <span class="nav-text">MaratonIME returns home</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+
+      
+
+
+    </div>
+
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div id="CountMsgs" class="HotDates">
+<span id="tds">--------Waiting--------</span>
+
+</div>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/1/1 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+
+var ds=Math.floor(t/1000/60/60/24);
+var hs=Math.floor(t/1000/60/60%24);
+var ms=Math.floor(t/1000/60%60);
+var ss=Math.floor(t/1000%60);
+
+
+
+document.getElementById("tds").innerHTML = "<center>At the end of 19 years, there are "+ds+" days "+hs+" hours "+ms+" minutes "+ss+" seconds ";
+
+
+
+}
+setInterval(getRTime,1000);
+</script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Uncle_drew</span>
+
+  
+
+  
+</div>
+<!--
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+
+-->
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">A total of 193.1kwords</span>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.0"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.0"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.0"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.0"></script>
+
+
+  
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.9/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: true,
+    notify: false,
+    appId: 'pNiuQ1a1Kllv1bupuAAOYjl3-gzGzoHsz',
+    appKey: '0cJBUKqrJsFhMOrGAyxfL9VU',
+    placeholder: 'Welcome comment',
+    avatar: 'wavatar',
+    meta: guest,
+    pageSize: '5' || 10,
+    visitor: false,
+    lang:'en'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('Copied');
+          else $(this).text('Copy failed');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('Copy');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+    <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+   $("body").click(function(e) {
+       var a = new Array("I","L","O","V","E","Y","O","U");
+       var $i = $("<span/>").text(a[a_idx]);
+       a_idx = (a_idx + 1) % a.length;
+       var x = e.pageX,
+       y = e.pageY;
+       $i.css({
+           "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+           "top": y - 20,
+           "left": x,
+           "position": "absolute",
+           "font-weight": "bold",
+           "color": "#ff6651"
+       });
+       $("body").append($i);
+       $i.animate({
+           "top": y - 180,
+           "opacity": 0
+       },
+       1500,
+       function() {
+           $i.remove();
+       });
+   });
+});
+
+
+
+    </script>
+
+
+
+
+<!-- <script type="text/javascript" src="dist/canvas-nest.js"></script> -->
+</body>
+
+
+
+</html>
+<!--崩溃欺骗-->
+<!-- <script type="text/javascript" src="/js/src/crash_cheat.js"></script> -->
+
+
+
+
+<!-- 雪花特效 -->
+<!-- <script type="text/javascript">
+  var windowWidth = $(window).width();
+  if (windowWidth > 480) {
+    document.write('<script type="text/javascript" src="/js/src/snow.js"><\/script>');
+  }
+  else
+    document.write('<script type="text/javascript" src="/js/src/snow_point.js"><\/script>');
+</script> -->
